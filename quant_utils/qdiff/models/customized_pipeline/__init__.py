@@ -1,0 +1,2 @@
+from .pipeline_stable_diffusion import CustomizedStableDiffusionPipeline
+from .pipeline_stable_diffusion_xl import CustomizedStableDiffusionXLPipeline

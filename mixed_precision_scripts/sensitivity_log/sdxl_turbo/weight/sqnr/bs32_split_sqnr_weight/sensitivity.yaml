@@ -1,0 +1,3176 @@
+model.add_embedding.linear_1:
+- 30.209497451782227
+- 38.59379196166992
+- 65.36524963378906
+model.add_embedding.linear_2:
+- 35.83686828613281
+- 48.125587463378906
+- 71.66156005859375
+model.conv_in:
+- 22.160289764404297
+- 35.056175231933594
+- 59.25852584838867
+model.conv_out:
+- 7.705155372619629
+- 23.234638214111328
+- 50.122764587402344
+model.down_blocks.0.downsamplers.0.conv:
+- 32.76026916503906
+- 40.54212951660156
+- 64.44308471679688
+model.down_blocks.0.resnets.0.conv1:
+- 26.92547607421875
+- 52.15459442138672
+- 71.94645690917969
+model.down_blocks.0.resnets.0.conv2:
+- 25.48696517944336
+- 41.037052154541016
+- 61.38833236694336
+model.down_blocks.0.resnets.0.time_emb_proj:
+- 29.707313537597656
+- 45.79454803466797
+- 68.89231872558594
+model.down_blocks.0.resnets.1.conv1:
+- 34.91075134277344
+- 46.92274475097656
+- 69.38308715820312
+model.down_blocks.0.resnets.1.conv2:
+- 29.888343811035156
+- 45.740116119384766
+- 63.25791931152344
+model.down_blocks.0.resnets.1.time_emb_proj:
+- 39.67854309082031
+- 53.775146484375
+- 76.27294921875
+model.down_blocks.1.attentions.0.proj_in:
+- 35.941349029541016
+- 47.462120056152344
+- 71.35256958007812
+model.down_blocks.1.attentions.0.proj_out:
+- 39.21330642700195
+- 49.8610725402832
+- 74.45243072509766
+model.down_blocks.1.attentions.0.transformer_blocks.0.attn1.to_k:
+- 51.747825622558594
+- 64.5562744140625
+- 82.33929443359375
+model.down_blocks.1.attentions.0.transformer_blocks.0.attn1.to_out.0:
+- 42.74864959716797
+- 55.183837890625
+- 77.11019897460938
+model.down_blocks.1.attentions.0.transformer_blocks.0.attn1.to_q:
+- 52.51305389404297
+- 66.32386016845703
+- 81.91676330566406
+model.down_blocks.1.attentions.0.transformer_blocks.0.attn1.to_v:
+- 41.61764907836914
+- 54.55838394165039
+- 78.91065216064453
+model.down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_k:
+- 51.58782196044922
+- 68.11651611328125
+- 82.56266784667969
+model.down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_out.0:
+- 52.76923370361328
+- 65.7982177734375
+- 81.59590911865234
+model.down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_q:
+- 58.89434051513672
+- 73.2425765991211
+- 83.60016632080078
+model.down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v:
+- 51.03483963012695
+- 63.98094940185547
+- 81.39605712890625
+model.down_blocks.1.attentions.0.transformer_blocks.0.ff.net.0.proj:
+- 39.61040496826172
+- 52.11298751831055
+- 76.41738891601562
+model.down_blocks.1.attentions.0.transformer_blocks.0.ff.net.2:
+- 42.28162384033203
+- 53.558494567871094
+- 77.72917175292969
+model.down_blocks.1.attentions.0.transformer_blocks.1.attn1.to_k:
+- 50.767616271972656
+- 64.58137512207031
+- 82.43869018554688
+model.down_blocks.1.attentions.0.transformer_blocks.1.attn1.to_out.0:
+- 44.662940979003906
+- 57.07988739013672
+- 78.2064208984375
+model.down_blocks.1.attentions.0.transformer_blocks.1.attn1.to_q:
+- 53.48350143432617
+- 66.24264526367188
+- 82.41685485839844
+model.down_blocks.1.attentions.0.transformer_blocks.1.attn1.to_v:
+- 36.840614318847656
+- 51.45441436767578
+- 74.3404541015625
+model.down_blocks.1.attentions.0.transformer_blocks.1.attn2.to_k:
+- 59.9834098815918
+- 77.0390625
+- 83.00208282470703
+model.down_blocks.1.attentions.0.transformer_blocks.1.attn2.to_out.0:
+- 60.951141357421875
+- 72.6823959350586
+- 83.25479125976562
+model.down_blocks.1.attentions.0.transformer_blocks.1.attn2.to_q:
+- 64.53627014160156
+- 77.33766174316406
+- 83.32691192626953
+model.down_blocks.1.attentions.0.transformer_blocks.1.attn2.to_v:
+- 59.219818115234375
+- 70.2344741821289
+- 82.7196044921875
+model.down_blocks.1.attentions.0.transformer_blocks.1.ff.net.0.proj:
+- 40.16999816894531
+- 51.08832550048828
+- 74.29103088378906
+model.down_blocks.1.attentions.0.transformer_blocks.1.ff.net.2:
+- 41.84721755981445
+- 54.23341369628906
+- 75.66138458251953
+model.down_blocks.1.attentions.1.proj_in:
+- 38.60423278808594
+- 49.519805908203125
+- 71.55226135253906
+model.down_blocks.1.attentions.1.proj_out:
+- 34.724124908447266
+- 44.10619354248047
+- 66.37638854980469
+model.down_blocks.1.attentions.1.transformer_blocks.0.attn1.to_k:
+- 55.80720520019531
+- 67.621337890625
+- 83.0969467163086
+model.down_blocks.1.attentions.1.transformer_blocks.0.attn1.to_out.0:
+- 46.21124267578125
+- 58.96094512939453
+- 80.10478210449219
+model.down_blocks.1.attentions.1.transformer_blocks.0.attn1.to_q:
+- 56.534217834472656
+- 71.07395935058594
+- 82.77103424072266
+model.down_blocks.1.attentions.1.transformer_blocks.0.attn1.to_v:
+- 44.76247024536133
+- 53.557525634765625
+- 75.88134002685547
+model.down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_k:
+- 64.46863555908203
+- 80.66256713867188
+- 83.21925354003906
+model.down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_out.0:
+- 63.15473175048828
+- 75.59837341308594
+- 83.55770874023438
+model.down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_q:
+- 72.72098541259766
+- 81.20243835449219
+- 83.72343444824219
+model.down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v:
+- 59.54996871948242
+- 73.63780975341797
+- 83.33097839355469
+model.down_blocks.1.attentions.1.transformer_blocks.0.ff.net.0.proj:
+- 43.04344177246094
+- 56.23790740966797
+- 78.77125549316406
+model.down_blocks.1.attentions.1.transformer_blocks.0.ff.net.2:
+- 48.47465515136719
+- 60.318119049072266
+- 80.83170318603516
+model.down_blocks.1.attentions.1.transformer_blocks.1.attn1.to_k:
+- 58.721893310546875
+- 73.82611846923828
+- 82.9581298828125
+model.down_blocks.1.attentions.1.transformer_blocks.1.attn1.to_out.0:
+- 48.46183776855469
+- 59.95304870605469
+- 80.86859130859375
+model.down_blocks.1.attentions.1.transformer_blocks.1.attn1.to_q:
+- 60.021202087402344
+- 69.76561737060547
+- 82.84916687011719
+model.down_blocks.1.attentions.1.transformer_blocks.1.attn1.to_v:
+- 40.62748718261719
+- 52.08268737792969
+- 74.64469146728516
+model.down_blocks.1.attentions.1.transformer_blocks.1.attn2.to_k:
+- 61.598358154296875
+- 79.18297576904297
+- 83.29925537109375
+model.down_blocks.1.attentions.1.transformer_blocks.1.attn2.to_out.0:
+- 59.41262435913086
+- 75.63152313232422
+- 83.65908813476562
+model.down_blocks.1.attentions.1.transformer_blocks.1.attn2.to_q:
+- 72.0200424194336
+- 80.48847961425781
+- 83.54034423828125
+model.down_blocks.1.attentions.1.transformer_blocks.1.attn2.to_v:
+- 60.554931640625
+- 72.3681640625
+- 83.05714416503906
+model.down_blocks.1.attentions.1.transformer_blocks.1.ff.net.0.proj:
+- 43.22147750854492
+- 55.76026153564453
+- 78.44488525390625
+model.down_blocks.1.attentions.1.transformer_blocks.1.ff.net.2:
+- 45.56963348388672
+- 58.526039123535156
+- 79.4158935546875
+model.down_blocks.1.downsamplers.0.conv:
+- 31.109743118286133
+- 43.57536315917969
+- 65.37339782714844
+model.down_blocks.1.resnets.0.conv1:
+- 31.320228576660156
+- 47.91474151611328
+- 73.0026626586914
+model.down_blocks.1.resnets.0.conv2:
+- 32.7127799987793
+- 48.08103561401367
+- 71.34383392333984
+model.down_blocks.1.resnets.0.conv_shortcut:
+- 34.3851203918457
+- 45.01778793334961
+- 68.48515319824219
+model.down_blocks.1.resnets.0.time_emb_proj:
+- 37.85599136352539
+- 50.47144317626953
+- 72.5982666015625
+model.down_blocks.1.resnets.1.conv1:
+- 34.832523345947266
+- 48.527469635009766
+- 71.53250885009766
+model.down_blocks.1.resnets.1.conv2:
+- 33.46579360961914
+- 46.21232604980469
+- 71.31419372558594
+model.down_blocks.1.resnets.1.time_emb_proj:
+- 42.84831237792969
+- 55.122615814208984
+- 79.03340148925781
+model.down_blocks.2.attentions.0.proj_in:
+- 37.01836395263672
+- 48.62528991699219
+- 72.00730895996094
+model.down_blocks.2.attentions.0.proj_out:
+- 35.5888786315918
+- 47.391807556152344
+- 71.30210876464844
+model.down_blocks.2.attentions.0.transformer_blocks.0.attn1.to_k:
+- 48.08263397216797
+- 65.04299926757812
+- 82.81849670410156
+model.down_blocks.2.attentions.0.transformer_blocks.0.attn1.to_out.0:
+- 43.616722106933594
+- 55.846771240234375
+- 77.5865478515625
+model.down_blocks.2.attentions.0.transformer_blocks.0.attn1.to_q:
+- 48.57640838623047
+- 64.00455474853516
+- 82.64237976074219
+model.down_blocks.2.attentions.0.transformer_blocks.0.attn1.to_v:
+- 46.356727600097656
+- 59.075740814208984
+- 80.2702865600586
+model.down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_k:
+- 48.126007080078125
+- 65.53089141845703
+- 81.5029296875
+model.down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_out.0:
+- 51.381107330322266
+- 62.990570068359375
+- 82.51492309570312
+model.down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_q:
+- 57.32147979736328
+- 72.69070434570312
+- 83.32774353027344
+model.down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v:
+- 48.968231201171875
+- 62.759483337402344
+- 81.68785095214844
+model.down_blocks.2.attentions.0.transformer_blocks.0.ff.net.0.proj:
+- 46.68463897705078
+- 58.44746780395508
+- 80.68553161621094
+model.down_blocks.2.attentions.0.transformer_blocks.0.ff.net.2:
+- 45.21394729614258
+- 58.3340950012207
+- 79.17362976074219
+model.down_blocks.2.attentions.0.transformer_blocks.1.attn1.to_k:
+- 60.417152404785156
+- 73.00370788574219
+- 83.47195434570312
+model.down_blocks.2.attentions.0.transformer_blocks.1.attn1.to_out.0:
+- 52.35850143432617
+- 64.72006225585938
+- 82.55340576171875
+model.down_blocks.2.attentions.0.transformer_blocks.1.attn1.to_q:
+- 61.337379455566406
+- 75.07490539550781
+- 83.6917495727539
+model.down_blocks.2.attentions.0.transformer_blocks.1.attn1.to_v:
+- 49.77954864501953
+- 63.16376876831055
+- 81.558837890625
+model.down_blocks.2.attentions.0.transformer_blocks.1.attn2.to_k:
+- 43.83866882324219
+- 65.22299194335938
+- 82.4891128540039
+model.down_blocks.2.attentions.0.transformer_blocks.1.attn2.to_out.0:
+- 47.30396270751953
+- 61.34245300292969
+- 81.13671112060547
+model.down_blocks.2.attentions.0.transformer_blocks.1.attn2.to_q:
+- 55.85044479370117
+- 73.16094207763672
+- 83.62512969970703
+model.down_blocks.2.attentions.0.transformer_blocks.1.attn2.to_v:
+- 47.37781524658203
+- 60.42503356933594
+- 80.38568115234375
+model.down_blocks.2.attentions.0.transformer_blocks.1.ff.net.0.proj:
+- 47.67726135253906
+- 59.07630920410156
+- 79.96009826660156
+model.down_blocks.2.attentions.0.transformer_blocks.1.ff.net.2:
+- 45.6381950378418
+- 57.39870834350586
+- 80.1573486328125
+model.down_blocks.2.attentions.0.transformer_blocks.2.attn1.to_k:
+- 57.88837814331055
+- 72.64093017578125
+- 83.82190704345703
+model.down_blocks.2.attentions.0.transformer_blocks.2.attn1.to_out.0:
+- 47.58699035644531
+- 62.530738830566406
+- 80.72256469726562
+model.down_blocks.2.attentions.0.transformer_blocks.2.attn1.to_q:
+- 55.040863037109375
+- 68.6284408569336
+- 83.51839447021484
+model.down_blocks.2.attentions.0.transformer_blocks.2.attn1.to_v:
+- 47.90134048461914
+- 61.0889892578125
+- 82.48648071289062
+model.down_blocks.2.attentions.0.transformer_blocks.2.attn2.to_k:
+- 52.56254577636719
+- 73.65788269042969
+- 83.44999694824219
+model.down_blocks.2.attentions.0.transformer_blocks.2.attn2.to_out.0:
+- 50.090187072753906
+- 62.86040496826172
+- 82.62608337402344
+model.down_blocks.2.attentions.0.transformer_blocks.2.attn2.to_q:
+- 65.55682373046875
+- 75.97814178466797
+- 83.92770385742188
+model.down_blocks.2.attentions.0.transformer_blocks.2.attn2.to_v:
+- 50.08524703979492
+- 57.829185485839844
+- 82.20269012451172
+model.down_blocks.2.attentions.0.transformer_blocks.2.ff.net.0.proj:
+- 45.90384292602539
+- 58.501243591308594
+- 80.43135070800781
+model.down_blocks.2.attentions.0.transformer_blocks.2.ff.net.2:
+- 45.49251174926758
+- 59.93938446044922
+- 80.90215301513672
+model.down_blocks.2.attentions.0.transformer_blocks.3.attn1.to_k:
+- 55.78672790527344
+- 69.82313537597656
+- 83.07466125488281
+model.down_blocks.2.attentions.0.transformer_blocks.3.attn1.to_out.0:
+- 49.245052337646484
+- 61.53315734863281
+- 81.07158660888672
+model.down_blocks.2.attentions.0.transformer_blocks.3.attn1.to_q:
+- 55.99315643310547
+- 69.84100341796875
+- 83.44428253173828
+model.down_blocks.2.attentions.0.transformer_blocks.3.attn1.to_v:
+- 46.55633544921875
+- 58.639747619628906
+- 79.31455993652344
+model.down_blocks.2.attentions.0.transformer_blocks.3.attn2.to_k:
+- 55.0064582824707
+- 76.22119140625
+- 83.01605987548828
+model.down_blocks.2.attentions.0.transformer_blocks.3.attn2.to_out.0:
+- 53.03699493408203
+- 65.73260498046875
+- 82.6656723022461
+model.down_blocks.2.attentions.0.transformer_blocks.3.attn2.to_q:
+- 64.1662368774414
+- 79.19334411621094
+- 83.67393493652344
+model.down_blocks.2.attentions.0.transformer_blocks.3.attn2.to_v:
+- 52.96217727661133
+- 65.13133239746094
+- 82.82405853271484
+model.down_blocks.2.attentions.0.transformer_blocks.3.ff.net.0.proj:
+- 45.18417739868164
+- 57.70185852050781
+- 80.13158416748047
+model.down_blocks.2.attentions.0.transformer_blocks.3.ff.net.2:
+- 45.378211975097656
+- 59.03587341308594
+- 79.60523223876953
+model.down_blocks.2.attentions.0.transformer_blocks.4.attn1.to_k:
+- 61.17259979248047
+- 73.85895538330078
+- 83.7816162109375
+model.down_blocks.2.attentions.0.transformer_blocks.4.attn1.to_out.0:
+- 50.19912338256836
+- 64.46527099609375
+- 82.12226867675781
+model.down_blocks.2.attentions.0.transformer_blocks.4.attn1.to_q:
+- 60.030967712402344
+- 74.63224792480469
+- 83.84382629394531
+model.down_blocks.2.attentions.0.transformer_blocks.4.attn1.to_v:
+- 48.119415283203125
+- 60.59089279174805
+- 80.89862823486328
+model.down_blocks.2.attentions.0.transformer_blocks.4.attn2.to_k:
+- 60.381771087646484
+- 75.25505065917969
+- 83.58080291748047
+model.down_blocks.2.attentions.0.transformer_blocks.4.attn2.to_out.0:
+- 56.872886657714844
+- 69.75089263916016
+- 83.34021759033203
+model.down_blocks.2.attentions.0.transformer_blocks.4.attn2.to_q:
+- 65.86325073242188
+- 80.77780151367188
+- 83.7126693725586
+model.down_blocks.2.attentions.0.transformer_blocks.4.attn2.to_v:
+- 55.57375717163086
+- 67.75821685791016
+- 82.91405487060547
+model.down_blocks.2.attentions.0.transformer_blocks.4.ff.net.0.proj:
+- 45.9837646484375
+- 59.58494567871094
+- 80.36070251464844
+model.down_blocks.2.attentions.0.transformer_blocks.4.ff.net.2:
+- 47.42478561401367
+- 56.96583938598633
+- 81.1094970703125
+model.down_blocks.2.attentions.0.transformer_blocks.5.attn1.to_k:
+- 59.506954193115234
+- 71.91336822509766
+- 83.88033294677734
+model.down_blocks.2.attentions.0.transformer_blocks.5.attn1.to_out.0:
+- 51.74443435668945
+- 65.04585266113281
+- 82.51301574707031
+model.down_blocks.2.attentions.0.transformer_blocks.5.attn1.to_q:
+- 59.08283233642578
+- 73.56333923339844
+- 83.71012878417969
+model.down_blocks.2.attentions.0.transformer_blocks.5.attn1.to_v:
+- 48.240081787109375
+- 62.4334716796875
+- 81.68305206298828
+model.down_blocks.2.attentions.0.transformer_blocks.5.attn2.to_k:
+- 67.81304168701172
+- 81.73225402832031
+- 83.80630493164062
+model.down_blocks.2.attentions.0.transformer_blocks.5.attn2.to_out.0:
+- 63.34954833984375
+- 76.97396850585938
+- 83.7679672241211
+model.down_blocks.2.attentions.0.transformer_blocks.5.attn2.to_q:
+- 78.62079620361328
+- 83.51073455810547
+- 83.67061614990234
+model.down_blocks.2.attentions.0.transformer_blocks.5.attn2.to_v:
+- 61.80293273925781
+- 74.138671875
+- 83.48539733886719
+model.down_blocks.2.attentions.0.transformer_blocks.5.ff.net.0.proj:
+- 45.81298065185547
+- 57.11977767944336
+- 80.52708435058594
+model.down_blocks.2.attentions.0.transformer_blocks.5.ff.net.2:
+- 47.68157958984375
+- 59.534603118896484
+- 80.85174560546875
+model.down_blocks.2.attentions.0.transformer_blocks.6.attn1.to_k:
+- 60.592933654785156
+- 74.3636245727539
+- 83.86901092529297
+model.down_blocks.2.attentions.0.transformer_blocks.6.attn1.to_out.0:
+- 54.481658935546875
+- 66.1141586303711
+- 82.99443054199219
+model.down_blocks.2.attentions.0.transformer_blocks.6.attn1.to_q:
+- 59.84217834472656
+- 75.81201171875
+- 83.56920623779297
+model.down_blocks.2.attentions.0.transformer_blocks.6.attn1.to_v:
+- 49.61109161376953
+- 63.92142868041992
+- 81.4302749633789
+model.down_blocks.2.attentions.0.transformer_blocks.6.attn2.to_k:
+- 78.50179290771484
+- 83.42122650146484
+- 83.73716735839844
+model.down_blocks.2.attentions.0.transformer_blocks.6.attn2.to_out.0:
+- 68.83128356933594
+- 78.69485473632812
+- 83.86845397949219
+model.down_blocks.2.attentions.0.transformer_blocks.6.attn2.to_q:
+- 81.90413665771484
+- 83.90106964111328
+- 83.76971435546875
+model.down_blocks.2.attentions.0.transformer_blocks.6.attn2.to_v:
+- 64.48646545410156
+- 80.03739929199219
+- 83.68366241455078
+model.down_blocks.2.attentions.0.transformer_blocks.6.ff.net.0.proj:
+- 45.72605895996094
+- 57.960453033447266
+- 78.83426666259766
+model.down_blocks.2.attentions.0.transformer_blocks.6.ff.net.2:
+- 48.23649215698242
+- 59.72010040283203
+- 80.0865707397461
+model.down_blocks.2.attentions.0.transformer_blocks.7.attn1.to_k:
+- 61.294517517089844
+- 72.83260345458984
+- 83.62777709960938
+model.down_blocks.2.attentions.0.transformer_blocks.7.attn1.to_out.0:
+- 53.08699417114258
+- 68.01323699951172
+- 83.17185974121094
+model.down_blocks.2.attentions.0.transformer_blocks.7.attn1.to_q:
+- 58.94845962524414
+- 73.99972534179688
+- 83.72398376464844
+model.down_blocks.2.attentions.0.transformer_blocks.7.attn1.to_v:
+- 49.62834167480469
+- 63.892601013183594
+- 82.2594223022461
+model.down_blocks.2.attentions.0.transformer_blocks.7.attn2.to_k:
+- 74.70388793945312
+- 82.86803436279297
+- 83.67399597167969
+model.down_blocks.2.attentions.0.transformer_blocks.7.attn2.to_out.0:
+- 66.77941131591797
+- 78.89742279052734
+- 83.8449935913086
+model.down_blocks.2.attentions.0.transformer_blocks.7.attn2.to_q:
+- 80.5132064819336
+- 83.82402038574219
+- 83.77006530761719
+model.down_blocks.2.attentions.0.transformer_blocks.7.attn2.to_v:
+- 66.7352294921875
+- 77.65608215332031
+- 83.37995147705078
+model.down_blocks.2.attentions.0.transformer_blocks.7.ff.net.0.proj:
+- 46.44566345214844
+- 58.80707550048828
+- 79.68801879882812
+model.down_blocks.2.attentions.0.transformer_blocks.7.ff.net.2:
+- 47.979339599609375
+- 61.60234451293945
+- 81.19674682617188
+model.down_blocks.2.attentions.0.transformer_blocks.8.attn1.to_k:
+- 63.37389373779297
+- 77.80352783203125
+- 83.75617980957031
+model.down_blocks.2.attentions.0.transformer_blocks.8.attn1.to_out.0:
+- 54.4814453125
+- 68.98269653320312
+- 82.91808319091797
+model.down_blocks.2.attentions.0.transformer_blocks.8.attn1.to_q:
+- 61.94275665283203
+- 76.4435806274414
+- 83.93670654296875
+model.down_blocks.2.attentions.0.transformer_blocks.8.attn1.to_v:
+- 50.03854751586914
+- 63.41419982910156
+- 82.26506042480469
+model.down_blocks.2.attentions.0.transformer_blocks.8.attn2.to_k:
+- 74.62007141113281
+- 82.80858612060547
+- 83.6812515258789
+model.down_blocks.2.attentions.0.transformer_blocks.8.attn2.to_out.0:
+- 68.15690612792969
+- 77.97120666503906
+- 83.66058349609375
+model.down_blocks.2.attentions.0.transformer_blocks.8.attn2.to_q:
+- 81.07110595703125
+- 83.74004364013672
+- 83.8023681640625
+model.down_blocks.2.attentions.0.transformer_blocks.8.attn2.to_v:
+- 65.2881851196289
+- 76.73529815673828
+- 83.61859130859375
+model.down_blocks.2.attentions.0.transformer_blocks.8.ff.net.0.proj:
+- 44.43602752685547
+- 56.80459976196289
+- 78.62699890136719
+model.down_blocks.2.attentions.0.transformer_blocks.8.ff.net.2:
+- 46.728660583496094
+- 60.13496398925781
+- 81.75715637207031
+model.down_blocks.2.attentions.0.transformer_blocks.9.attn1.to_k:
+- 61.328365325927734
+- 73.23590087890625
+- 83.5746841430664
+model.down_blocks.2.attentions.0.transformer_blocks.9.attn1.to_out.0:
+- 52.91831588745117
+- 67.99026489257812
+- 83.24789428710938
+model.down_blocks.2.attentions.0.transformer_blocks.9.attn1.to_q:
+- 59.360538482666016
+- 72.094482421875
+- 83.7029800415039
+model.down_blocks.2.attentions.0.transformer_blocks.9.attn1.to_v:
+- 49.539798736572266
+- 61.42129135131836
+- 81.30573272705078
+model.down_blocks.2.attentions.0.transformer_blocks.9.attn2.to_k:
+- 68.62872314453125
+- 81.62525939941406
+- 83.87394714355469
+model.down_blocks.2.attentions.0.transformer_blocks.9.attn2.to_out.0:
+- 62.68053436279297
+- 76.5186767578125
+- 83.33941650390625
+model.down_blocks.2.attentions.0.transformer_blocks.9.attn2.to_q:
+- 74.89298248291016
+- 82.66197967529297
+- 83.85298919677734
+model.down_blocks.2.attentions.0.transformer_blocks.9.attn2.to_v:
+- 62.755897521972656
+- 73.31105041503906
+- 83.64273071289062
+model.down_blocks.2.attentions.0.transformer_blocks.9.ff.net.0.proj:
+- 43.06584930419922
+- 55.883235931396484
+- 77.18771362304688
+model.down_blocks.2.attentions.0.transformer_blocks.9.ff.net.2:
+- 44.91990661621094
+- 59.59211349487305
+- 80.1588363647461
+model.down_blocks.2.attentions.1.proj_in:
+- 34.53639221191406
+- 43.90232849121094
+- 66.06298828125
+model.down_blocks.2.attentions.1.proj_out:
+- 34.3778076171875
+- 45.74936294555664
+- 68.86077880859375
+model.down_blocks.2.attentions.1.transformer_blocks.0.attn1.to_k:
+- 51.09206771850586
+- 66.10662841796875
+- 82.81121063232422
+model.down_blocks.2.attentions.1.transformer_blocks.0.attn1.to_out.0:
+- 41.29433822631836
+- 52.26102828979492
+- 75.79136657714844
+model.down_blocks.2.attentions.1.transformer_blocks.0.attn1.to_q:
+- 52.274391174316406
+- 68.47660064697266
+- 83.0634765625
+model.down_blocks.2.attentions.1.transformer_blocks.0.attn1.to_v:
+- 41.60945129394531
+- 53.4050407409668
+- 77.34400177001953
+model.down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_k:
+- 37.21751403808594
+- 57.076602935791016
+- 78.7406005859375
+model.down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_out.0:
+- 38.92389678955078
+- 49.432960510253906
+- 72.77629089355469
+model.down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_q:
+- 49.402557373046875
+- 63.75544738769531
+- 82.18344116210938
+model.down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v:
+- 36.713294982910156
+- 48.01167678833008
+- 69.8043441772461
+model.down_blocks.2.attentions.1.transformer_blocks.0.ff.net.0.proj:
+- 38.452178955078125
+- 50.64468765258789
+- 72.44403076171875
+model.down_blocks.2.attentions.1.transformer_blocks.0.ff.net.2:
+- 39.630279541015625
+- 52.995574951171875
+- 72.8092041015625
+model.down_blocks.2.attentions.1.transformer_blocks.1.attn1.to_k:
+- 50.45084762573242
+- 64.48127746582031
+- 81.2119140625
+model.down_blocks.2.attentions.1.transformer_blocks.1.attn1.to_out.0:
+- 39.21210861206055
+- 50.15290832519531
+- 73.9580078125
+model.down_blocks.2.attentions.1.transformer_blocks.1.attn1.to_q:
+- 49.915802001953125
+- 65.27299499511719
+- 81.42559051513672
+model.down_blocks.2.attentions.1.transformer_blocks.1.attn1.to_v:
+- 39.555301666259766
+- 51.95954895019531
+- 74.40679168701172
+model.down_blocks.2.attentions.1.transformer_blocks.1.attn2.to_k:
+- 34.45564270019531
+- 52.620216369628906
+- 75.92076110839844
+model.down_blocks.2.attentions.1.transformer_blocks.1.attn2.to_out.0:
+- 36.96874237060547
+- 47.387603759765625
+- 68.60006713867188
+model.down_blocks.2.attentions.1.transformer_blocks.1.attn2.to_q:
+- 43.88575744628906
+- 56.728912353515625
+- 78.15426635742188
+model.down_blocks.2.attentions.1.transformer_blocks.1.attn2.to_v:
+- 34.90883255004883
+- 45.36065673828125
+- 66.44757843017578
+model.down_blocks.2.attentions.1.transformer_blocks.1.ff.net.0.proj:
+- 36.63266372680664
+- 48.36162567138672
+- 69.91639709472656
+model.down_blocks.2.attentions.1.transformer_blocks.1.ff.net.2:
+- 37.31136703491211
+- 49.297603607177734
+- 69.60089111328125
+model.down_blocks.2.attentions.1.transformer_blocks.2.attn1.to_k:
+- 50.410118103027344
+- 62.06352233886719
+- 82.66444396972656
+model.down_blocks.2.attentions.1.transformer_blocks.2.attn1.to_out.0:
+- 39.87245178222656
+- 51.818302154541016
+- 76.44071197509766
+model.down_blocks.2.attentions.1.transformer_blocks.2.attn1.to_q:
+- 49.436119079589844
+- 63.084197998046875
+- 81.86656951904297
+model.down_blocks.2.attentions.1.transformer_blocks.2.attn1.to_v:
+- 38.54043197631836
+- 48.5228271484375
+- 72.85139465332031
+model.down_blocks.2.attentions.1.transformer_blocks.2.attn2.to_k:
+- 39.73771286010742
+- 51.93604278564453
+- 74.45069885253906
+model.down_blocks.2.attentions.1.transformer_blocks.2.attn2.to_out.0:
+- 38.52156448364258
+- 48.56664276123047
+- 73.513916015625
+model.down_blocks.2.attentions.1.transformer_blocks.2.attn2.to_q:
+- 42.4515495300293
+- 54.50303649902344
+- 77.48123168945312
+model.down_blocks.2.attentions.1.transformer_blocks.2.attn2.to_v:
+- 37.91654968261719
+- 48.221527099609375
+- 72.41604614257812
+model.down_blocks.2.attentions.1.transformer_blocks.2.ff.net.0.proj:
+- 35.48845291137695
+- 47.027767181396484
+- 68.70692443847656
+model.down_blocks.2.attentions.1.transformer_blocks.2.ff.net.2:
+- 35.81993103027344
+- 47.75487518310547
+- 70.50233459472656
+model.down_blocks.2.attentions.1.transformer_blocks.3.attn1.to_k:
+- 51.0113639831543
+- 62.463905334472656
+- 82.64108276367188
+model.down_blocks.2.attentions.1.transformer_blocks.3.attn1.to_out.0:
+- 41.363990783691406
+- 53.58711242675781
+- 75.68525695800781
+model.down_blocks.2.attentions.1.transformer_blocks.3.attn1.to_q:
+- 48.57707977294922
+- 62.316558837890625
+- 81.45298767089844
+model.down_blocks.2.attentions.1.transformer_blocks.3.attn1.to_v:
+- 38.7821044921875
+- 50.23307418823242
+- 73.33605194091797
+model.down_blocks.2.attentions.1.transformer_blocks.3.attn2.to_k:
+- 41.338008880615234
+- 57.81157684326172
+- 79.50408935546875
+model.down_blocks.2.attentions.1.transformer_blocks.3.attn2.to_out.0:
+- 38.665069580078125
+- 51.70051574707031
+- 74.05271911621094
+model.down_blocks.2.attentions.1.transformer_blocks.3.attn2.to_q:
+- 45.76631546020508
+- 58.14356231689453
+- 78.493408203125
+model.down_blocks.2.attentions.1.transformer_blocks.3.attn2.to_v:
+- 39.350528717041016
+- 50.03708267211914
+- 75.136474609375
+model.down_blocks.2.attentions.1.transformer_blocks.3.ff.net.0.proj:
+- 34.722408294677734
+- 45.38677215576172
+- 68.04698944091797
+model.down_blocks.2.attentions.1.transformer_blocks.3.ff.net.2:
+- 35.40031433105469
+- 46.66417694091797
+- 67.2879867553711
+model.down_blocks.2.attentions.1.transformer_blocks.4.attn1.to_k:
+- 51.019805908203125
+- 63.413578033447266
+- 82.26927185058594
+model.down_blocks.2.attentions.1.transformer_blocks.4.attn1.to_out.0:
+- 42.36979675292969
+- 54.5539436340332
+- 77.31268310546875
+model.down_blocks.2.attentions.1.transformer_blocks.4.attn1.to_q:
+- 51.43750762939453
+- 63.81063461303711
+- 82.20430755615234
+model.down_blocks.2.attentions.1.transformer_blocks.4.attn1.to_v:
+- 40.140838623046875
+- 51.240806579589844
+- 73.55955505371094
+model.down_blocks.2.attentions.1.transformer_blocks.4.attn2.to_k:
+- 47.220069885253906
+- 59.969505310058594
+- 80.03602600097656
+model.down_blocks.2.attentions.1.transformer_blocks.4.attn2.to_out.0:
+- 41.171844482421875
+- 52.48053741455078
+- 74.6956787109375
+model.down_blocks.2.attentions.1.transformer_blocks.4.attn2.to_q:
+- 48.665321350097656
+- 61.74182891845703
+- 82.4992446899414
+model.down_blocks.2.attentions.1.transformer_blocks.4.attn2.to_v:
+- 40.91856002807617
+- 51.10540771484375
+- 74.62804412841797
+model.down_blocks.2.attentions.1.transformer_blocks.4.ff.net.0.proj:
+- 34.304542541503906
+- 42.75725555419922
+- 64.63517761230469
+model.down_blocks.2.attentions.1.transformer_blocks.4.ff.net.2:
+- 36.12370300292969
+- 45.51227569580078
+- 67.89149475097656
+model.down_blocks.2.attentions.1.transformer_blocks.5.attn1.to_k:
+- 48.65174865722656
+- 61.31094741821289
+- 81.54141235351562
+model.down_blocks.2.attentions.1.transformer_blocks.5.attn1.to_out.0:
+- 43.01177215576172
+- 54.91613006591797
+- 78.34037780761719
+model.down_blocks.2.attentions.1.transformer_blocks.5.attn1.to_q:
+- 48.633934020996094
+- 61.950679779052734
+- 81.72333526611328
+model.down_blocks.2.attentions.1.transformer_blocks.5.attn1.to_v:
+- 40.01740264892578
+- 50.58085632324219
+- 73.591796875
+model.down_blocks.2.attentions.1.transformer_blocks.5.attn2.to_k:
+- 43.76529312133789
+- 59.631160736083984
+- 79.46009826660156
+model.down_blocks.2.attentions.1.transformer_blocks.5.attn2.to_out.0:
+- 41.05118942260742
+- 52.26124572753906
+- 75.89997100830078
+model.down_blocks.2.attentions.1.transformer_blocks.5.attn2.to_q:
+- 49.01384735107422
+- 62.650054931640625
+- 80.4344482421875
+model.down_blocks.2.attentions.1.transformer_blocks.5.attn2.to_v:
+- 39.87049865722656
+- 52.01692581176758
+- 73.42494201660156
+model.down_blocks.2.attentions.1.transformer_blocks.5.ff.net.0.proj:
+- 33.32890319824219
+- 44.158851623535156
+- 65.259033203125
+model.down_blocks.2.attentions.1.transformer_blocks.5.ff.net.2:
+- 35.30342483520508
+- 45.036865234375
+- 67.08814239501953
+model.down_blocks.2.attentions.1.transformer_blocks.6.attn1.to_k:
+- 50.1533088684082
+- 61.034210205078125
+- 81.42868041992188
+model.down_blocks.2.attentions.1.transformer_blocks.6.attn1.to_out.0:
+- 42.88309860229492
+- 54.29560852050781
+- 77.44320678710938
+model.down_blocks.2.attentions.1.transformer_blocks.6.attn1.to_q:
+- 51.61083221435547
+- 64.48949432373047
+- 81.00428771972656
+model.down_blocks.2.attentions.1.transformer_blocks.6.attn1.to_v:
+- 40.57096481323242
+- 51.54499053955078
+- 75.70799255371094
+model.down_blocks.2.attentions.1.transformer_blocks.6.attn2.to_k:
+- 52.96408462524414
+- 68.8526382446289
+- 83.3144302368164
+model.down_blocks.2.attentions.1.transformer_blocks.6.attn2.to_out.0:
+- 45.53416061401367
+- 59.669677734375
+- 78.95303344726562
+model.down_blocks.2.attentions.1.transformer_blocks.6.attn2.to_q:
+- 60.82301712036133
+- 72.32525634765625
+- 83.43043518066406
+model.down_blocks.2.attentions.1.transformer_blocks.6.attn2.to_v:
+- 45.960758209228516
+- 58.510494232177734
+- 79.72542572021484
+model.down_blocks.2.attentions.1.transformer_blocks.6.ff.net.0.proj:
+- 32.95764923095703
+- 44.58622360229492
+- 63.6765022277832
+model.down_blocks.2.attentions.1.transformer_blocks.6.ff.net.2:
+- 35.5482177734375
+- 44.40568161010742
+- 67.53113555908203
+model.down_blocks.2.attentions.1.transformer_blocks.7.attn1.to_k:
+- 48.591102600097656
+- 63.272830963134766
+- 80.32158660888672
+model.down_blocks.2.attentions.1.transformer_blocks.7.attn1.to_out.0:
+- 43.32420349121094
+- 55.24163818359375
+- 77.20295715332031
+model.down_blocks.2.attentions.1.transformer_blocks.7.attn1.to_q:
+- 47.649288177490234
+- 59.89478302001953
+- 82.27153778076172
+model.down_blocks.2.attentions.1.transformer_blocks.7.attn1.to_v:
+- 41.32150650024414
+- 53.45981216430664
+- 75.10115814208984
+model.down_blocks.2.attentions.1.transformer_blocks.7.attn2.to_k:
+- 53.83112716674805
+- 69.32728576660156
+- 83.38604736328125
+model.down_blocks.2.attentions.1.transformer_blocks.7.attn2.to_out.0:
+- 46.244895935058594
+- 59.63127899169922
+- 80.91925048828125
+model.down_blocks.2.attentions.1.transformer_blocks.7.attn2.to_q:
+- 57.573890686035156
+- 71.93224334716797
+- 83.34803771972656
+model.down_blocks.2.attentions.1.transformer_blocks.7.attn2.to_v:
+- 46.64615249633789
+- 57.983726501464844
+- 79.40685272216797
+model.down_blocks.2.attentions.1.transformer_blocks.7.ff.net.0.proj:
+- 33.28702926635742
+- 43.653533935546875
+- 67.72796630859375
+model.down_blocks.2.attentions.1.transformer_blocks.7.ff.net.2:
+- 36.421878814697266
+- 45.46428680419922
+- 69.5589599609375
+model.down_blocks.2.attentions.1.transformer_blocks.8.attn1.to_k:
+- 47.26908874511719
+- 61.18627166748047
+- 80.85543060302734
+model.down_blocks.2.attentions.1.transformer_blocks.8.attn1.to_out.0:
+- 42.7187614440918
+- 55.17781066894531
+- 77.28387451171875
+model.down_blocks.2.attentions.1.transformer_blocks.8.attn1.to_q:
+- 48.760860443115234
+- 60.76896286010742
+- 81.13040161132812
+model.down_blocks.2.attentions.1.transformer_blocks.8.attn1.to_v:
+- 41.04621124267578
+- 53.750389099121094
+- 75.0781478881836
+model.down_blocks.2.attentions.1.transformer_blocks.8.attn2.to_k:
+- 53.40848922729492
+- 70.04833984375
+- 83.46975708007812
+model.down_blocks.2.attentions.1.transformer_blocks.8.attn2.to_out.0:
+- 49.301551818847656
+- 62.55866622924805
+- 81.10704040527344
+model.down_blocks.2.attentions.1.transformer_blocks.8.attn2.to_q:
+- 59.551876068115234
+- 74.1399154663086
+- 83.52400207519531
+model.down_blocks.2.attentions.1.transformer_blocks.8.attn2.to_v:
+- 46.539737701416016
+- 60.650325775146484
+- 80.32086944580078
+model.down_blocks.2.attentions.1.transformer_blocks.8.ff.net.0.proj:
+- 34.2291259765625
+- 44.00218200683594
+- 65.59749603271484
+model.down_blocks.2.attentions.1.transformer_blocks.8.ff.net.2:
+- 37.634822845458984
+- 47.932228088378906
+- 70.56381225585938
+model.down_blocks.2.attentions.1.transformer_blocks.9.attn1.to_k:
+- 46.81303787231445
+- 59.81948471069336
+- 80.95820617675781
+model.down_blocks.2.attentions.1.transformer_blocks.9.attn1.to_out.0:
+- 44.899871826171875
+- 56.390201568603516
+- 78.0491714477539
+model.down_blocks.2.attentions.1.transformer_blocks.9.attn1.to_q:
+- 46.46855163574219
+- 58.846195220947266
+- 80.15509033203125
+model.down_blocks.2.attentions.1.transformer_blocks.9.attn1.to_v:
+- 41.87053298950195
+- 54.915279388427734
+- 77.19336700439453
+model.down_blocks.2.attentions.1.transformer_blocks.9.attn2.to_k:
+- 63.0797119140625
+- 77.58805847167969
+- 83.73208618164062
+model.down_blocks.2.attentions.1.transformer_blocks.9.attn2.to_out.0:
+- 57.03956604003906
+- 69.66194915771484
+- 82.90054321289062
+model.down_blocks.2.attentions.1.transformer_blocks.9.attn2.to_q:
+- 69.8409652709961
+- 80.42200469970703
+- 83.5780029296875
+model.down_blocks.2.attentions.1.transformer_blocks.9.attn2.to_v:
+- 56.330596923828125
+- 69.88095092773438
+- 83.19230651855469
+model.down_blocks.2.attentions.1.transformer_blocks.9.ff.net.0.proj:
+- 34.04932403564453
+- 43.9495735168457
+- 66.99359130859375
+model.down_blocks.2.attentions.1.transformer_blocks.9.ff.net.2:
+- 38.234195709228516
+- 52.09124755859375
+- 76.2776107788086
+model.down_blocks.2.resnets.0.conv1:
+- 31.207658767700195
+- 50.190040588378906
+- 72.89779663085938
+model.down_blocks.2.resnets.0.conv2:
+- 30.078022003173828
+- 50.30255889892578
+- 72.33810424804688
+model.down_blocks.2.resnets.0.conv_shortcut:
+- 35.78826141357422
+- 46.61088562011719
+- 69.29712677001953
+model.down_blocks.2.resnets.0.time_emb_proj:
+- 31.894371032714844
+- 47.63787078857422
+- 69.61355590820312
+model.down_blocks.2.resnets.1.conv1:
+- 31.983753204345703
+- 46.722110748291016
+- 71.48017883300781
+model.down_blocks.2.resnets.1.conv2:
+- 32.886329650878906
+- 47.079891204833984
+- 71.87049865722656
+model.down_blocks.2.resnets.1.time_emb_proj:
+- 30.809049606323242
+- 44.390953063964844
+- 68.848876953125
+model.mid_block.attentions.0.proj_in:
+- 33.59827423095703
+- 44.611297607421875
+- 67.48897552490234
+model.mid_block.attentions.0.proj_out:
+- 38.35084915161133
+- 50.083858489990234
+- 74.48258972167969
+model.mid_block.attentions.0.transformer_blocks.0.attn1.to_k:
+- 47.15855407714844
+- 59.6446647644043
+- 79.46247100830078
+model.mid_block.attentions.0.transformer_blocks.0.attn1.to_out.0:
+- 38.80681610107422
+- 49.92034912109375
+- 74.10148620605469
+model.mid_block.attentions.0.transformer_blocks.0.attn1.to_q:
+- 46.1258544921875
+- 60.787025451660156
+- 80.77496337890625
+model.mid_block.attentions.0.transformer_blocks.0.attn1.to_v:
+- 41.18439483642578
+- 52.9091796875
+- 77.22319793701172
+model.mid_block.attentions.0.transformer_blocks.0.attn2.to_k:
+- 58.4714241027832
+- 74.5876235961914
+- 83.64543914794922
+model.mid_block.attentions.0.transformer_blocks.0.attn2.to_out.0:
+- 54.63859558105469
+- 66.27107238769531
+- 82.76203155517578
+model.mid_block.attentions.0.transformer_blocks.0.attn2.to_q:
+- 65.35298919677734
+- 78.11649322509766
+- 83.71791076660156
+model.mid_block.attentions.0.transformer_blocks.0.attn2.to_v:
+- 53.53652572631836
+- 64.87242126464844
+- 82.6976089477539
+model.mid_block.attentions.0.transformer_blocks.0.ff.net.0.proj:
+- 39.338096618652344
+- 52.82733917236328
+- 74.02189636230469
+model.mid_block.attentions.0.transformer_blocks.0.ff.net.2:
+- 39.69539260864258
+- 49.86881637573242
+- 73.4913330078125
+model.mid_block.attentions.0.transformer_blocks.1.attn1.to_k:
+- 45.684349060058594
+- 55.98158264160156
+- 79.65802001953125
+model.mid_block.attentions.0.transformer_blocks.1.attn1.to_out.0:
+- 39.95234680175781
+- 51.93650817871094
+- 75.78034973144531
+model.mid_block.attentions.0.transformer_blocks.1.attn1.to_q:
+- 44.670867919921875
+- 58.154571533203125
+- 78.92739868164062
+model.mid_block.attentions.0.transformer_blocks.1.attn1.to_v:
+- 40.682960510253906
+- 52.347713470458984
+- 75.66830444335938
+model.mid_block.attentions.0.transformer_blocks.1.attn2.to_k:
+- 54.82143783569336
+- 73.88467407226562
+- 83.74335479736328
+model.mid_block.attentions.0.transformer_blocks.1.attn2.to_out.0:
+- 50.59770584106445
+- 63.890342712402344
+- 81.67721557617188
+model.mid_block.attentions.0.transformer_blocks.1.attn2.to_q:
+- 61.79724884033203
+- 73.41307067871094
+- 83.10175323486328
+model.mid_block.attentions.0.transformer_blocks.1.attn2.to_v:
+- 49.90768814086914
+- 64.27462768554688
+- 82.22512817382812
+model.mid_block.attentions.0.transformer_blocks.1.ff.net.0.proj:
+- 40.814910888671875
+- 52.490318298339844
+- 74.59379577636719
+model.mid_block.attentions.0.transformer_blocks.1.ff.net.2:
+- 40.567970275878906
+- 52.64247512817383
+- 76.04109954833984
+model.mid_block.attentions.0.transformer_blocks.2.attn1.to_k:
+- 46.590824127197266
+- 59.02543640136719
+- 80.79902648925781
+model.mid_block.attentions.0.transformer_blocks.2.attn1.to_out.0:
+- 41.70145034790039
+- 53.999298095703125
+- 76.59691619873047
+model.mid_block.attentions.0.transformer_blocks.2.attn1.to_q:
+- 47.16558837890625
+- 60.13157653808594
+- 81.34330749511719
+model.mid_block.attentions.0.transformer_blocks.2.attn1.to_v:
+- 41.10205078125
+- 54.25139236450195
+- 76.40372467041016
+model.mid_block.attentions.0.transformer_blocks.2.attn2.to_k:
+- 60.8514404296875
+- 79.24446105957031
+- 83.85643005371094
+model.mid_block.attentions.0.transformer_blocks.2.attn2.to_out.0:
+- 54.12726593017578
+- 67.71967315673828
+- 83.0593032836914
+model.mid_block.attentions.0.transformer_blocks.2.attn2.to_q:
+- 68.20328521728516
+- 79.74562072753906
+- 83.65910339355469
+model.mid_block.attentions.0.transformer_blocks.2.attn2.to_v:
+- 53.3646240234375
+- 68.01715087890625
+- 82.98096466064453
+model.mid_block.attentions.0.transformer_blocks.2.ff.net.0.proj:
+- 40.611656188964844
+- 52.14677047729492
+- 75.80529022216797
+model.mid_block.attentions.0.transformer_blocks.2.ff.net.2:
+- 41.046539306640625
+- 53.565330505371094
+- 75.86929321289062
+model.mid_block.attentions.0.transformer_blocks.3.attn1.to_k:
+- 47.522499084472656
+- 61.07592010498047
+- 80.29977416992188
+model.mid_block.attentions.0.transformer_blocks.3.attn1.to_out.0:
+- 41.48301696777344
+- 54.235076904296875
+- 77.39202117919922
+model.mid_block.attentions.0.transformer_blocks.3.attn1.to_q:
+- 46.93095397949219
+- 59.27139663696289
+- 80.91447448730469
+model.mid_block.attentions.0.transformer_blocks.3.attn1.to_v:
+- 40.34665298461914
+- 53.49119567871094
+- 75.88700866699219
+model.mid_block.attentions.0.transformer_blocks.3.attn2.to_k:
+- 71.50833129882812
+- 81.2765884399414
+- 83.847412109375
+model.mid_block.attentions.0.transformer_blocks.3.attn2.to_out.0:
+- 60.607181549072266
+- 72.58198547363281
+- 82.96501922607422
+model.mid_block.attentions.0.transformer_blocks.3.attn2.to_q:
+- 72.42561340332031
+- 82.28273010253906
+- 83.75852966308594
+model.mid_block.attentions.0.transformer_blocks.3.attn2.to_v:
+- 58.44976043701172
+- 71.6368637084961
+- 83.64750671386719
+model.mid_block.attentions.0.transformer_blocks.3.ff.net.0.proj:
+- 40.057823181152344
+- 52.42510223388672
+- 74.83253479003906
+model.mid_block.attentions.0.transformer_blocks.3.ff.net.2:
+- 41.219749450683594
+- 53.07420349121094
+- 76.85245513916016
+model.mid_block.attentions.0.transformer_blocks.4.attn1.to_k:
+- 46.74403762817383
+- 60.18065643310547
+- 80.32785034179688
+model.mid_block.attentions.0.transformer_blocks.4.attn1.to_out.0:
+- 41.63467025756836
+- 54.555171966552734
+- 77.20409393310547
+model.mid_block.attentions.0.transformer_blocks.4.attn1.to_q:
+- 45.809608459472656
+- 58.09440612792969
+- 79.9196548461914
+model.mid_block.attentions.0.transformer_blocks.4.attn1.to_v:
+- 42.81934356689453
+- 54.344390869140625
+- 76.62222290039062
+model.mid_block.attentions.0.transformer_blocks.4.attn2.to_k:
+- 73.71040344238281
+- 82.73764038085938
+- 83.820068359375
+model.mid_block.attentions.0.transformer_blocks.4.attn2.to_out.0:
+- 63.43936538696289
+- 77.90349578857422
+- 83.81964874267578
+model.mid_block.attentions.0.transformer_blocks.4.attn2.to_q:
+- 77.82452392578125
+- 83.52657318115234
+- 83.83326721191406
+model.mid_block.attentions.0.transformer_blocks.4.attn2.to_v:
+- 63.8096809387207
+- 76.3600845336914
+- 83.63831329345703
+model.mid_block.attentions.0.transformer_blocks.4.ff.net.0.proj:
+- 40.675926208496094
+- 52.248573303222656
+- 76.03914642333984
+model.mid_block.attentions.0.transformer_blocks.4.ff.net.2:
+- 41.85206985473633
+- 54.46096420288086
+- 77.36676025390625
+model.mid_block.attentions.0.transformer_blocks.5.attn1.to_k:
+- 47.492889404296875
+- 59.93534851074219
+- 81.49784088134766
+model.mid_block.attentions.0.transformer_blocks.5.attn1.to_out.0:
+- 44.22224044799805
+- 56.94651412963867
+- 79.19134521484375
+model.mid_block.attentions.0.transformer_blocks.5.attn1.to_q:
+- 46.38667297363281
+- 61.1032829284668
+- 81.66854858398438
+model.mid_block.attentions.0.transformer_blocks.5.attn1.to_v:
+- 43.111793518066406
+- 56.06542205810547
+- 78.82818603515625
+model.mid_block.attentions.0.transformer_blocks.5.attn2.to_k:
+- 74.84866333007812
+- 83.08819580078125
+- 83.79368591308594
+model.mid_block.attentions.0.transformer_blocks.5.attn2.to_out.0:
+- 64.25975799560547
+- 76.28166961669922
+- 83.84619903564453
+model.mid_block.attentions.0.transformer_blocks.5.attn2.to_q:
+- 77.60823822021484
+- 83.41285705566406
+- 83.78024291992188
+model.mid_block.attentions.0.transformer_blocks.5.attn2.to_v:
+- 63.49556350708008
+- 76.48893737792969
+- 83.61790466308594
+model.mid_block.attentions.0.transformer_blocks.5.ff.net.0.proj:
+- 41.0284309387207
+- 52.76218032836914
+- 75.46794128417969
+model.mid_block.attentions.0.transformer_blocks.5.ff.net.2:
+- 43.09136199951172
+- 55.55480194091797
+- 77.1971435546875
+model.mid_block.attentions.0.transformer_blocks.6.attn1.to_k:
+- 51.172210693359375
+- 64.66889190673828
+- 82.57887268066406
+model.mid_block.attentions.0.transformer_blocks.6.attn1.to_out.0:
+- 46.843017578125
+- 58.722816467285156
+- 80.7854995727539
+model.mid_block.attentions.0.transformer_blocks.6.attn1.to_q:
+- 50.646854400634766
+- 63.92945098876953
+- 82.19120788574219
+model.mid_block.attentions.0.transformer_blocks.6.attn1.to_v:
+- 45.71236038208008
+- 59.13710021972656
+- 79.72512817382812
+model.mid_block.attentions.0.transformer_blocks.6.attn2.to_k:
+- 78.21687316894531
+- 83.39298248291016
+- 83.83648681640625
+model.mid_block.attentions.0.transformer_blocks.6.attn2.to_out.0:
+- 69.41505432128906
+- 80.20621490478516
+- 83.75210571289062
+model.mid_block.attentions.0.transformer_blocks.6.attn2.to_q:
+- 78.18306732177734
+- 83.62470245361328
+- 83.79173278808594
+model.mid_block.attentions.0.transformer_blocks.6.attn2.to_v:
+- 68.6033935546875
+- 80.2826919555664
+- 83.7341537475586
+model.mid_block.attentions.0.transformer_blocks.6.ff.net.0.proj:
+- 40.5387077331543
+- 53.4096565246582
+- 75.88436889648438
+model.mid_block.attentions.0.transformer_blocks.6.ff.net.2:
+- 43.640743255615234
+- 56.093994140625
+- 78.28993225097656
+model.mid_block.attentions.0.transformer_blocks.7.attn1.to_k:
+- 50.733036041259766
+- 62.48551940917969
+- 81.70582580566406
+model.mid_block.attentions.0.transformer_blocks.7.attn1.to_out.0:
+- 47.58898162841797
+- 59.935081481933594
+- 80.68930053710938
+model.mid_block.attentions.0.transformer_blocks.7.attn1.to_q:
+- 49.112422943115234
+- 62.263694763183594
+- 81.36084747314453
+model.mid_block.attentions.0.transformer_blocks.7.attn1.to_v:
+- 46.209388732910156
+- 59.36991882324219
+- 80.53165435791016
+model.mid_block.attentions.0.transformer_blocks.7.attn2.to_k:
+- 80.64768981933594
+- 83.42208862304688
+- 83.86998748779297
+model.mid_block.attentions.0.transformer_blocks.7.attn2.to_out.0:
+- 70.98941040039062
+- 81.06737518310547
+- 83.79988098144531
+model.mid_block.attentions.0.transformer_blocks.7.attn2.to_q:
+- 78.0508041381836
+- 83.57174682617188
+- 83.793212890625
+model.mid_block.attentions.0.transformer_blocks.7.attn2.to_v:
+- 70.24005126953125
+- 80.98369598388672
+- 83.74620819091797
+model.mid_block.attentions.0.transformer_blocks.7.ff.net.0.proj:
+- 40.7760124206543
+- 53.495079040527344
+- 76.01301574707031
+model.mid_block.attentions.0.transformer_blocks.7.ff.net.2:
+- 44.23065185546875
+- 56.797576904296875
+- 79.17288970947266
+model.mid_block.attentions.0.transformer_blocks.8.attn1.to_k:
+- 49.07514190673828
+- 60.905269622802734
+- 81.86387634277344
+model.mid_block.attentions.0.transformer_blocks.8.attn1.to_out.0:
+- 48.52738571166992
+- 60.754417419433594
+- 80.64649963378906
+model.mid_block.attentions.0.transformer_blocks.8.attn1.to_q:
+- 47.99308776855469
+- 61.902732849121094
+- 81.18916320800781
+model.mid_block.attentions.0.transformer_blocks.8.attn1.to_v:
+- 45.878604888916016
+- 58.62512969970703
+- 80.05870819091797
+model.mid_block.attentions.0.transformer_blocks.8.attn2.to_k:
+- 79.94585418701172
+- 83.56558990478516
+- 83.79917907714844
+model.mid_block.attentions.0.transformer_blocks.8.attn2.to_out.0:
+- 70.54295349121094
+- 80.84024047851562
+- 83.70880889892578
+model.mid_block.attentions.0.transformer_blocks.8.attn2.to_q:
+- 82.72256469726562
+- 83.74830627441406
+- 83.76252746582031
+model.mid_block.attentions.0.transformer_blocks.8.attn2.to_v:
+- 69.98542785644531
+- 80.82714080810547
+- 83.80587005615234
+model.mid_block.attentions.0.transformer_blocks.8.ff.net.0.proj:
+- 41.33936309814453
+- 53.7037353515625
+- 77.20263671875
+model.mid_block.attentions.0.transformer_blocks.8.ff.net.2:
+- 44.44552230834961
+- 57.812461853027344
+- 79.93682861328125
+model.mid_block.attentions.0.transformer_blocks.9.attn1.to_k:
+- 48.77216339111328
+- 62.34610366821289
+- 81.59620666503906
+model.mid_block.attentions.0.transformer_blocks.9.attn1.to_out.0:
+- 49.823116302490234
+- 63.096534729003906
+- 82.50881958007812
+model.mid_block.attentions.0.transformer_blocks.9.attn1.to_q:
+- 48.974647521972656
+- 61.018089294433594
+- 81.59564208984375
+model.mid_block.attentions.0.transformer_blocks.9.attn1.to_v:
+- 46.386085510253906
+- 60.41710662841797
+- 80.5825424194336
+model.mid_block.attentions.0.transformer_blocks.9.attn2.to_k:
+- 81.80421447753906
+- 83.62211608886719
+- 83.71876525878906
+model.mid_block.attentions.0.transformer_blocks.9.attn2.to_out.0:
+- 72.54900360107422
+- 82.4290542602539
+- 83.75807189941406
+model.mid_block.attentions.0.transformer_blocks.9.attn2.to_q:
+- 83.59709167480469
+- 83.72705078125
+- 83.78466796875
+model.mid_block.attentions.0.transformer_blocks.9.attn2.to_v:
+- 74.62274932861328
+- 82.44212341308594
+- 83.90937042236328
+model.mid_block.attentions.0.transformer_blocks.9.ff.net.0.proj:
+- 41.89405059814453
+- 53.748992919921875
+- 77.00128173828125
+model.mid_block.attentions.0.transformer_blocks.9.ff.net.2:
+- 46.4177131652832
+- 59.755523681640625
+- 80.6914291381836
+model.mid_block.resnets.0.conv1:
+- 33.79737091064453
+- 46.90412139892578
+- 71.94920349121094
+model.mid_block.resnets.0.conv2:
+- 34.18278121948242
+- 48.84074783325195
+- 74.06922912597656
+model.mid_block.resnets.0.time_emb_proj:
+- 44.34992980957031
+- 57.32007598876953
+- 78.8956298828125
+model.mid_block.resnets.1.conv1:
+- 38.038604736328125
+- 51.03783416748047
+- 73.14192199707031
+model.mid_block.resnets.1.conv2:
+- 36.88178253173828
+- 53.05015182495117
+- 76.19051361083984
+model.mid_block.resnets.1.time_emb_proj:
+- 48.68964767456055
+- 61.33469009399414
+- 80.64654541015625
+model.time_embedding.linear_1:
+- 34.284149169921875
+- 62.13661193847656
+- 79.11298370361328
+model.time_embedding.linear_2:
+- 38.11587905883789
+- 53.564964294433594
+- 73.2342300415039
+model.up_blocks.0.attentions.0.proj_in:
+- 35.87677764892578
+- 47.18144989013672
+- 70.63739013671875
+model.up_blocks.0.attentions.0.proj_out:
+- 39.845611572265625
+- 52.19511413574219
+- 75.41246032714844
+model.up_blocks.0.attentions.0.transformer_blocks.0.attn1.to_k:
+- 47.44382095336914
+- 61.391544342041016
+- 81.21569061279297
+model.up_blocks.0.attentions.0.transformer_blocks.0.attn1.to_out.0:
+- 38.322689056396484
+- 49.567806243896484
+- 72.81585693359375
+model.up_blocks.0.attentions.0.transformer_blocks.0.attn1.to_q:
+- 47.34096908569336
+- 60.39010238647461
+- 81.07916259765625
+model.up_blocks.0.attentions.0.transformer_blocks.0.attn1.to_v:
+- 40.97244644165039
+- 53.21076202392578
+- 75.2841796875
+model.up_blocks.0.attentions.0.transformer_blocks.0.attn2.to_k:
+- 56.2446174621582
+- 69.89179229736328
+- 82.81492614746094
+model.up_blocks.0.attentions.0.transformer_blocks.0.attn2.to_out.0:
+- 48.28645706176758
+- 61.71025466918945
+- 81.05986785888672
+model.up_blocks.0.attentions.0.transformer_blocks.0.attn2.to_q:
+- 63.04280090332031
+- 74.99667358398438
+- 83.37762451171875
+model.up_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v:
+- 48.86405944824219
+- 60.530120849609375
+- 81.01514434814453
+model.up_blocks.0.attentions.0.transformer_blocks.0.ff.net.0.proj:
+- 40.058738708496094
+- 52.72107696533203
+- 75.72947692871094
+model.up_blocks.0.attentions.0.transformer_blocks.0.ff.net.2:
+- 38.99966049194336
+- 51.8629264831543
+- 74.81099700927734
+model.up_blocks.0.attentions.0.transformer_blocks.1.attn1.to_k:
+- 48.01165771484375
+- 62.03506088256836
+- 81.66304016113281
+model.up_blocks.0.attentions.0.transformer_blocks.1.attn1.to_out.0:
+- 40.07765579223633
+- 51.44696044921875
+- 74.72006225585938
+model.up_blocks.0.attentions.0.transformer_blocks.1.attn1.to_q:
+- 47.22932434082031
+- 61.48575973510742
+- 81.01081848144531
+model.up_blocks.0.attentions.0.transformer_blocks.1.attn1.to_v:
+- 40.493125915527344
+- 52.312286376953125
+- 75.3099365234375
+model.up_blocks.0.attentions.0.transformer_blocks.1.attn2.to_k:
+- 51.69952392578125
+- 67.21044158935547
+- 82.70622253417969
+model.up_blocks.0.attentions.0.transformer_blocks.1.attn2.to_out.0:
+- 45.93491744995117
+- 57.242313385009766
+- 79.52169799804688
+model.up_blocks.0.attentions.0.transformer_blocks.1.attn2.to_q:
+- 56.929073333740234
+- 71.06069946289062
+- 83.1831283569336
+model.up_blocks.0.attentions.0.transformer_blocks.1.attn2.to_v:
+- 45.67277526855469
+- 57.71996307373047
+- 78.47486114501953
+model.up_blocks.0.attentions.0.transformer_blocks.1.ff.net.0.proj:
+- 38.64881134033203
+- 50.56557846069336
+- 73.84522247314453
+model.up_blocks.0.attentions.0.transformer_blocks.1.ff.net.2:
+- 38.82695770263672
+- 50.08051300048828
+- 73.99899291992188
+model.up_blocks.0.attentions.0.transformer_blocks.2.attn1.to_k:
+- 48.161094665527344
+- 61.37657165527344
+- 80.8070068359375
+model.up_blocks.0.attentions.0.transformer_blocks.2.attn1.to_out.0:
+- 41.595664978027344
+- 54.070655822753906
+- 76.32487487792969
+model.up_blocks.0.attentions.0.transformer_blocks.2.attn1.to_q:
+- 48.328189849853516
+- 61.00795364379883
+- 81.47052764892578
+model.up_blocks.0.attentions.0.transformer_blocks.2.attn1.to_v:
+- 40.74398422241211
+- 53.586524963378906
+- 76.41864013671875
+model.up_blocks.0.attentions.0.transformer_blocks.2.attn2.to_k:
+- 51.146766662597656
+- 64.87989044189453
+- 82.60270690917969
+model.up_blocks.0.attentions.0.transformer_blocks.2.attn2.to_out.0:
+- 46.080726623535156
+- 58.90601348876953
+- 79.852783203125
+model.up_blocks.0.attentions.0.transformer_blocks.2.attn2.to_q:
+- 52.948631286621094
+- 67.2591781616211
+- 82.80392456054688
+model.up_blocks.0.attentions.0.transformer_blocks.2.attn2.to_v:
+- 45.552825927734375
+- 58.135677337646484
+- 78.75782775878906
+model.up_blocks.0.attentions.0.transformer_blocks.2.ff.net.0.proj:
+- 38.42031478881836
+- 49.56681823730469
+- 73.7005844116211
+model.up_blocks.0.attentions.0.transformer_blocks.2.ff.net.2:
+- 38.966514587402344
+- 50.70057678222656
+- 73.58535766601562
+model.up_blocks.0.attentions.0.transformer_blocks.3.attn1.to_k:
+- 47.17694091796875
+- 61.2402458190918
+- 81.63059997558594
+model.up_blocks.0.attentions.0.transformer_blocks.3.attn1.to_out.0:
+- 41.57844924926758
+- 54.86640930175781
+- 77.84555053710938
+model.up_blocks.0.attentions.0.transformer_blocks.3.attn1.to_q:
+- 47.74568176269531
+- 61.061767578125
+- 81.49918365478516
+model.up_blocks.0.attentions.0.transformer_blocks.3.attn1.to_v:
+- 41.297149658203125
+- 53.41593551635742
+- 76.31520080566406
+model.up_blocks.0.attentions.0.transformer_blocks.3.attn2.to_k:
+- 55.36542510986328
+- 69.41950225830078
+- 83.30484008789062
+model.up_blocks.0.attentions.0.transformer_blocks.3.attn2.to_out.0:
+- 49.71025848388672
+- 62.774593353271484
+- 81.62617492675781
+model.up_blocks.0.attentions.0.transformer_blocks.3.attn2.to_q:
+- 58.40422058105469
+- 69.55524444580078
+- 83.0529556274414
+model.up_blocks.0.attentions.0.transformer_blocks.3.attn2.to_v:
+- 48.40106201171875
+- 60.810787200927734
+- 81.2860336303711
+model.up_blocks.0.attentions.0.transformer_blocks.3.ff.net.0.proj:
+- 37.75366973876953
+- 49.76976776123047
+- 72.53903198242188
+model.up_blocks.0.attentions.0.transformer_blocks.3.ff.net.2:
+- 38.78250503540039
+- 50.65708541870117
+- 73.41864776611328
+model.up_blocks.0.attentions.0.transformer_blocks.4.attn1.to_k:
+- 48.7385368347168
+- 61.496734619140625
+- 81.55938720703125
+model.up_blocks.0.attentions.0.transformer_blocks.4.attn1.to_out.0:
+- 43.794761657714844
+- 55.95452117919922
+- 78.35250854492188
+model.up_blocks.0.attentions.0.transformer_blocks.4.attn1.to_q:
+- 49.1428337097168
+- 62.32569122314453
+- 81.25709533691406
+model.up_blocks.0.attentions.0.transformer_blocks.4.attn1.to_v:
+- 41.655006408691406
+- 54.8594970703125
+- 77.22956848144531
+model.up_blocks.0.attentions.0.transformer_blocks.4.attn2.to_k:
+- 59.503177642822266
+- 74.3165283203125
+- 83.670654296875
+model.up_blocks.0.attentions.0.transformer_blocks.4.attn2.to_out.0:
+- 52.86772537231445
+- 66.54081726074219
+- 82.4446792602539
+model.up_blocks.0.attentions.0.transformer_blocks.4.attn2.to_q:
+- 62.08992385864258
+- 75.26399230957031
+- 83.70646667480469
+model.up_blocks.0.attentions.0.transformer_blocks.4.attn2.to_v:
+- 51.58161163330078
+- 64.03298950195312
+- 82.46951293945312
+model.up_blocks.0.attentions.0.transformer_blocks.4.ff.net.0.proj:
+- 37.852081298828125
+- 49.71811294555664
+- 72.68880462646484
+model.up_blocks.0.attentions.0.transformer_blocks.4.ff.net.2:
+- 38.70201110839844
+- 50.654083251953125
+- 73.71044921875
+model.up_blocks.0.attentions.0.transformer_blocks.5.attn1.to_k:
+- 49.870094299316406
+- 62.41854476928711
+- 82.10165405273438
+model.up_blocks.0.attentions.0.transformer_blocks.5.attn1.to_out.0:
+- 44.53064727783203
+- 57.531951904296875
+- 79.4693603515625
+model.up_blocks.0.attentions.0.transformer_blocks.5.attn1.to_q:
+- 48.77649688720703
+- 62.16205596923828
+- 81.62838745117188
+model.up_blocks.0.attentions.0.transformer_blocks.5.attn1.to_v:
+- 43.660728454589844
+- 55.566959381103516
+- 78.41165161132812
+model.up_blocks.0.attentions.0.transformer_blocks.5.attn2.to_k:
+- 63.227989196777344
+- 76.5518569946289
+- 83.73086547851562
+model.up_blocks.0.attentions.0.transformer_blocks.5.attn2.to_out.0:
+- 55.45575714111328
+- 68.47327423095703
+- 83.31095886230469
+model.up_blocks.0.attentions.0.transformer_blocks.5.attn2.to_q:
+- 65.16160583496094
+- 77.48987579345703
+- 83.71432495117188
+model.up_blocks.0.attentions.0.transformer_blocks.5.attn2.to_v:
+- 54.19939041137695
+- 66.54045104980469
+- 82.7052001953125
+model.up_blocks.0.attentions.0.transformer_blocks.5.ff.net.0.proj:
+- 37.82203674316406
+- 49.245662689208984
+- 72.76966857910156
+model.up_blocks.0.attentions.0.transformer_blocks.5.ff.net.2:
+- 39.1497802734375
+- 51.22517395019531
+- 73.45184326171875
+model.up_blocks.0.attentions.0.transformer_blocks.6.attn1.to_k:
+- 49.8493766784668
+- 63.94110107421875
+- 82.26873016357422
+model.up_blocks.0.attentions.0.transformer_blocks.6.attn1.to_out.0:
+- 45.8613395690918
+- 59.066776275634766
+- 80.40734100341797
+model.up_blocks.0.attentions.0.transformer_blocks.6.attn1.to_q:
+- 49.72803497314453
+- 63.29332733154297
+- 82.18748474121094
+model.up_blocks.0.attentions.0.transformer_blocks.6.attn1.to_v:
+- 44.63872528076172
+- 57.4892463684082
+- 79.60633087158203
+model.up_blocks.0.attentions.0.transformer_blocks.6.attn2.to_k:
+- 65.84146118164062
+- 79.50750732421875
+- 83.6975326538086
+model.up_blocks.0.attentions.0.transformer_blocks.6.attn2.to_out.0:
+- 58.0827522277832
+- 71.9878921508789
+- 83.6549072265625
+model.up_blocks.0.attentions.0.transformer_blocks.6.attn2.to_q:
+- 70.36358642578125
+- 80.36326599121094
+- 83.74412536621094
+model.up_blocks.0.attentions.0.transformer_blocks.6.attn2.to_v:
+- 56.779212951660156
+- 69.46245574951172
+- 83.41131591796875
+model.up_blocks.0.attentions.0.transformer_blocks.6.ff.net.0.proj:
+- 37.54509353637695
+- 49.34364318847656
+- 71.78890991210938
+model.up_blocks.0.attentions.0.transformer_blocks.6.ff.net.2:
+- 39.72423553466797
+- 51.055747985839844
+- 75.01891326904297
+model.up_blocks.0.attentions.0.transformer_blocks.7.attn1.to_k:
+- 49.03013610839844
+- 63.0106201171875
+- 81.45946502685547
+model.up_blocks.0.attentions.0.transformer_blocks.7.attn1.to_out.0:
+- 47.48118209838867
+- 60.65289306640625
+- 81.0578384399414
+model.up_blocks.0.attentions.0.transformer_blocks.7.attn1.to_q:
+- 49.812801361083984
+- 62.91896057128906
+- 82.11478424072266
+model.up_blocks.0.attentions.0.transformer_blocks.7.attn1.to_v:
+- 45.77693557739258
+- 59.0831184387207
+- 79.5816650390625
+model.up_blocks.0.attentions.0.transformer_blocks.7.attn2.to_k:
+- 68.39952087402344
+- 80.82051086425781
+- 83.76551818847656
+model.up_blocks.0.attentions.0.transformer_blocks.7.attn2.to_out.0:
+- 60.86559295654297
+- 73.88485717773438
+- 83.67121887207031
+model.up_blocks.0.attentions.0.transformer_blocks.7.attn2.to_q:
+- 71.71015930175781
+- 81.64453125
+- 83.76510620117188
+model.up_blocks.0.attentions.0.transformer_blocks.7.attn2.to_v:
+- 58.991451263427734
+- 72.16177368164062
+- 83.43959045410156
+model.up_blocks.0.attentions.0.transformer_blocks.7.ff.net.0.proj:
+- 37.7614860534668
+- 49.38343048095703
+- 72.28263854980469
+model.up_blocks.0.attentions.0.transformer_blocks.7.ff.net.2:
+- 40.401573181152344
+- 53.459877014160156
+- 75.98968505859375
+model.up_blocks.0.attentions.0.transformer_blocks.8.attn1.to_k:
+- 49.20472717285156
+- 62.62009048461914
+- 81.96592712402344
+model.up_blocks.0.attentions.0.transformer_blocks.8.attn1.to_out.0:
+- 49.016212463378906
+- 61.91618347167969
+- 81.87725830078125
+model.up_blocks.0.attentions.0.transformer_blocks.8.attn1.to_q:
+- 49.39380645751953
+- 62.607643127441406
+- 81.66370391845703
+model.up_blocks.0.attentions.0.transformer_blocks.8.attn1.to_v:
+- 46.599273681640625
+- 59.001407623291016
+- 80.70442199707031
+model.up_blocks.0.attentions.0.transformer_blocks.8.attn2.to_k:
+- 71.22837829589844
+- 82.12374877929688
+- 83.76416015625
+model.up_blocks.0.attentions.0.transformer_blocks.8.attn2.to_out.0:
+- 63.634334564208984
+- 76.35591888427734
+- 83.63673400878906
+model.up_blocks.0.attentions.0.transformer_blocks.8.attn2.to_q:
+- 75.0478744506836
+- 82.94007873535156
+- 83.76087951660156
+model.up_blocks.0.attentions.0.transformer_blocks.8.attn2.to_v:
+- 62.349056243896484
+- 74.3156967163086
+- 83.63577270507812
+model.up_blocks.0.attentions.0.transformer_blocks.8.ff.net.0.proj:
+- 38.5729866027832
+- 50.051231384277344
+- 73.94514465332031
+model.up_blocks.0.attentions.0.transformer_blocks.8.ff.net.2:
+- 42.25548553466797
+- 55.23365783691406
+- 77.81962585449219
+model.up_blocks.0.attentions.0.transformer_blocks.9.attn1.to_k:
+- 49.56656265258789
+- 63.58065414428711
+- 82.17876434326172
+model.up_blocks.0.attentions.0.transformer_blocks.9.attn1.to_out.0:
+- 50.727500915527344
+- 63.928993225097656
+- 82.22671508789062
+model.up_blocks.0.attentions.0.transformer_blocks.9.attn1.to_q:
+- 50.26491928100586
+- 63.56694030761719
+- 82.38964080810547
+model.up_blocks.0.attentions.0.transformer_blocks.9.attn1.to_v:
+- 47.300750732421875
+- 60.70201110839844
+- 80.68330383300781
+model.up_blocks.0.attentions.0.transformer_blocks.9.attn2.to_k:
+- 75.3644790649414
+- 83.03382110595703
+- 83.7550048828125
+model.up_blocks.0.attentions.0.transformer_blocks.9.attn2.to_out.0:
+- 65.96340942382812
+- 79.40997314453125
+- 83.75149536132812
+model.up_blocks.0.attentions.0.transformer_blocks.9.attn2.to_q:
+- 79.00074768066406
+- 83.49458312988281
+- 83.80680847167969
+model.up_blocks.0.attentions.0.transformer_blocks.9.attn2.to_v:
+- 66.27450561523438
+- 76.83985900878906
+- 83.733154296875
+model.up_blocks.0.attentions.0.transformer_blocks.9.ff.net.0.proj:
+- 38.772239685058594
+- 51.56715393066406
+- 74.36390686035156
+model.up_blocks.0.attentions.0.transformer_blocks.9.ff.net.2:
+- 44.64903259277344
+- 58.40415954589844
+- 79.9066390991211
+model.up_blocks.0.attentions.1.proj_in:
+- 37.85093307495117
+- 49.67224884033203
+- 73.21973419189453
+model.up_blocks.0.attentions.1.proj_out:
+- 40.98339080810547
+- 53.77484893798828
+- 77.00721740722656
+model.up_blocks.0.attentions.1.transformer_blocks.0.attn1.to_k:
+- 52.098575592041016
+- 65.86455535888672
+- 82.60489654541016
+model.up_blocks.0.attentions.1.transformer_blocks.0.attn1.to_out.0:
+- 41.23176956176758
+- 54.59818649291992
+- 77.6086654663086
+model.up_blocks.0.attentions.1.transformer_blocks.0.attn1.to_q:
+- 51.28133773803711
+- 66.18839263916016
+- 82.56163024902344
+model.up_blocks.0.attentions.1.transformer_blocks.0.attn1.to_v:
+- 44.2208137512207
+- 57.18840026855469
+- 79.00019836425781
+model.up_blocks.0.attentions.1.transformer_blocks.0.attn2.to_k:
+- 58.340023040771484
+- 72.93329620361328
+- 83.46347045898438
+model.up_blocks.0.attentions.1.transformer_blocks.0.attn2.to_out.0:
+- 53.38727569580078
+- 66.87409973144531
+- 82.89495849609375
+model.up_blocks.0.attentions.1.transformer_blocks.0.attn2.to_q:
+- 67.75592803955078
+- 77.18492126464844
+- 83.68990325927734
+model.up_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v:
+- 51.534263610839844
+- 64.99397277832031
+- 82.34172058105469
+model.up_blocks.0.attentions.1.transformer_blocks.0.ff.net.0.proj:
+- 42.8257942199707
+- 55.79165267944336
+- 77.81623840332031
+model.up_blocks.0.attentions.1.transformer_blocks.0.ff.net.2:
+- 41.25669860839844
+- 53.97867965698242
+- 76.8375244140625
+model.up_blocks.0.attentions.1.transformer_blocks.1.attn1.to_k:
+- 53.894657135009766
+- 67.83238220214844
+- 82.94871520996094
+model.up_blocks.0.attentions.1.transformer_blocks.1.attn1.to_out.0:
+- 43.76297378540039
+- 56.06299591064453
+- 78.44987487792969
+model.up_blocks.0.attentions.1.transformer_blocks.1.attn1.to_q:
+- 51.97581481933594
+- 66.6459732055664
+- 82.68854522705078
+model.up_blocks.0.attentions.1.transformer_blocks.1.attn1.to_v:
+- 43.96156311035156
+- 56.44143295288086
+- 79.37943267822266
+model.up_blocks.0.attentions.1.transformer_blocks.1.attn2.to_k:
+- 47.968360900878906
+- 65.0849609375
+- 81.74945068359375
+model.up_blocks.0.attentions.1.transformer_blocks.1.attn2.to_out.0:
+- 47.50404357910156
+- 60.82143020629883
+- 79.5743179321289
+model.up_blocks.0.attentions.1.transformer_blocks.1.attn2.to_q:
+- 55.125545501708984
+- 68.81361389160156
+- 83.18975067138672
+model.up_blocks.0.attentions.1.transformer_blocks.1.attn2.to_v:
+- 45.765907287597656
+- 58.54373550415039
+- 80.02959442138672
+model.up_blocks.0.attentions.1.transformer_blocks.1.ff.net.0.proj:
+- 41.65717315673828
+- 54.52928161621094
+- 77.315673828125
+model.up_blocks.0.attentions.1.transformer_blocks.1.ff.net.2:
+- 41.8450813293457
+- 54.67512512207031
+- 77.73765563964844
+model.up_blocks.0.attentions.1.transformer_blocks.2.attn1.to_k:
+- 53.87922286987305
+- 68.23277282714844
+- 82.29508972167969
+model.up_blocks.0.attentions.1.transformer_blocks.2.attn1.to_out.0:
+- 45.60542678833008
+- 58.42987823486328
+- 79.7690658569336
+model.up_blocks.0.attentions.1.transformer_blocks.2.attn1.to_q:
+- 53.41615295410156
+- 67.26382446289062
+- 83.00385284423828
+model.up_blocks.0.attentions.1.transformer_blocks.2.attn1.to_v:
+- 43.57958984375
+- 56.569053649902344
+- 78.26652526855469
+model.up_blocks.0.attentions.1.transformer_blocks.2.attn2.to_k:
+- 49.204002380371094
+- 66.79308319091797
+- 82.70030212402344
+model.up_blocks.0.attentions.1.transformer_blocks.2.attn2.to_out.0:
+- 47.75072479248047
+- 60.14251708984375
+- 81.18810272216797
+model.up_blocks.0.attentions.1.transformer_blocks.2.attn2.to_q:
+- 56.07667541503906
+- 70.62499237060547
+- 83.36932373046875
+model.up_blocks.0.attentions.1.transformer_blocks.2.attn2.to_v:
+- 45.288063049316406
+- 58.86753845214844
+- 79.90177917480469
+model.up_blocks.0.attentions.1.transformer_blocks.2.ff.net.0.proj:
+- 40.706512451171875
+- 53.265281677246094
+- 76.52632141113281
+model.up_blocks.0.attentions.1.transformer_blocks.2.ff.net.2:
+- 42.0322380065918
+- 54.403404235839844
+- 77.79166412353516
+model.up_blocks.0.attentions.1.transformer_blocks.3.attn1.to_k:
+- 53.141754150390625
+- 66.51799774169922
+- 82.65290832519531
+model.up_blocks.0.attentions.1.transformer_blocks.3.attn1.to_out.0:
+- 45.689796447753906
+- 58.61115646362305
+- 80.38274383544922
+model.up_blocks.0.attentions.1.transformer_blocks.3.attn1.to_q:
+- 52.08430862426758
+- 65.78721618652344
+- 82.6412124633789
+model.up_blocks.0.attentions.1.transformer_blocks.3.attn1.to_v:
+- 44.01850509643555
+- 56.75029373168945
+- 78.78447723388672
+model.up_blocks.0.attentions.1.transformer_blocks.3.attn2.to_k:
+- 52.623741149902344
+- 64.87142181396484
+- 82.82587432861328
+model.up_blocks.0.attentions.1.transformer_blocks.3.attn2.to_out.0:
+- 48.839603424072266
+- 62.33545684814453
+- 81.62250518798828
+model.up_blocks.0.attentions.1.transformer_blocks.3.attn2.to_q:
+- 52.74095916748047
+- 66.45036315917969
+- 82.80636596679688
+model.up_blocks.0.attentions.1.transformer_blocks.3.attn2.to_v:
+- 48.31949234008789
+- 61.11144256591797
+- 80.87401580810547
+model.up_blocks.0.attentions.1.transformer_blocks.3.ff.net.0.proj:
+- 39.614906311035156
+- 52.05817413330078
+- 75.70407104492188
+model.up_blocks.0.attentions.1.transformer_blocks.3.ff.net.2:
+- 41.4849739074707
+- 54.620567321777344
+- 77.4645004272461
+model.up_blocks.0.attentions.1.transformer_blocks.4.attn1.to_k:
+- 54.00921630859375
+- 67.23464965820312
+- 82.88951110839844
+model.up_blocks.0.attentions.1.transformer_blocks.4.attn1.to_out.0:
+- 46.949432373046875
+- 60.404014587402344
+- 80.75216674804688
+model.up_blocks.0.attentions.1.transformer_blocks.4.attn1.to_q:
+- 52.60652160644531
+- 66.62977600097656
+- 82.76388549804688
+model.up_blocks.0.attentions.1.transformer_blocks.4.attn1.to_v:
+- 44.24037170410156
+- 56.99701690673828
+- 79.63745880126953
+model.up_blocks.0.attentions.1.transformer_blocks.4.attn2.to_k:
+- 56.43816375732422
+- 70.60411071777344
+- 83.20555114746094
+model.up_blocks.0.attentions.1.transformer_blocks.4.attn2.to_out.0:
+- 52.81538772583008
+- 65.09732055664062
+- 82.61644744873047
+model.up_blocks.0.attentions.1.transformer_blocks.4.attn2.to_q:
+- 58.19243621826172
+- 71.41975402832031
+- 83.44127655029297
+model.up_blocks.0.attentions.1.transformer_blocks.4.attn2.to_v:
+- 51.21261978149414
+- 63.37527084350586
+- 81.76654815673828
+model.up_blocks.0.attentions.1.transformer_blocks.4.ff.net.0.proj:
+- 39.27305221557617
+- 52.575408935546875
+- 75.6328125
+model.up_blocks.0.attentions.1.transformer_blocks.4.ff.net.2:
+- 41.51722717285156
+- 54.75714874267578
+- 77.19397735595703
+model.up_blocks.0.attentions.1.transformer_blocks.5.attn1.to_k:
+- 53.36537551879883
+- 67.27558135986328
+- 82.7454833984375
+model.up_blocks.0.attentions.1.transformer_blocks.5.attn1.to_out.0:
+- 47.607017517089844
+- 60.44676971435547
+- 81.00774383544922
+model.up_blocks.0.attentions.1.transformer_blocks.5.attn1.to_q:
+- 53.10396957397461
+- 66.21273040771484
+- 82.80464935302734
+model.up_blocks.0.attentions.1.transformer_blocks.5.attn1.to_v:
+- 45.897544860839844
+- 58.84674072265625
+- 79.82135009765625
+model.up_blocks.0.attentions.1.transformer_blocks.5.attn2.to_k:
+- 57.69727325439453
+- 74.66771697998047
+- 83.54338073730469
+model.up_blocks.0.attentions.1.transformer_blocks.5.attn2.to_out.0:
+- 54.48486328125
+- 68.29141235351562
+- 82.68086242675781
+model.up_blocks.0.attentions.1.transformer_blocks.5.attn2.to_q:
+- 61.54262924194336
+- 73.89317321777344
+- 83.6375503540039
+model.up_blocks.0.attentions.1.transformer_blocks.5.attn2.to_v:
+- 52.408477783203125
+- 64.93629455566406
+- 82.2474365234375
+model.up_blocks.0.attentions.1.transformer_blocks.5.ff.net.0.proj:
+- 39.552589416503906
+- 52.370208740234375
+- 76.16510009765625
+model.up_blocks.0.attentions.1.transformer_blocks.5.ff.net.2:
+- 42.25148010253906
+- 54.90555953979492
+- 77.26292419433594
+model.up_blocks.0.attentions.1.transformer_blocks.6.attn1.to_k:
+- 53.58209228515625
+- 66.8267822265625
+- 82.83612823486328
+model.up_blocks.0.attentions.1.transformer_blocks.6.attn1.to_out.0:
+- 47.94645690917969
+- 61.77321243286133
+- 81.05052947998047
+model.up_blocks.0.attentions.1.transformer_blocks.6.attn1.to_q:
+- 52.54597854614258
+- 65.61446380615234
+- 82.67330169677734
+model.up_blocks.0.attentions.1.transformer_blocks.6.attn1.to_v:
+- 46.303768157958984
+- 58.795806884765625
+- 80.5957260131836
+model.up_blocks.0.attentions.1.transformer_blocks.6.attn2.to_k:
+- 61.459312438964844
+- 75.3939437866211
+- 83.53047180175781
+model.up_blocks.0.attentions.1.transformer_blocks.6.attn2.to_out.0:
+- 57.32935333251953
+- 71.20274353027344
+- 83.11751556396484
+model.up_blocks.0.attentions.1.transformer_blocks.6.attn2.to_q:
+- 65.75149536132812
+- 77.93722534179688
+- 83.66925048828125
+model.up_blocks.0.attentions.1.transformer_blocks.6.attn2.to_v:
+- 56.18635177612305
+- 68.56684875488281
+- 83.04879760742188
+model.up_blocks.0.attentions.1.transformer_blocks.6.ff.net.0.proj:
+- 39.54283142089844
+- 52.66688537597656
+- 76.39927673339844
+model.up_blocks.0.attentions.1.transformer_blocks.6.ff.net.2:
+- 42.28994369506836
+- 55.32609939575195
+- 78.05145263671875
+model.up_blocks.0.attentions.1.transformer_blocks.7.attn1.to_k:
+- 54.57687759399414
+- 68.528564453125
+- 83.01155090332031
+model.up_blocks.0.attentions.1.transformer_blocks.7.attn1.to_out.0:
+- 49.317726135253906
+- 62.9254150390625
+- 81.90744018554688
+model.up_blocks.0.attentions.1.transformer_blocks.7.attn1.to_q:
+- 52.8338623046875
+- 66.64105987548828
+- 82.67002868652344
+model.up_blocks.0.attentions.1.transformer_blocks.7.attn1.to_v:
+- 48.22283172607422
+- 62.42626190185547
+- 81.42906951904297
+model.up_blocks.0.attentions.1.transformer_blocks.7.attn2.to_k:
+- 69.13426208496094
+- 80.96328735351562
+- 83.77571868896484
+model.up_blocks.0.attentions.1.transformer_blocks.7.attn2.to_out.0:
+- 60.26114273071289
+- 73.8699951171875
+- 83.47541809082031
+model.up_blocks.0.attentions.1.transformer_blocks.7.attn2.to_q:
+- 72.84563446044922
+- 81.67887878417969
+- 83.81878662109375
+model.up_blocks.0.attentions.1.transformer_blocks.7.attn2.to_v:
+- 58.70404815673828
+- 71.99031829833984
+- 83.34381866455078
+model.up_blocks.0.attentions.1.transformer_blocks.7.ff.net.0.proj:
+- 40.295162200927734
+- 53.252140045166016
+- 76.48251342773438
+model.up_blocks.0.attentions.1.transformer_blocks.7.ff.net.2:
+- 43.18510818481445
+- 55.863338470458984
+- 78.27008056640625
+model.up_blocks.0.attentions.1.transformer_blocks.8.attn1.to_k:
+- 50.546600341796875
+- 64.75341796875
+- 82.52915954589844
+model.up_blocks.0.attentions.1.transformer_blocks.8.attn1.to_out.0:
+- 48.930381774902344
+- 62.47761535644531
+- 81.64588928222656
+model.up_blocks.0.attentions.1.transformer_blocks.8.attn1.to_q:
+- 49.31422424316406
+- 63.383766174316406
+- 81.83904266357422
+model.up_blocks.0.attentions.1.transformer_blocks.8.attn1.to_v:
+- 47.90998840332031
+- 62.14188003540039
+- 81.38839721679688
+model.up_blocks.0.attentions.1.transformer_blocks.8.attn2.to_k:
+- 72.46441650390625
+- 82.42400360107422
+- 83.79072570800781
+model.up_blocks.0.attentions.1.transformer_blocks.8.attn2.to_out.0:
+- 64.83839416503906
+- 77.2083969116211
+- 83.6981201171875
+model.up_blocks.0.attentions.1.transformer_blocks.8.attn2.to_q:
+- 76.5714111328125
+- 82.86246490478516
+- 83.82069396972656
+model.up_blocks.0.attentions.1.transformer_blocks.8.attn2.to_v:
+- 63.13982009887695
+- 76.27508544921875
+- 83.65243530273438
+model.up_blocks.0.attentions.1.transformer_blocks.8.ff.net.0.proj:
+- 40.834434509277344
+- 53.86126708984375
+- 76.95436096191406
+model.up_blocks.0.attentions.1.transformer_blocks.8.ff.net.2:
+- 44.63379669189453
+- 58.111907958984375
+- 79.6198959350586
+model.up_blocks.0.attentions.1.transformer_blocks.9.attn1.to_k:
+- 51.8762321472168
+- 66.7464370727539
+- 82.79737091064453
+model.up_blocks.0.attentions.1.transformer_blocks.9.attn1.to_out.0:
+- 51.853904724121094
+- 66.141357421875
+- 82.69390869140625
+model.up_blocks.0.attentions.1.transformer_blocks.9.attn1.to_q:
+- 50.88661193847656
+- 64.88063049316406
+- 82.3692855834961
+model.up_blocks.0.attentions.1.transformer_blocks.9.attn1.to_v:
+- 49.40381622314453
+- 63.241294860839844
+- 81.6771240234375
+model.up_blocks.0.attentions.1.transformer_blocks.9.attn2.to_k:
+- 71.70951843261719
+- 82.43262481689453
+- 83.78128051757812
+model.up_blocks.0.attentions.1.transformer_blocks.9.attn2.to_out.0:
+- 69.02959442138672
+- 80.01314544677734
+- 83.71705627441406
+model.up_blocks.0.attentions.1.transformer_blocks.9.attn2.to_q:
+- 76.61393737792969
+- 82.86927795410156
+- 83.79662322998047
+model.up_blocks.0.attentions.1.transformer_blocks.9.attn2.to_v:
+- 68.11421966552734
+- 79.72708129882812
+- 83.7768325805664
+model.up_blocks.0.attentions.1.transformer_blocks.9.ff.net.0.proj:
+- 42.010353088378906
+- 55.72271728515625
+- 77.9955825805664
+model.up_blocks.0.attentions.1.transformer_blocks.9.ff.net.2:
+- 47.317230224609375
+- 61.251251220703125
+- 81.37057495117188
+model.up_blocks.0.attentions.2.proj_in:
+- 38.66999435424805
+- 51.535362243652344
+- 74.90544891357422
+model.up_blocks.0.attentions.2.proj_out:
+- 41.81272888183594
+- 54.73142623901367
+- 77.0889663696289
+model.up_blocks.0.attentions.2.transformer_blocks.0.attn1.to_k:
+- 52.70170593261719
+- 66.47975158691406
+- 82.85093688964844
+model.up_blocks.0.attentions.2.transformer_blocks.0.attn1.to_out.0:
+- 44.032073974609375
+- 57.0681037902832
+- 78.87128448486328
+model.up_blocks.0.attentions.2.transformer_blocks.0.attn1.to_q:
+- 51.51660919189453
+- 64.90592193603516
+- 82.58018493652344
+model.up_blocks.0.attentions.2.transformer_blocks.0.attn1.to_v:
+- 46.86052322387695
+- 60.557273864746094
+- 80.97200012207031
+model.up_blocks.0.attentions.2.transformer_blocks.0.attn2.to_k:
+- 70.62325286865234
+- 81.81859588623047
+- 83.79141235351562
+model.up_blocks.0.attentions.2.transformer_blocks.0.attn2.to_out.0:
+- 66.04823303222656
+- 77.69705200195312
+- 83.75287628173828
+model.up_blocks.0.attentions.2.transformer_blocks.0.attn2.to_q:
+- 77.69660949707031
+- 83.14921569824219
+- 83.7894287109375
+model.up_blocks.0.attentions.2.transformer_blocks.0.attn2.to_v:
+- 63.7597770690918
+- 74.37248992919922
+- 83.63861083984375
+model.up_blocks.0.attentions.2.transformer_blocks.0.ff.net.0.proj:
+- 43.64269256591797
+- 56.62968444824219
+- 78.60353088378906
+model.up_blocks.0.attentions.2.transformer_blocks.0.ff.net.2:
+- 43.82901382446289
+- 57.397830963134766
+- 79.42607116699219
+model.up_blocks.0.attentions.2.transformer_blocks.1.attn1.to_k:
+- 55.962608337402344
+- 70.0278549194336
+- 83.2957763671875
+model.up_blocks.0.attentions.2.transformer_blocks.1.attn1.to_out.0:
+- 48.308021545410156
+- 61.82473373413086
+- 81.42619323730469
+model.up_blocks.0.attentions.2.transformer_blocks.1.attn1.to_q:
+- 56.25901412963867
+- 70.39332580566406
+- 83.30397033691406
+model.up_blocks.0.attentions.2.transformer_blocks.1.attn1.to_v:
+- 48.1994514465332
+- 60.52434158325195
+- 81.36599731445312
+model.up_blocks.0.attentions.2.transformer_blocks.1.attn2.to_k:
+- 68.05355834960938
+- 78.97508239746094
+- 83.7651138305664
+model.up_blocks.0.attentions.2.transformer_blocks.1.attn2.to_out.0:
+- 60.77827835083008
+- 73.6533203125
+- 83.5759048461914
+model.up_blocks.0.attentions.2.transformer_blocks.1.attn2.to_q:
+- 73.1468505859375
+- 81.98470306396484
+- 83.80963897705078
+model.up_blocks.0.attentions.2.transformer_blocks.1.attn2.to_v:
+- 59.10083770751953
+- 67.3724365234375
+- 83.082275390625
+model.up_blocks.0.attentions.2.transformer_blocks.1.ff.net.0.proj:
+- 43.79044723510742
+- 57.23397445678711
+- 79.51084899902344
+model.up_blocks.0.attentions.2.transformer_blocks.1.ff.net.2:
+- 45.28933334350586
+- 58.23167037963867
+- 80.24315643310547
+model.up_blocks.0.attentions.2.transformer_blocks.2.attn1.to_k:
+- 55.78469467163086
+- 70.03548431396484
+- 83.34325408935547
+model.up_blocks.0.attentions.2.transformer_blocks.2.attn1.to_out.0:
+- 49.71583938598633
+- 63.34130096435547
+- 81.9936294555664
+model.up_blocks.0.attentions.2.transformer_blocks.2.attn1.to_q:
+- 56.78947067260742
+- 70.06050109863281
+- 83.34207153320312
+model.up_blocks.0.attentions.2.transformer_blocks.2.attn1.to_v:
+- 48.82777404785156
+- 62.34061050415039
+- 81.61216735839844
+model.up_blocks.0.attentions.2.transformer_blocks.2.attn2.to_k:
+- 68.88167572021484
+- 79.0571517944336
+- 83.73418426513672
+model.up_blocks.0.attentions.2.transformer_blocks.2.attn2.to_out.0:
+- 61.57881164550781
+- 74.5467300415039
+- 83.58973693847656
+model.up_blocks.0.attentions.2.transformer_blocks.2.attn2.to_q:
+- 72.39403533935547
+- 82.01405334472656
+- 83.78009033203125
+model.up_blocks.0.attentions.2.transformer_blocks.2.attn2.to_v:
+- 60.19416046142578
+- 69.38506317138672
+- 83.15514373779297
+model.up_blocks.0.attentions.2.transformer_blocks.2.ff.net.0.proj:
+- 44.6710090637207
+- 58.018680572509766
+- 79.86529541015625
+model.up_blocks.0.attentions.2.transformer_blocks.2.ff.net.2:
+- 46.02989959716797
+- 59.28815841674805
+- 80.4123306274414
+model.up_blocks.0.attentions.2.transformer_blocks.3.attn1.to_k:
+- 55.71675109863281
+- 69.9766845703125
+- 83.392822265625
+model.up_blocks.0.attentions.2.transformer_blocks.3.attn1.to_out.0:
+- 50.94087219238281
+- 64.53611755371094
+- 82.46037292480469
+model.up_blocks.0.attentions.2.transformer_blocks.3.attn1.to_q:
+- 55.24069595336914
+- 69.1127700805664
+- 83.31694030761719
+model.up_blocks.0.attentions.2.transformer_blocks.3.attn1.to_v:
+- 50.15100860595703
+- 63.3599853515625
+- 81.78564453125
+model.up_blocks.0.attentions.2.transformer_blocks.3.attn2.to_k:
+- 71.75186157226562
+- 81.59146118164062
+- 83.77867126464844
+model.up_blocks.0.attentions.2.transformer_blocks.3.attn2.to_out.0:
+- 64.550048828125
+- 76.6436538696289
+- 83.6938705444336
+model.up_blocks.0.attentions.2.transformer_blocks.3.attn2.to_q:
+- 73.82393646240234
+- 82.50297546386719
+- 83.8206787109375
+model.up_blocks.0.attentions.2.transformer_blocks.3.attn2.to_v:
+- 64.32331848144531
+- 72.35246276855469
+- 83.40203094482422
+model.up_blocks.0.attentions.2.transformer_blocks.3.ff.net.0.proj:
+- 44.776336669921875
+- 58.414493560791016
+- 80.12572479248047
+model.up_blocks.0.attentions.2.transformer_blocks.3.ff.net.2:
+- 46.034786224365234
+- 59.16304016113281
+- 80.51109313964844
+model.up_blocks.0.attentions.2.transformer_blocks.4.attn1.to_k:
+- 58.62242126464844
+- 72.51388549804688
+- 83.52827453613281
+model.up_blocks.0.attentions.2.transformer_blocks.4.attn1.to_out.0:
+- 53.03221130371094
+- 66.5107421875
+- 82.67850494384766
+model.up_blocks.0.attentions.2.transformer_blocks.4.attn1.to_q:
+- 58.561134338378906
+- 72.29969024658203
+- 83.5057601928711
+model.up_blocks.0.attentions.2.transformer_blocks.4.attn1.to_v:
+- 50.86361312866211
+- 64.79789733886719
+- 82.30757904052734
+model.up_blocks.0.attentions.2.transformer_blocks.4.attn2.to_k:
+- 75.35755920410156
+- 82.98193359375
+- 83.79338836669922
+model.up_blocks.0.attentions.2.transformer_blocks.4.attn2.to_out.0:
+- 68.176025390625
+- 79.46926879882812
+- 83.75619506835938
+model.up_blocks.0.attentions.2.transformer_blocks.4.attn2.to_q:
+- 78.04440307617188
+- 83.2239990234375
+- 83.79060363769531
+model.up_blocks.0.attentions.2.transformer_blocks.4.attn2.to_v:
+- 66.6584243774414
+- 76.84930419921875
+- 83.77023315429688
+model.up_blocks.0.attentions.2.transformer_blocks.4.ff.net.0.proj:
+- 44.77698516845703
+- 58.11332321166992
+- 79.92719268798828
+model.up_blocks.0.attentions.2.transformer_blocks.4.ff.net.2:
+- 46.344032287597656
+- 59.775150299072266
+- 80.49189758300781
+model.up_blocks.0.attentions.2.transformer_blocks.5.attn1.to_k:
+- 60.770118713378906
+- 74.01177978515625
+- 83.58832550048828
+model.up_blocks.0.attentions.2.transformer_blocks.5.attn1.to_out.0:
+- 53.99348831176758
+- 67.70901489257812
+- 83.03571319580078
+model.up_blocks.0.attentions.2.transformer_blocks.5.attn1.to_q:
+- 60.019798278808594
+- 73.77294158935547
+- 83.5726318359375
+model.up_blocks.0.attentions.2.transformer_blocks.5.attn1.to_v:
+- 52.93098068237305
+- 66.70301818847656
+- 82.86100006103516
+model.up_blocks.0.attentions.2.transformer_blocks.5.attn2.to_k:
+- 77.62579345703125
+- 83.32181549072266
+- 83.79090881347656
+model.up_blocks.0.attentions.2.transformer_blocks.5.attn2.to_out.0:
+- 69.36255645751953
+- 80.1251220703125
+- 83.80027770996094
+model.up_blocks.0.attentions.2.transformer_blocks.5.attn2.to_q:
+- 79.74626922607422
+- 83.52213287353516
+- 83.80882263183594
+model.up_blocks.0.attentions.2.transformer_blocks.5.attn2.to_v:
+- 68.5562744140625
+- 78.49042510986328
+- 83.77867889404297
+model.up_blocks.0.attentions.2.transformer_blocks.5.ff.net.0.proj:
+- 44.943946838378906
+- 58.44732666015625
+- 80.16215515136719
+model.up_blocks.0.attentions.2.transformer_blocks.5.ff.net.2:
+- 46.98401641845703
+- 60.196693420410156
+- 80.83061218261719
+model.up_blocks.0.attentions.2.transformer_blocks.6.attn1.to_k:
+- 58.83722686767578
+- 72.84166717529297
+- 83.49571228027344
+model.up_blocks.0.attentions.2.transformer_blocks.6.attn1.to_out.0:
+- 55.29132843017578
+- 68.95387268066406
+- 83.17913818359375
+model.up_blocks.0.attentions.2.transformer_blocks.6.attn1.to_q:
+- 59.240478515625
+- 73.07523345947266
+- 83.53363037109375
+model.up_blocks.0.attentions.2.transformer_blocks.6.attn1.to_v:
+- 52.860595703125
+- 65.98943328857422
+- 82.71943664550781
+model.up_blocks.0.attentions.2.transformer_blocks.6.attn2.to_k:
+- 79.8473129272461
+- 83.54939270019531
+- 83.79693603515625
+model.up_blocks.0.attentions.2.transformer_blocks.6.attn2.to_out.0:
+- 71.87020874023438
+- 81.14405059814453
+- 83.76161193847656
+model.up_blocks.0.attentions.2.transformer_blocks.6.attn2.to_q:
+- 81.3533706665039
+- 83.66695404052734
+- 83.77649688720703
+model.up_blocks.0.attentions.2.transformer_blocks.6.attn2.to_v:
+- 70.98126220703125
+- 80.43010711669922
+- 83.7645034790039
+model.up_blocks.0.attentions.2.transformer_blocks.6.ff.net.0.proj:
+- 44.925533294677734
+- 58.747802734375
+- 80.31214904785156
+model.up_blocks.0.attentions.2.transformer_blocks.6.ff.net.2:
+- 47.27629089355469
+- 60.78535079956055
+- 81.032958984375
+model.up_blocks.0.attentions.2.transformer_blocks.7.attn1.to_k:
+- 59.8970832824707
+- 72.955078125
+- 83.61316680908203
+model.up_blocks.0.attentions.2.transformer_blocks.7.attn1.to_out.0:
+- 56.08470153808594
+- 69.88574981689453
+- 83.20917510986328
+model.up_blocks.0.attentions.2.transformer_blocks.7.attn1.to_q:
+- 59.59797286987305
+- 73.26849365234375
+- 83.61175537109375
+model.up_blocks.0.attentions.2.transformer_blocks.7.attn1.to_v:
+- 53.57012176513672
+- 67.79165649414062
+- 83.00360107421875
+model.up_blocks.0.attentions.2.transformer_blocks.7.attn2.to_k:
+- 80.10891723632812
+- 83.56965637207031
+- 83.78394317626953
+model.up_blocks.0.attentions.2.transformer_blocks.7.attn2.to_out.0:
+- 71.8426742553711
+- 81.4791030883789
+- 83.7780990600586
+model.up_blocks.0.attentions.2.transformer_blocks.7.attn2.to_q:
+- 82.1158447265625
+- 83.7040786743164
+- 83.79859161376953
+model.up_blocks.0.attentions.2.transformer_blocks.7.attn2.to_v:
+- 71.43197631835938
+- 80.79975128173828
+- 83.75160217285156
+model.up_blocks.0.attentions.2.transformer_blocks.7.ff.net.0.proj:
+- 45.102630615234375
+- 58.661006927490234
+- 79.839599609375
+model.up_blocks.0.attentions.2.transformer_blocks.7.ff.net.2:
+- 47.739784240722656
+- 60.85386657714844
+- 81.2550048828125
+model.up_blocks.0.attentions.2.transformer_blocks.8.attn1.to_k:
+- 59.58978271484375
+- 73.58381652832031
+- 83.55316162109375
+model.up_blocks.0.attentions.2.transformer_blocks.8.attn1.to_out.0:
+- 56.29298782348633
+- 69.73527526855469
+- 83.24800109863281
+model.up_blocks.0.attentions.2.transformer_blocks.8.attn1.to_q:
+- 59.82617950439453
+- 73.4324722290039
+- 83.51458740234375
+model.up_blocks.0.attentions.2.transformer_blocks.8.attn1.to_v:
+- 54.406410217285156
+- 68.56855773925781
+- 83.02933502197266
+model.up_blocks.0.attentions.2.transformer_blocks.8.attn2.to_k:
+- 78.6121826171875
+- 83.6435317993164
+- 83.7955322265625
+model.up_blocks.0.attentions.2.transformer_blocks.8.attn2.to_out.0:
+- 74.95358276367188
+- 82.37683868408203
+- 83.80786895751953
+model.up_blocks.0.attentions.2.transformer_blocks.8.attn2.to_q:
+- 82.10005187988281
+- 83.68496704101562
+- 83.81607055664062
+model.up_blocks.0.attentions.2.transformer_blocks.8.attn2.to_v:
+- 74.38046264648438
+- 82.12692260742188
+- 83.7757568359375
+model.up_blocks.0.attentions.2.transformer_blocks.8.ff.net.0.proj:
+- 44.95568084716797
+- 58.85041809082031
+- 80.02823638916016
+model.up_blocks.0.attentions.2.transformer_blocks.8.ff.net.2:
+- 47.6819953918457
+- 61.607444763183594
+- 81.44373321533203
+model.up_blocks.0.attentions.2.transformer_blocks.9.attn1.to_k:
+- 64.3604507446289
+- 77.62934875488281
+- 83.73234558105469
+model.up_blocks.0.attentions.2.transformer_blocks.9.attn1.to_out.0:
+- 59.86821746826172
+- 73.47730255126953
+- 83.507568359375
+model.up_blocks.0.attentions.2.transformer_blocks.9.attn1.to_q:
+- 64.4882583618164
+- 77.0490493774414
+- 83.73818969726562
+model.up_blocks.0.attentions.2.transformer_blocks.9.attn1.to_v:
+- 57.19611358642578
+- 70.69442749023438
+- 83.24186706542969
+model.up_blocks.0.attentions.2.transformer_blocks.9.attn2.to_k:
+- 81.11686706542969
+- 83.68669128417969
+- 83.8058853149414
+model.up_blocks.0.attentions.2.transformer_blocks.9.attn2.to_out.0:
+- 76.24222564697266
+- 82.73136901855469
+- 83.78595733642578
+model.up_blocks.0.attentions.2.transformer_blocks.9.attn2.to_q:
+- 83.22792053222656
+- 83.77193450927734
+- 83.79794311523438
+model.up_blocks.0.attentions.2.transformer_blocks.9.attn2.to_v:
+- 76.6865463256836
+- 82.7774658203125
+- 83.785888671875
+model.up_blocks.0.attentions.2.transformer_blocks.9.ff.net.0.proj:
+- 45.40917205810547
+- 59.473323822021484
+- 80.32388305664062
+model.up_blocks.0.attentions.2.transformer_blocks.9.ff.net.2:
+- 47.43121337890625
+- 61.23710632324219
+- 81.1676025390625
+model.up_blocks.0.resnets.0.conv1:
+- 34.01624298095703
+- 49.31746292114258
+- 72.69969177246094
+model.up_blocks.0.resnets.0.conv2:
+- 33.73760986328125
+- 51.079551696777344
+- 74.51437377929688
+model.up_blocks.0.resnets.0.conv_shortcut:
+- 36.78539276123047
+- 48.1859016418457
+- 71.44139099121094
+model.up_blocks.0.resnets.0.time_emb_proj:
+- 50.692291259765625
+- 63.603431701660156
+- 82.08113098144531
+model.up_blocks.0.resnets.1.conv1:
+- 34.443912506103516
+- 50.71520233154297
+- 74.90647888183594
+model.up_blocks.0.resnets.1.conv2:
+- 37.72611999511719
+- 52.74104690551758
+- 76.80238342285156
+model.up_blocks.0.resnets.1.conv_shortcut:
+- 36.491249084472656
+- 49.08110046386719
+- 72.93605041503906
+model.up_blocks.0.resnets.1.time_emb_proj:
+- 45.08866882324219
+- 62.97250747680664
+- 82.15290832519531
+model.up_blocks.0.resnets.2.conv1:
+- 39.753387451171875
+- 53.83884811401367
+- 76.99603271484375
+model.up_blocks.0.resnets.2.conv2:
+- 41.12609100341797
+- 56.607139587402344
+- 78.6689682006836
+model.up_blocks.0.resnets.2.conv_shortcut:
+- 35.90146255493164
+- 49.030662536621094
+- 72.68109893798828
+model.up_blocks.0.resnets.2.time_emb_proj:
+- 46.16020965576172
+- 61.46448516845703
+- 80.06816101074219
+model.up_blocks.0.upsamplers.0.conv:
+- 33.82720947265625
+- 47.1350212097168
+- 71.45458984375
+model.up_blocks.1.attentions.0.proj_in:
+- 38.781063079833984
+- 51.62876510620117
+- 75.26203155517578
+model.up_blocks.1.attentions.0.proj_out:
+- 45.266807556152344
+- 58.56336212158203
+- 79.75096130371094
+model.up_blocks.1.attentions.0.transformer_blocks.0.attn1.to_k:
+- 48.75682067871094
+- 62.59762954711914
+- 81.70877075195312
+model.up_blocks.1.attentions.0.transformer_blocks.0.attn1.to_out.0:
+- 40.992774963378906
+- 54.44561004638672
+- 77.19149780273438
+model.up_blocks.1.attentions.0.transformer_blocks.0.attn1.to_q:
+- 48.236061096191406
+- 62.255767822265625
+- 81.72103881835938
+model.up_blocks.1.attentions.0.transformer_blocks.0.attn1.to_v:
+- 41.682395935058594
+- 55.01421356201172
+- 77.70510864257812
+model.up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_k:
+- 62.98920440673828
+- 80.01824188232422
+- 83.77507019042969
+model.up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_out.0:
+- 63.49266052246094
+- 76.13670349121094
+- 83.65568542480469
+model.up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_q:
+- 66.19416809082031
+- 75.16349792480469
+- 83.71214294433594
+model.up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v:
+- 64.287353515625
+- 77.7698974609375
+- 83.71257019042969
+model.up_blocks.1.attentions.0.transformer_blocks.0.ff.net.0.proj:
+- 41.521148681640625
+- 55.166160583496094
+- 77.90351104736328
+model.up_blocks.1.attentions.0.transformer_blocks.0.ff.net.2:
+- 41.99322509765625
+- 55.128379821777344
+- 77.90396118164062
+model.up_blocks.1.attentions.0.transformer_blocks.1.attn1.to_k:
+- 48.914154052734375
+- 62.311100006103516
+- 81.6632080078125
+model.up_blocks.1.attentions.0.transformer_blocks.1.attn1.to_out.0:
+- 43.17180633544922
+- 56.483642578125
+- 78.83195495605469
+model.up_blocks.1.attentions.0.transformer_blocks.1.attn1.to_q:
+- 48.93408203125
+- 63.292259216308594
+- 81.83484649658203
+model.up_blocks.1.attentions.0.transformer_blocks.1.attn1.to_v:
+- 42.25002670288086
+- 55.06668472290039
+- 78.3204345703125
+model.up_blocks.1.attentions.0.transformer_blocks.1.attn2.to_k:
+- 64.17514038085938
+- 80.79833984375
+- 83.77082824707031
+model.up_blocks.1.attentions.0.transformer_blocks.1.attn2.to_out.0:
+- 64.00020599365234
+- 76.98593139648438
+- 83.7036361694336
+model.up_blocks.1.attentions.0.transformer_blocks.1.attn2.to_q:
+- 65.98081970214844
+- 77.93421936035156
+- 83.72840881347656
+model.up_blocks.1.attentions.0.transformer_blocks.1.attn2.to_v:
+- 63.57804489135742
+- 78.75273895263672
+- 83.72356414794922
+model.up_blocks.1.attentions.0.transformer_blocks.1.ff.net.0.proj:
+- 41.810997009277344
+- 55.63349914550781
+- 78.23194885253906
+model.up_blocks.1.attentions.0.transformer_blocks.1.ff.net.2:
+- 45.571041107177734
+- 59.11247253417969
+- 80.32666015625
+model.up_blocks.1.attentions.1.proj_in:
+- 41.083499908447266
+- 54.18232345581055
+- 77.07632446289062
+model.up_blocks.1.attentions.1.proj_out:
+- 45.18050765991211
+- 59.230777740478516
+- 80.05609893798828
+model.up_blocks.1.attentions.1.transformer_blocks.0.attn1.to_k:
+- 54.37366485595703
+- 67.92305755615234
+- 83.04398345947266
+model.up_blocks.1.attentions.1.transformer_blocks.0.attn1.to_out.0:
+- 45.37432861328125
+- 58.55200958251953
+- 79.98213195800781
+model.up_blocks.1.attentions.1.transformer_blocks.0.attn1.to_q:
+- 53.55519104003906
+- 67.48635864257812
+- 82.90263366699219
+model.up_blocks.1.attentions.1.transformer_blocks.0.attn1.to_v:
+- 44.787452697753906
+- 59.26741027832031
+- 80.24064636230469
+model.up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_k:
+- 62.10829162597656
+- 81.9676284790039
+- 83.78520965576172
+model.up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_out.0:
+- 60.843421936035156
+- 77.21061706542969
+- 83.65005493164062
+model.up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_q:
+- 58.809661865234375
+- 69.84973907470703
+- 83.65851593017578
+model.up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v:
+- 66.8621826171875
+- 80.67291259765625
+- 83.77116394042969
+model.up_blocks.1.attentions.1.transformer_blocks.0.ff.net.0.proj:
+- 43.61104965209961
+- 57.11582946777344
+- 79.23155975341797
+model.up_blocks.1.attentions.1.transformer_blocks.0.ff.net.2:
+- 44.839698791503906
+- 58.368194580078125
+- 79.82701873779297
+model.up_blocks.1.attentions.1.transformer_blocks.1.attn1.to_k:
+- 55.07066345214844
+- 69.47872161865234
+- 83.17171478271484
+model.up_blocks.1.attentions.1.transformer_blocks.1.attn1.to_out.0:
+- 47.74445724487305
+- 61.25143814086914
+- 81.11830139160156
+model.up_blocks.1.attentions.1.transformer_blocks.1.attn1.to_q:
+- 55.256134033203125
+- 69.15513610839844
+- 83.15234375
+model.up_blocks.1.attentions.1.transformer_blocks.1.attn1.to_v:
+- 46.71840286254883
+- 59.43409729003906
+- 80.0850601196289
+model.up_blocks.1.attentions.1.transformer_blocks.1.attn2.to_k:
+- 59.06968307495117
+- 80.60467529296875
+- 83.78410339355469
+model.up_blocks.1.attentions.1.transformer_blocks.1.attn2.to_out.0:
+- 64.95384216308594
+- 77.99116516113281
+- 83.70150756835938
+model.up_blocks.1.attentions.1.transformer_blocks.1.attn2.to_q:
+- 63.126007080078125
+- 77.14629364013672
+- 83.65996551513672
+model.up_blocks.1.attentions.1.transformer_blocks.1.attn2.to_v:
+- 63.232521057128906
+- 79.83235168457031
+- 83.724365234375
+model.up_blocks.1.attentions.1.transformer_blocks.1.ff.net.0.proj:
+- 43.600528717041016
+- 57.165409088134766
+- 79.18621063232422
+model.up_blocks.1.attentions.1.transformer_blocks.1.ff.net.2:
+- 48.17085266113281
+- 62.210086822509766
+- 81.31161499023438
+model.up_blocks.1.attentions.2.proj_in:
+- 40.746681213378906
+- 55.67420196533203
+- 77.716552734375
+model.up_blocks.1.attentions.2.proj_out:
+- 43.56916809082031
+- 57.238155364990234
+- 78.64926147460938
+model.up_blocks.1.attentions.2.transformer_blocks.0.attn1.to_k:
+- 62.74836730957031
+- 75.21028137207031
+- 83.60670471191406
+model.up_blocks.1.attentions.2.transformer_blocks.0.attn1.to_out.0:
+- 48.376487731933594
+- 62.03614044189453
+- 81.12602233886719
+model.up_blocks.1.attentions.2.transformer_blocks.0.attn1.to_q:
+- 60.60432434082031
+- 74.77131652832031
+- 83.54979705810547
+model.up_blocks.1.attentions.2.transformer_blocks.0.attn1.to_v:
+- 45.2701416015625
+- 61.69874954223633
+- 80.80724334716797
+model.up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_k:
+- 59.981170654296875
+- 80.85968780517578
+- 83.78018188476562
+model.up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_out.0:
+- 64.79674530029297
+- 77.32011413574219
+- 83.68456268310547
+model.up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_q:
+- 67.55364990234375
+- 78.56084442138672
+- 83.73243713378906
+model.up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v:
+- 66.84353637695312
+- 79.80718231201172
+- 83.71723175048828
+model.up_blocks.1.attentions.2.transformer_blocks.0.ff.net.0.proj:
+- 44.0643424987793
+- 58.78562927246094
+- 79.19817352294922
+model.up_blocks.1.attentions.2.transformer_blocks.0.ff.net.2:
+- 47.30465316772461
+- 61.276283264160156
+- 80.77131652832031
+model.up_blocks.1.attentions.2.transformer_blocks.1.attn1.to_k:
+- 62.686309814453125
+- 76.57252502441406
+- 83.64511108398438
+model.up_blocks.1.attentions.2.transformer_blocks.1.attn1.to_out.0:
+- 52.48094940185547
+- 65.8470687866211
+- 82.01524353027344
+model.up_blocks.1.attentions.2.transformer_blocks.1.attn1.to_q:
+- 61.68953323364258
+- 75.86422729492188
+- 83.55855560302734
+model.up_blocks.1.attentions.2.transformer_blocks.1.attn1.to_v:
+- 49.28233337402344
+- 62.27568817138672
+- 80.6498031616211
+model.up_blocks.1.attentions.2.transformer_blocks.1.attn2.to_k:
+- 61.15856170654297
+- 81.27268981933594
+- 83.76907348632812
+model.up_blocks.1.attentions.2.transformer_blocks.1.attn2.to_out.0:
+- 66.63998413085938
+- 78.1654281616211
+- 83.65972137451172
+model.up_blocks.1.attentions.2.transformer_blocks.1.attn2.to_q:
+- 67.57406616210938
+- 79.92390441894531
+- 83.70878601074219
+model.up_blocks.1.attentions.2.transformer_blocks.1.attn2.to_v:
+- 64.37940216064453
+- 77.66441345214844
+- 83.65164184570312
+model.up_blocks.1.attentions.2.transformer_blocks.1.ff.net.0.proj:
+- 46.685367584228516
+- 60.975032806396484
+- 80.6624755859375
+model.up_blocks.1.attentions.2.transformer_blocks.1.ff.net.2:
+- 49.354103088378906
+- 63.59228515625
+- 81.66452026367188
+model.up_blocks.1.resnets.0.conv1:
+- 37.059898376464844
+- 47.02943420410156
+- 70.6768569946289
+model.up_blocks.1.resnets.0.conv2:
+- 38.58055114746094
+- 50.75706481933594
+- 74.5186767578125
+model.up_blocks.1.resnets.0.conv_shortcut:
+- 37.50788497924805
+- 49.59548568725586
+- 73.0690689086914
+model.up_blocks.1.resnets.0.time_emb_proj:
+- 52.592838287353516
+- 68.12716674804688
+- 83.02007293701172
+model.up_blocks.1.resnets.1.conv1:
+- 39.76399230957031
+- 51.53972244262695
+- 74.74130249023438
+model.up_blocks.1.resnets.1.conv2:
+- 42.15203857421875
+- 52.814537048339844
+- 76.00179290771484
+model.up_blocks.1.resnets.1.conv_shortcut:
+- 39.098915100097656
+- 52.24214553833008
+- 75.66476440429688
+model.up_blocks.1.resnets.1.time_emb_proj:
+- 50.911865234375
+- 66.36700439453125
+- 82.29600524902344
+model.up_blocks.1.resnets.2.conv1:
+- 36.954673767089844
+- 55.14272689819336
+- 77.84599304199219
+model.up_blocks.1.resnets.2.conv2:
+- 42.77690887451172
+- 55.175540924072266
+- 77.32744598388672
+model.up_blocks.1.resnets.2.conv_shortcut:
+- 39.432708740234375
+- 53.057395935058594
+- 76.4620361328125
+model.up_blocks.1.resnets.2.time_emb_proj:
+- 46.99883270263672
+- 67.96774291992188
+- 82.63912963867188
+model.up_blocks.1.upsamplers.0.conv:
+- 34.074161529541016
+- 50.71796417236328
+- 74.70079040527344
+model.up_blocks.2.resnets.0.conv1:
+- 35.188812255859375
+- 45.10063934326172
+- 69.87977600097656
+model.up_blocks.2.resnets.0.conv2:
+- 38.70928192138672
+- 46.87018585205078
+- 69.44966125488281
+model.up_blocks.2.resnets.0.conv_shortcut:
+- 37.017547607421875
+- 48.343894958496094
+- 72.41796875
+model.up_blocks.2.resnets.0.time_emb_proj:
+- 53.53834915161133
+- 70.84413146972656
+- 82.47805786132812
+model.up_blocks.2.resnets.1.conv1:
+- 34.387474060058594
+- 43.20548629760742
+- 70.148193359375
+model.up_blocks.2.resnets.1.conv2:
+- 27.828590393066406
+- 44.90131378173828
+- 67.64000701904297
+model.up_blocks.2.resnets.1.conv_shortcut:
+- 33.71845245361328
+- 46.25530242919922
+- 70.08565521240234
+model.up_blocks.2.resnets.1.time_emb_proj:
+- 50.47867202758789
+- 63.6976432800293
+- 81.95030975341797
+model.up_blocks.2.resnets.2.conv1:
+- 29.444686889648438
+- 40.024044036865234
+- 62.52611541748047
+model.up_blocks.2.resnets.2.conv2:
+- 7.764101028442383
+- 34.801429748535156
+- 62.40995788574219
+model.up_blocks.2.resnets.2.conv_shortcut:
+- 30.973995208740234
+- 45.0316162109375
+- 69.96370697021484
+model.up_blocks.2.resnets.2.time_emb_proj:
+- 42.41691589355469
+- 60.3363151550293
+- 81.0821533203125

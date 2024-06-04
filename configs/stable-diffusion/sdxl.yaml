@@ -1,0 +1,40 @@
+
+model:
+    model_id: "stabilityai/stable-diffusion-xl-base-1.0"
+    cache_dir: "/share/public/diffusion_quant/huggingface/"
+    model_type: 'sdxl'  # ['sd','sdxl']
+conditional: True
+mixed_precision: [2,4,8]
+calib_data:
+    path: "/share/public/diffusion_quant/calib_dataset/bs32_t30_sdxl.pt"
+    n_steps: 30
+    batch_size: 8  # used for quant param initialization
+    n_samples: 32
+    scale_type: "fix"
+    scale_value: 7.5
+quant:
+    weight:
+        optimization:
+        quantizer:
+            n_bits: 4
+            channel_wise: True
+            scale_method: 'min_max'
+            round_mode: 'nearest'
+    activation:
+        optimization:
+        quantizer:
+            n_bits: 8
+            channel_wise: False
+            scale_method: 'min_max'
+            round_mode: 'nearest_ste'
+            running_stat: True
+            bos_aware: True
+            softmax: 
+    grad_checkpoint: False
+resume_with_w_quantized:
+    path: None
+
+
+
+
+

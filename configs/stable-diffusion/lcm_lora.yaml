@@ -1,0 +1,40 @@
+
+model:
+    model_id: "Lykon/dreamshaper-7"
+    cache_dir: "/share/public/diffusion_quant/huggingface/"
+    adapter_id: "latent-consistency/lcm-lora-sdv1-5"
+    model_type: 'sd'  # ['sd','sdxl']
+conditional: True
+calib_data:
+    path: "/share/public/diffusion_quant/calib_dataset/bs32_t4_g0_LCM.pt"
+    n_steps: 4
+    batch_size: 16  # used for quant param initialization
+    n_samples: 32
+    scale_type: "fix"
+    scale_value: 1.5
+quant:
+    weight:
+        optimization:
+        quantizer:
+            n_bits: 4
+            channel_wise: True
+            scale_method: 'min_max'
+            round_mode: 'nearest'
+    activation:
+        optimization:
+        quantizer:
+            n_bits: 8
+            channel_wise: False
+            scale_method: 'min_max'
+            round_mode: 'nearest_ste'
+            running_stat: True
+            bos_aware: True
+            softmax: 
+    grad_checkpoint: False
+resume_with_w_quantized:
+    path: None
+
+
+
+
+
