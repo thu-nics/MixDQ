@@ -586,21 +586,42 @@ class QuantAttnProcessor:
         # INFO: make cross_attn act_quant skip the 1st BoS token
         # only when cross_atttn, and to_k to_v need to be quantized
         # noted that when to_k have both w and a not quant, the input is placeholder, not actual prompt embedding
-        if is_cross_attn and ((attn.to_k.act_quant or attn.to_k.weight_quant) or (attn.to_v.act_quant or attn.to_v.weight_quant)):
-            # assert ((attn.to_v.act_quant or attn.to_v.weight_quant) or (attn.to_k.act_quant or attn.to_k.weight_quant))
-            self.split_first_token = True
+        # INFO: for lcm_lora, the attn.to_k is lora.Linear, the QuantLayer is the base_layer, and default_0,1
+        if is_cross_attn:
+            if (getattr(attn.to_k,'act_quant',False) or getattr(attn.to_k,'weight_quant',False)) or (getattr(attn.to_v,'act_quant',False) or getattr(attn.to_v,'weight_quant',False)):
+                # assert ((attn.to_v.act_quant or attn.to_v.weight_quant) or (attn.to_k.act_quant or attn.to_k.weight_quant))
+                self.split_first_token = True
+            if getattr(attn.to_k,'base_layer',False):
+                if getattr(attn.to_k.base_layer,'act_quant',False) or getattr(attn.to_k,'weight_quant',False):
+                    self.split_first_token = True
 
         # INFO: split the 1st BoS token, use FP16 
         # (could be resolved by implicitly saving them during actual inference)
         if self.split_first_token and self.enable_bos_aware:
-            # logger.info("split the first token!")
-            # encoder_hidden_statets = [BS, N_token , channels]
             key = attn.to_k(encoder_hidden_states[:,1:,:], *args)
-            key_first_token = attn.to_k.fwd_func(encoder_hidden_states[:,0,:].unsqueeze(1), attn.to_k.org_weight, attn.to_k.org_bias, **attn.to_k.fwd_kwargs)
-            key = torch.cat([key_first_token,key],dim=1)
-
             value = attn.to_v(encoder_hidden_states[:,1:,:], *args)
-            value_first_token = attn.to_v.fwd_func(encoder_hidden_states[:,0,:].unsqueeze(1), attn.to_v.org_weight, attn.to_v.org_bias, **attn.to_v.fwd_kwargs)
+
+            # INFO: conduct inference of the first token as FP
+            if getattr(attn.to_k,'base_layer',False):
+                # the lora layer, store the existing quant state
+                cur_weight_quant = attn.to_k.base_layer.weight_quant
+                cur_act_quant = attn.to_k.base_layer.act_quant
+                for block_ in [attn.to_k, attn.to_v]:
+                    for layer_ in [block_.base_layer, block_.lora_A, block_.lora_B]:
+                        layer_.weight_quant = False
+                        layer_.act_quant = False
+                key_first_token = attn.to_k(encoder_hidden_states[:,0,:].unsqueeze(1), *args)
+                value_first_token = attn.to_v(encoder_hidden_states[:,0,:].unsqueeze(1), *args)
+                for block_ in [attn.to_k, attn.to_v]:
+                    for layer_ in [block_.base_layer, block_.lora_A, block_.lora_B]:
+                        layer_.weight_quant = cur_weight_quant
+                        layer_.act_quant = cur_act_quant
+
+            else: # normal layer, simply call the FP fwd_func of QuantLayer
+                key_first_token = attn.to_k.fwd_func(encoder_hidden_states[:,0,:].unsqueeze(1), attn.to_k.org_weight, attn.to_k.org_bias, **attn.to_k.fwd_kwargs)
+                value_first_token = attn.to_v.fwd_func(encoder_hidden_states[:,0,:].unsqueeze(1), attn.to_v.org_weight, attn.to_v.org_bias, **attn.to_v.fwd_kwargs)
+
+            key = torch.cat([key_first_token,key],dim=1)
             value = torch.cat([value_first_token,value],dim=1)
         else:
             key = attn.to_k(encoder_hidden_states, *args)
