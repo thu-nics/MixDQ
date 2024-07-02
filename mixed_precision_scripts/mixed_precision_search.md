@@ -13,7 +13,7 @@
     - The "metric-decouple" is conducted during the sensitivity analysis. We split the layer types into 2 groups (the "quality-related", and the "content-related"), and measure their sensitivity respectively. 
     - The sensitivity analysis scheme: measure the difference of certain metric (SQNR for quality-related, SSIM for content-related) with **certain layer quantized**. 
 
-(3) **Integer Programming**: given the memory budget, it yields a family of mixed-precision configurations on the pareto frontier. 
+(3) **Integer Programming**: given the memory budget, **iteratively runnning such process** yield a family of mixed-precision configurations on the pareto frontier. 
 
 (4) Similar configurations are tested with image generation/metric ranking to determine the final ones. 
 
@@ -51,11 +51,12 @@ python ./mixed_precision_scripts/optimize/integer_programming.py --mixed_precisi
 python ./mixed_precision_scripts/optimize/integer_programming.py --mixed_precision_type act --sensitivity_ssim ./mixed_precision_scripts/sensitivity_log/sdxl_turbo/act/ssim/bs32_split_ssim_act/sensitivity.yaml --sensitivity_sqnr ./mixed_precision_scripts/sensitivity_log/sdxl_turbo/act/sqnr/bs32_split_sqnr_act/sensitivity.yaml --para_size_config ./mixed_precision_scripts/optimize/tensor_ratio/sdxl_turbo/act_ratio_config.yaml --mixed_precision_config <your path to save the mixde-precision configs for act> --target_bitwidth 7.7
 
 # Due to the presence of activations that maintain FP16, we set the average bit width of the remaining activations to 7.7 so that the average bit width of all activations is not greater than 8 bit
+# Noted that **not every configurations acquired this way is the good configurations**, you may need to run the programming process for multiple times with different seeds and "target_bitwidth" to generate a number of candidate configurations.
 ```
 
 #### Phase 4: Choose the optimal config
 
-* give a final config based on the metric value
+* Choose a final mixed-precision config from the candidates based on the metric value / visual quality
 
 ```shell
 # Infer with mixed-precision quantization configurations for weights, obtaining one image per configuration, and then assess each to select the optimal mixed-precision configuration.
