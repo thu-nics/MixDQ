@@ -2,7 +2,13 @@
 
 ### [📖 Paper](https://arxiv.org/abs/2405.17873) | [🖥️ Project Page](https://a-suozhang.xyz/mixdq.github.io/) | [🤗 Huggingface Pipeline](https://huggingface.co/nics-efc/MixDQ)
 
-This repo contains the official code of [MixDQ: Memory-Efficient Few-Step Text-to-Image Diffusion Models with Metric-Decoupled Mixed Precision Quantization](https://arxiv.org/abs/2405.17873)
+### News
+
+- [24/07] MixDQ is accepted by [ECCV2024](https://eccv2024.ecva.net/).
+- [24/05] We release the MixDQ hardware acceleration code (with INT8 GPU kernel) at [https://huggingface.co/nics-efc/MixDQ](https://huggingface.co/nics-efc/MixDQ).
+- [24/05] We release the MixDQ algorithm-level quantization simulation code at [https://github.com/A-suozhang/MixDQ](https://github.com/A-suozhang/MixDQ).
+
+This repo contains the official code of our ECCV2024 paper: [MixDQ: Memory-Efficient Few-Step Text-to-Image Diffusion Models with Metric-Decoupled Mixed Precision Quantization](https://arxiv.org/abs/2405.17873)
 
 We design MixDQ, a mixed-precision quantization framework that successfully tackles the challenging few-step text-to-image diffusion model quantization. With negligible visual quality degradation and content change, MixDQ could achieve W4A8, with equivalent 3.4x memory compression and 1.5x latency speedup.
 
