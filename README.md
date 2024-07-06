@@ -1,6 +1,19 @@
-# <img src="https://github.com/A-suozhang/MyPicBed/raw/master/img/20240604133532.png" alt="drawing" width="30"/> MixDQ
+<div align="center">
+<h1> <img src="https://github.com/A-suozhang/MyPicBed/raw/master/img/20240604133532.png" alt="drawing" width="30"/> MixDQ: Memory-Efficient Few-Step Text-to-Image Diffusion Models with Metric-Decoupled Mixed Precision Quantization</h1>  
+<a href="https://eccv2024.ecva.net/">
+  <img alt="pub" src="https://img.shields.io/badge/ECCV-2024-%236477b8?style=fla">
+</a>
+<a href="https://arxiv.org/abs/2405.17873">
+  <img alt="arxiv" src="https://img.shields.io/badge/arXiv-%3C2405.17873%3E-%23a72f20.svg">
+</a>
+<a href="https://a-suozhang.xyz/mixdq.github.io/">
+    <img alt="Project Page" src="https://img.shields.io/badge/Project_Page-blue?style=flat&logo=googlechrome&logoColor=white">
+</a>
+<a href="https://huggingface.co/nics-efc/MixDQ">
+    <img alt="Huggingface" src="https://img.shields.io/badge/Huggingface_Pipeline-%23f8d51e?style=flat&logo=huggingface&logoColor=black">
+</a>
+</div>
 
-### [📖 Paper](https://arxiv.org/abs/2405.17873) | [🖥️ Project Page](https://a-suozhang.xyz/mixdq.github.io/) | [🤗 Huggingface Pipeline](https://huggingface.co/nics-efc/MixDQ)
 
 ### News
 
