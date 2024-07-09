@@ -143,7 +143,7 @@ def main():
 
     # adapter_id = getattr(config.model, "adapter_id", None)
     # adapter_cache_dir = getattr(config.model, "adapter_cache_dir", None)
-    model, pipe = get_model(config.model, fp16=opt.fp16, return_pipe=True)
+    model, pipe = get_model(config.model, fp16=opt.fp16, return_pipe=True, convert_model_for_quant=True)
     num_timesteps = config.calib_data.n_steps
 
     assert(config.conditional)

@@ -162,7 +162,7 @@ class QuantResnetBlock2D(BaseQuantBlock):
 
         if self.conv_shortcut is not None:
             input_tensor = (
-                self.conv_shortcut(input_tensor, split=split) if not USE_PEFT_BACKEND else self.conv_shortcut(input_tensor)
+                self.conv_shortcut(input_tensor, split=split)
             )
 
         output_tensor = (input_tensor + hidden_states) / self.output_scale_factor

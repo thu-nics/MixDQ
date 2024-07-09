@@ -117,7 +117,7 @@ CUDA_VISIBLE_DEVICES=$1 python scripts/quant_txt2img.py \
 
 Using the example prompt, the generated W8A8 with mixed precision should be like:
 
-![](https://github.com/A-suozhang/MyPicBed/raw/master/img/20240604195806.png)
+![](https://github.com/A-suozhang/MyPicBed/raw/master/img/20240709230245.png)
 
 ## 3. Mixed Precision Search
 

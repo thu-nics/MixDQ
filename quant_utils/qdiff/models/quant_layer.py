@@ -66,7 +66,7 @@ class QuantLayer(nn.Module):
         if split != 0 and self.split != 0:
             assert(split == self.split)
         elif split != 0:
-            logger.info(f"split at {split}!")
+            # logger.info(f"split at {split}!")
             self.split = split
             self.set_split()
 

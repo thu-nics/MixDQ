@@ -454,7 +454,6 @@ def get_model(model_config, fp16=False, return_pipe=False, device='cuda', **kwar
 
     if convert_model_for_quant:
         convert_model_split(model)
-        convert_transformer_storable(model)
 
     model.cuda()
     model.eval()

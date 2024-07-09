@@ -125,7 +125,6 @@ class BaseQuantizer(nn.Module):
             x_quant = torch.clamp(x_int, -self.n_levels - 1, self.n_levels)
         else:
             x_quant = torch.clamp(x_int, 0, self.n_levels - 1)
-        x_quant_ = self.rounding(x)
         x_dequant = (x_quant - self.zero_point) * self.delta
         return x_dequant
 

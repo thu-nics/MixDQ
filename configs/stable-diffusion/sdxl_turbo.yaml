@@ -17,6 +17,7 @@ quant:
         optimization:
         quantizer:
             n_bits: 8
+            sym: True
             channel_wise: True
             scale_method: 'min_max'
             round_mode: 'nearest'

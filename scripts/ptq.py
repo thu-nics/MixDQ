@@ -71,7 +71,7 @@ def main():
     logger = logging.getLogger(__name__)
 
     config = OmegaConf.load(f"{opt.config}")
-    model = get_model(config.model, fp16=False, return_pipe=False)
+    model = get_model(config.model, fp16=False, return_pipe=False, convert_model_for_quant=True)
     assert(config.conditional)
 
     wq_params = config.quant.weight.quantizer
