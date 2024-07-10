@@ -72,7 +72,7 @@ We provide the shell script `main.sh` for the whole quantization process. The qu
 
 ### 1.1 Generate Calibration Data
 
-Run the `main_calib_data.sh $GPU_ID` to generate the FP activation calibration data. The output path of calib data is specified in the quant `config.yaml`. the `--save_image_path` saves the FP generated reference images. 
+Run the `main_calib_data.sh $GPU_ID` to generate the FP activation calibration data. The output path of calib data is specified in the quant `config.yaml`. the `--save_image_path` saves the FP generated reference images. (We provide the pre-generated calib data at [Google Drive](https://drive.google.com/file/d/1RMj2IDukDwRD3XY9eHgVkCiJC8fDxRwz/view?usp=sharing), you could replace it with `"/share/public/diffusion_quant/calib_dataset/bs1024_t1_sdxl.pt"` in `mixdq_open_source/MixDQ/configs/stable-diffusion/sdxl_turbo.yaml`. Noted that the calib_data in the google drive contains 1024 samples, so you may increase the `n_samples` in the `sdxl_turbo.yaml` up to 1024.)
 
 ```
 CUDA_VISIBLE_DEVICES=$1 python scripts/gen_calib_data.py --config ./configs/stable-diffusion/$config_name --save_image_path ./debug_imgs
@@ -80,7 +80,7 @@ CUDA_VISIBLE_DEVICES=$1 python scripts/gen_calib_data.py --config ./configs/stab
 
 ### 1.2 Post Training Quantization (PTQ) Process
  
-Run the `main_ptq.sh $LOG_NAME $GPU_ID` to conduct PTQ to determine quant parameters, the quant parameters are saved as `ckpt.pth` in the log path.
+Run the `main_ptq.sh $LOG_NAME $GPU_ID` to conduct PTQ to determine quant parameters, the quant parameters are saved as `ckpt.pth` in the log path. (We provide the `ckpt.pth` quant_params checkpoint for sdxl_turbo at [Google Drive](https://drive.google.com/file/d/1m2wS2gpgVtA6HhX-zUnlVWMtVD-et2bK/view?usp=sharing), you may put it under the `./logs/$log_name` folder. It contains the quant_parmas for 2/4/8 bit, so you could use it with differnt mixed-precision configurations. )
 
 ```
 CUDA_VISIBLE_DEVICES=$2 python scripts/ptq.py --config ./configs/stable-diffusion/${cfg_name} --outdir ./logs/$1 --seed 42

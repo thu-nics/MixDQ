@@ -223,7 +223,7 @@ def main():
     if use_act_mp:
         # protect the extremely sensitive layer
         acts_protected = torch.load(opt.act_protect)
-        qnn.set_layer_quant(model=qnn, module_name_list=acts_protected, quant_level='per_layer', weight_quant=True, act_quant=False)
+        qnn.set_layer_quant(model=qnn, module_name_list=acts_protected, quant_level='per_layer', weight_quant=False, act_quant=False)
 
         with open(opt.config_weight_mp, 'r') as file:
             bit_config = yaml.safe_load(file)
