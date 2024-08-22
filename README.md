@@ -17,8 +17,9 @@
 
 ### News
 
+- [24/08] We release the CUDA kernels for MixDQ hardware acceleration, please check out [./kernels/readme.md](./kernels/readme.md)
 - [24/07] MixDQ is accepted by [ECCV2024](https://eccv2024.ecva.net/).
-- [24/05] We release the MixDQ hardware acceleration code (with INT8 GPU kernel) at [https://huggingface.co/nics-efc/MixDQ](https://huggingface.co/nics-efc/MixDQ).
+- [24/05] We release the MixDQ hardware acceleration pipline (with INT8 GPU kernel) at [https://huggingface.co/nics-efc/MixDQ](https://huggingface.co/nics-efc/MixDQ).
 - [24/05] We release the MixDQ algorithm-level quantization simulation code at [https://github.com/A-suozhang/MixDQ](https://github.com/A-suozhang/MixDQ).
 
 This repo contains the official code of our ECCV2024 paper: [MixDQ: Memory-Efficient Few-Step Text-to-Image Diffusion Models with Metric-Decoupled Mixed Precision Quantization](https://arxiv.org/abs/2405.17873)
