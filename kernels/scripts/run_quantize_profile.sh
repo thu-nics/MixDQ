@@ -13,7 +13,7 @@ nsys profile -s none -c cudaProfilerApi  --force-overwrite true -o ./nsys_logs/a
 	--quantize \
 	--w_config ./cfgs/weight/uniform_8.yaml \
 	--a_config ./cfgs/act/act_8.00.yaml \
-	--ckpt ./quant_para_wsym_fp16.pth \
+	--ckpt ./output/new_ckpt.pth \
 	--profile \
 	--profile_tool nsys \
 	--bos \

@@ -432,6 +432,8 @@ class CustomizedStableDiffusionXLPipeline(StableDiffusionXLPipeline):
                 text_emb = prompt_embeds
             if 'added_conds' in return_args:
                 added_conds = {"text_embeds": add_text_embeds, "time_ids": add_time_ids}
+            if 'output' in return_args:
+                outputs = {}
 
         added_conds = {"text_embeds": [], "time_ids": []}  # initial empty added_cond_kwargs list
         with self.progress_bar(total=num_inference_steps) as progress_bar:
@@ -464,6 +466,10 @@ class CustomizedStableDiffusionXLPipeline(StableDiffusionXLPipeline):
                     added_cond_kwargs=added_cond_kwargs,
                     return_dict=False,
                 )[0]
+
+                if return_args is not None:
+                    if 'output' in return_args:
+                        outputs[t.item()] = noise_pred
 
                 # perform guidance
                 if self.do_classifier_free_guidance:
@@ -541,6 +547,8 @@ class CustomizedStableDiffusionXLPipeline(StableDiffusionXLPipeline):
                 d_return_args['text_emb'] = text_emb
             if 'added_conds' in return_args:
                 d_return_args['added_conds'] = added_conds
+            if 'output' in return_args:
+                d_return_args['output'] = outputs
 
         return_obj = StableDiffusionXLPipelineOutput(images=image, return_args=d_return_args)
         if not return_dict:

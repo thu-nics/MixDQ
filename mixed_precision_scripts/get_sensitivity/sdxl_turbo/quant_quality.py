@@ -17,14 +17,12 @@ from qdiff.models.quant_block import BaseQuantBlock
 from qdiff.models.quant_layer import QuantLayer
 from qdiff.models.quant_model import QuantModel
 from qdiff.quantizer.base_quantizer import BaseQuantizer, WeightQuantizer, ActQuantizer, lp_loss
-from qdiff.utils import get_model, load_model_from_config, load_quant_params
+from qdiff.utils import get_model, load_quant_params
 
 from diffusers.models.unet_2d_blocks import UpBlock2D, AttnUpBlock2D, CrossAttnUpBlock2D, DownBlock2D, AttnDownBlock2D, CrossAttnDownBlock2D, UNetMidBlock2DCrossAttn
 from diffusers import StableDiffusionXLPipeline
 
-
 logger = logging.getLogger(__name__)
-
 
 def LossFunction(pred, tgt, grad=None):
         """
@@ -52,7 +50,7 @@ def set_quant_state(model=None, weight_quant: bool = False, act_quant: bool = Fa
             m.set_quant_state(weight_quant, act_quant)
 
 
-def layer_set_quant(model=None, quantized_model: QuantModel=None, weight_quant=True, act_quant=False, input_list=None, output_fp32_list=None, config_sqnr={}, cur_bit=0, prefix=""):
+def get_layer_sqnr(model=None, quantized_model: QuantModel=None, weight_quant=True, act_quant=False, saved_in_out=None, config_sqnr={}, cur_bit=0, prefix=""):
     '''
     compute the error of the output of the model with a certain layer quantized
     '''
@@ -68,22 +66,22 @@ def layer_set_quant(model=None, quantized_model: QuantModel=None, weight_quant=T
 
                 mse_mean = 0
                 sqnr_mean = 0
-                for idx, input_data in enumerate(input_list):
-                    with torch.no_grad():
-                        output_quant = quantized_model(input_data['xs'].cuda(), input_data['ts'].cuda(), input_data['text_embs'].cuda(), added_cond_kwargs=input_data['added_cond_kwargs'])[0]
-                    mse, sqnr = LossFunction(output_quant, output_fp32_list[idx])
-                    mse_mean = mse_mean + mse
-                    sqnr_mean = sqnr_mean + sqnr
-                # 对于不同的输入取平均
-                mse_mean = mse_mean / (idx+1)
-                sqnr_mean = sqnr_mean / (idx+1)
+                with torch.no_grad():
+                    output_quant = quantized_model(
+                        saved_in_out['xs'].cuda(), 
+                        saved_in_out['ts'].cuda(), 
+                        saved_in_out['text_embs'].cuda(), 
+                        added_cond_kwargs=saved_in_out['added_cond_kwargs'])[0]
+                mse_mean, sqnr_mean = LossFunction(output_quant, saved_in_out['outputs'])
                 logger.info('MSE:{:.5f}x10^(-5),\tSQNR:{:.5f}dB \n'.format(float(mse_mean*1e5), float(sqnr_mean)))
-                config_sqnr[full_name][int(math.log2(cur_bit)-1)] = float(sqnr_mean)
+
+                if not full_name in config_sqnr.keys():
+                    config_sqnr[full_name] = []
+                config_sqnr[full_name].append(float(sqnr_mean))
 
                 quantized_model.set_quant_state(False, False)
         else:
-            layer_set_quant(model=module, quantized_model=quantized_model, weight_quant=weight_quant, act_quant=act_quant, input_list=input_list, output_fp32_list=output_fp32_list, config_sqnr=config_sqnr, cur_bit=cur_bit, prefix=full_name+".")
-
+            get_layer_sqnr(model=module, quantized_model=quantized_model, weight_quant=weight_quant, act_quant=act_quant, saved_in_out=saved_in_out, config_sqnr=config_sqnr, cur_bit=cur_bit, prefix=full_name+".")
 
 logger = logging.getLogger(__name__)
 
@@ -107,19 +105,23 @@ def main():
         default=42,
         help="the seed (for reproducible sampling)",
     )
+    # parser.add_argument(
+    #     "--model_id", type=str, required=True,
+    #     default="stabilityai/sdxl-turbo",
+    #     help="the model type: sdxl or sdxl-turbo"
+    # )
     parser.add_argument(
-        "--model_id", type=str, required=True,
-        default="stabilityai/sdxl-turbo",
-        help="the model type: sdxl or sdxl-turbo"
+        "--calib_data_path", type=str,
+        help="read the input and output data from file"
     )
-    parser.add_argument(
-        "--unet_input_path", type=str, required=True,
-        help="the input of the unet"
-    )
-    parser.add_argument(
-        "--unet_output_path", type=str, required=True,
-        help="the output of the unet with the weight of fp32"
-    )
+    # parser.add_argument(
+    #     "--unet_input_path", type=str, required=True,
+    #     help="the input of the unet"
+    # )
+    # parser.add_argument(
+    #     "--unet_output_path", type=str, required=True,
+    #     help="the output of the unet with the weight of fp32"
+    # )
     parser.add_argument(
         "--is_fp16", action="store_true", 
         help="if to use fp16 weight to inference"
@@ -163,11 +165,11 @@ def main():
         "--skip_quant_weight",
         action='store_true',
     )
-    parser.add_argument(
-        "--template_config",
-        type=str,
-        help="a template to init a sensitivity config",
-    )
+    # parser.add_argument(
+    #     "--template_config",
+    #     type=str,
+    #     help="a template to init a sensitivity config",
+    # )
 
     opt = parser.parse_args()
 
@@ -195,11 +197,12 @@ def main():
         opt.ckpt = os.path.join(opt.base_path,'ckpt.pth')
     if opt.image_folder is None:
         opt.image_folder = os.path.join(opt.base_path,'generated_images')
-    config = OmegaConf.load(f"{opt.config}")
-    # model = load_model_from_config(config, ckpt=None, cfg_type='diffusers')
-    model, pipe = get_model(model_id=opt.model_id, cache_dir="/share/public/diffusion_quant/huggingface/hub", quant_inference = True, is_fp16 = False, return_pipe=True, model_type=config.model.model_type)
 
+    config = OmegaConf.load(f"{opt.config}")
+    model, pipe = get_model(config.model, fp16=False, return_pipe=True, convert_model_for_quant=True)
     assert(config.conditional)
+    if opt.calib_data_path is None:
+        opt.calib_data_path = config.calib_data.path
 
     wq_params = config.quant.weight.quantizer
     aq_params = config.quant.activation.quantizer
@@ -232,51 +235,47 @@ def main():
     qnn.set_quant_init_done('weight')
     qnn.set_quant_init_done('activation')
 
-    # TODO: load quant params
     load_quant_params(qnn, opt.ckpt)
     model = qnn
     qnn.cuda()
 
 
-    ######################################################################
     # compute the sensitivity
-    logger.info("quant_error_unet_output!")
+    logger.info("quant_error_unet_output...")
 
-    # use min-max based quantized model
-    input_list = []
-    input_list = torch.load(opt.unet_input_path)
-
-    for input_data in input_list:
-        input_data['added_cond_kwargs']['time_ids'] = input_data['added_cond_kwargs']['time_ids'].cuda()
-        input_data['added_cond_kwargs']['text_embeds'] = input_data['added_cond_kwargs']['text_embeds'].cuda()
+    # load the input and output
+    saved_in_out = torch.load(opt.calib_data_path)
+    for k_ in saved_in_out:
+        if k_ == 'prompts':
+            continue
+        elif k_ != 'added_cond_kwargs':
+            saved_in_out[k_] = saved_in_out[k_].squeeze(0)  # squeeze the first dim
+        else:
+            for k_2 in saved_in_out[k_]:
+                saved_in_out[k_][k_2] = saved_in_out[k_][k_2].squeeze(0)
 
     # disable the quant mode
     model.set_quant_state(False, False)
 
-    output_fp32_list = torch.load(opt.unet_output_path)
-    # output_fp32_list = []
     logger.info("Verify the correctness")
     mse_mean = 0
     sqnr_mean = 0
-    for idx, input_data in enumerate(input_list):
-        # inference with the full precision model, get the output
-        with torch.no_grad():
-            output_val = qnn(input_data['xs'].cuda(), input_data['ts'].cuda(), input_data['text_embs'].cuda(), added_cond_kwargs = input_data['added_cond_kwargs'])[0]
-        mse, sqnr = LossFunction(output_val, output_fp32_list[idx])
-        # output_fp32_list.append(output_val)
-        mse_mean = mse_mean + mse
-        sqnr_mean = sqnr_mean + sqnr
-    # 对于不同的输入取平均
-    mse_mean = mse_mean / (idx+1)
-    sqnr_mean = sqnr_mean / (idx+1)
+    with torch.no_grad():
+        output_val = qnn(
+            saved_in_out['xs'].cuda(), 
+            saved_in_out['ts'].cuda(), 
+            saved_in_out['text_embs'].cuda(), 
+            added_cond_kwargs = saved_in_out['added_cond_kwargs'])[0]
+        mse_mean, sqnr_mean = LossFunction(output_val, saved_in_out['outputs'])
+
     logger.info('MSE:{:.5f}x10^(-5),\tSQNR:{:.5f}dB \n'.format(float(mse_mean*1e5), float(sqnr_mean)))
 
 
     ##################################################################################
     if opt.sensitivity_type == 'weight':
         config_sqnr = {}
-        with open(opt.template_config, 'r') as file:
-            config_sqnr = yaml.safe_load(file)
+        # with open(opt.template_config, 'r') as file:
+        #     config_sqnr = yaml.safe_load(file)
         
         for bit_width in [2,4,8]:
             logger.info(f"\nthe bit width is {bit_width}!\n")
@@ -285,12 +284,12 @@ def main():
             logger.info("################# Start to quantize the layers one by one #################")
             qnn.set_quant_state(False, False)
 
-            layer_set_quant(model=qnn, quantized_model=qnn, weight_quant=True, act_quant=False, input_list=input_list, output_fp32_list=output_fp32_list, config_sqnr=config_sqnr, cur_bit=bit_width)
+            get_layer_sqnr(model=qnn, quantized_model=qnn, weight_quant=True, act_quant=False, saved_in_out=saved_in_out, config_sqnr=config_sqnr, cur_bit=bit_width)
     
     elif opt.sensitivity_type == 'act':
         config_sqnr = {}
-        with open(opt.template_config, 'r') as file:
-            config_sqnr = yaml.safe_load(file)
+        # with open(opt.template_config, 'r') as file:
+        #     config_sqnr = yaml.safe_load(file)
         
         for bit_width in [2,4,8]:
             logger.info(f"\nthe bit width is {bit_width}!\n")
@@ -299,8 +298,9 @@ def main():
             logger.info("################# Start to quantize the layers one by one #################")
             qnn.set_quant_state(False, False)
 
-            layer_set_quant(model=qnn, quantized_model=qnn, weight_quant=False, act_quant=True, input_list=input_list, output_fp32_list=output_fp32_list, config_sqnr=config_sqnr, cur_bit=bit_width)
-    save_path_config = opt.base_path+'/sensitivity.yaml'
+            get_layer_sqnr(model=qnn, quantized_model=qnn, weight_quant=False, act_quant=True, saved_in_out=saved_in_out, config_sqnr=config_sqnr, cur_bit=bit_width)
+
+    save_path_config = opt.base_path+'/sensitivity_{}_quality.yaml'.format(opt.sensitivity_type)
     with open(save_path_config, 'w') as file:
         yaml.dump(config_sqnr, file)
 
