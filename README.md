@@ -17,8 +17,9 @@
 
 ### News
 
+- [24/08] We release the CUDA kernels for MixDQ hardware acceleration, please check out [./kernels/README.md](./kernels/README.md)
 - [24/07] MixDQ is accepted by [ECCV2024](https://eccv2024.ecva.net/).
-- [24/05] We release the MixDQ hardware acceleration code (with INT8 GPU kernel) at [https://huggingface.co/nics-efc/MixDQ](https://huggingface.co/nics-efc/MixDQ).
+- [24/05] We release the MixDQ hardware acceleration pipline (with INT8 GPU kernel) at [https://huggingface.co/nics-efc/MixDQ](https://huggingface.co/nics-efc/MixDQ).
 - [24/05] We release the MixDQ algorithm-level quantization simulation code at [https://github.com/A-suozhang/MixDQ](https://github.com/A-suozhang/MixDQ).
 
 This repo contains the official code of our ECCV2024 paper: [MixDQ: Memory-Efficient Few-Step Text-to-Image Diffusion Models with Metric-Decoupled Mixed Precision Quantization](https://arxiv.org/abs/2405.17873)
@@ -27,11 +28,32 @@ We design MixDQ, a mixed-precision quantization framework that successfully tack
 
 ![](https://github.com/A-suozhang/MyPicBed/raw/master/img/20240604133828.png)
 
-🤗 Open-Source Huggingface Pipeline 🤗: We implement efficient INT8 GPU kernel to achieve actual GPU acceleration (1.45x) and memory savings (2x) for W8A8. The pipeline is released at: [https://huggingface.co/nics-efc/MixDQ](https://huggingface.co/nics-efc/MixDQ). It could be easily implemented with just a few lines of code. 
+- 🤗 Open-Source Huggingface Pipeline 🤗: We implement efficient INT8 GPU kernel to achieve actual GPU acceleration (1.45x) and memory savings (2x) for W8A8. The pipeline is released at: [https://huggingface.co/nics-efc/MixDQ](https://huggingface.co/nics-efc/MixDQ). It could be easily implemented with just a few lines of code. 
 
 ![](https://github.com/A-suozhang/MyPicBed/raw/master/img/20240604133923.png)
 
-For more information, please refer to our [Project Page: https://a-suozhang.xyz/mixdq.github.io/](https://a-suozhang.xyz/mixdq.github.io/)
+
+
+- <a href="https://huggingface.co/nics-efc/MixDQ"><img alt="Huggingface" src="https://img.shields.io/badge/CUDA--Kernel?style=flat&logo=NVIDIA"></a> Open-source CUDA Kernels: We provide open-sourced CUDA kernels for practical hardware savings in `./kernels`, for more details for the CUDA development, please refer to the [`./kernels/README.md`](./kernels/README.md)
+  - Memory Savings
+
+    | Memory Cost  (MB) | Static (Weight) | Dynamic (Act) | Peak Memory | 
+    |-------------------|---------------|-----------------|-------------|
+    | FP16 version      | 4998          | 240.88          |    5239     |
+    | Quantized version | 2575          | 55.77           |    2631     | 
+    | Savings           | 1.94x         | 4.36x           |    1.99x    |
+  
+  - Latency Speedup
+
+    | UNet Latency (ms) | RTX3090 | RT4080 | A100 | 
+    |-------------------|---------------|-----------------|---------|
+    | FP16 version      | 43.6          | 36.1            |    30.7     |
+    | Quantized version | 34.2          | 24.9            |    28.8     |
+    | Speedup           | 1.27x         | 1.45x           |    1.07x    |
+
+
+
+- For more information, please refer to our [Project Page: https://a-suozhang.xyz/mixdq.github.io/](https://a-suozhang.xyz/mixdq.github.io/)
 
 # Usage
 

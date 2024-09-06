@@ -25,57 +25,23 @@ python scripts/ptq.py --config ./configs/stable-diffusion/sdxl-turbo.yaml --outd
 
 #### Phase 2: Get Sensitivity
 
-```shell
-
-# get sensitivity of weight
-# sensitivity based on ssim
-python mixed_precision_scripts/get_sensitivity/sdxl_turbo/quant_content.py --config ./configs/stable-diffusion/sdxl-turbo.yaml --base_path <outdir> --ckpt <quantized_ckpt_path> --sensitivity_type weight --template_config utils_files/bs32_ssim_weight.yaml --reference_img ./utils_files/reference_imgs_fp16
-# sensitivity based on sqnr
-python mixed_precision_scripts/get_sensitivity/sdxl_turbo/quant_quality.py --config ./configs/stable-diffusion/sdxl-turbo.yaml --base_path <outdir> --ckpt <quantized_ckpt_path> --unet_input_path ./utils_files/bs32_input_sdxl_turbo.pt  --unet_output_path ./utils_files/bs32_output_sdxl_turbo.pt --model_id stabilityai/sdxl-turbo --sensitivity_type weight --template_config utils_files/bs32_sqnr_weight.yaml
-
-# get sensitivity of act
-# sensitivity based on ssim
-python mixed_precision_scripts/get_sensitivity/sdxl_turbo/quant_content.py --config ./configs/stable-diffusion/sdxl-turbo.yaml --base_path <outdir> --ckpt <quantized_ckpt_path> --sensitivity_type act --template_config utils_files/bs32_ssim_weight.yaml --reference_img ./utils_files/reference_imgs_fp16
-# sensitivity based on sqnr
-python mixed_precision_scripts/get_sensitivity/sdxl_turbo/quant_quality.py --config ./configs/stable-diffusion/sdxl-turbo.yaml --base_path <outdir> --ckpt <quantized_ckpt_path> --unet_input_path ./utils_files/bs32_input_sdxl_turbo.pt  --unet_output_path ./utils_files/bs32_output_sdxl_turbo.pt --model_id stabilityai/sdxl-turbo --sensitivity_type act --template_config utils_files/bs32_sqnr_weight.yaml
-```
-
+run `./get_sensitivity.sh` to get the sensitivity for weight/act of the content/quality related layers. The sensitivity is generated in `${OUTDIR}/sensitivity_{w/a}_{content/quality}.yaml`
 
 #### Phase 3: Integer Programming
 
-```shell
-# mixed precision for weight
-python ./mixed_precision_scripts/optimize/integer_programming.py --mixed_precision_type weight --sensitivity_ssim ./mixed_precision_scripts/sensitivity_log/sdxl_turbo/weight/ssim/bs32_split_ssim_weight/sensitivity.yaml --sensitivity_sqnr ./mixed_precision_scripts/sensitivity_log/sdxl_turbo/weight/sqnr/bs32_split_sqnr_weight/sensitivity.yaml --para_size_config ./mixed_precision_scripts/optimize/tensor_ratio/sdxl_turbo/weight_ratio_config.yaml --mixed_precision_config <your path to save the mixde-precision configs for weihgt> --target_bitwidth 5
+install the utility package for integer programing `pip install ortools`. 
 
-# mixed precision for act
-python ./mixed_precision_scripts/optimize/integer_programming.py --mixed_precision_type act --sensitivity_ssim ./mixed_precision_scripts/sensitivity_log/sdxl_turbo/act/ssim/bs32_split_ssim_act/sensitivity.yaml --sensitivity_sqnr ./mixed_precision_scripts/sensitivity_log/sdxl_turbo/act/sqnr/bs32_split_sqnr_act/sensitivity.yaml --para_size_config ./mixed_precision_scripts/optimize/tensor_ratio/sdxl_turbo/act_ratio_config.yaml --mixed_precision_config <your path to save the mixde-precision configs for act> --target_bitwidth 7.7
+run `./integer_program.sh` to assign the mixed-precision bit-width. given the averaged bitwidth for W and A. This process will generate a number of candidate bitwidths placed under `${OUTDIR}/{weight/act}_{avg_bitwidth}_{K}`. The `K` is a weighting coefficient that controls the bit-width assigned for the 2 layer groups (quality/content related layers). We scan through multiple `K` values to determine proper value for `K`. 
 
-# Due to the presence of activations that maintain FP16, we set the average bit width of the remaining activations to 7.7 so that the average bit width of all activations is not greater than 8 bit
-# Noted that **not every configurations acquired this way is the good configurations**, you may need to run the programming process for multiple times with different seeds and "target_bitwidth" to generate a number of candidate configurations.
-```
+- Noted that **not every configurations acquired this way is the good configurations**, you may need to run the programming process for multiple times with different seeds and "target_bitwidth" to generate a number of candidate configurations.
 
 #### Phase 4: Choose the optimal config
 
-* Choose a final mixed-precision config from the candidates based on the metric value / visual quality
+- Choose a final mixed-precision config from the candidates based on the metric value / visual quality. Run `./mixed_precision_infer.sh`, firstly, this will generate one single image for each weight configuration under the folder `opt.image_folder`. Then, the one with the least MSE error with FP generated image is chosen as the best config (placed under the `$OUTDIR/final_weight_mp.yaml`). Then, similar process is conducted for choosing the activation config **with the current optimal weight config**, and will generate `$OUTDIR/final_{weight/act}_mp.yaml`
 
-```shell
-# Infer with mixed-precision quantization configurations for weights, obtaining one image per configuration, and then assess each to select the optimal mixed-precision configuration.
-python mixed_precision_scripts/quant_inference_mp.py --base_path <outdir> --config ./configs/stable-diffusion/sdxl-turbo.yaml --ckpt <quantized_ckpt_path> --use_weight_mp --dir_weight_mp <your path to save the mixde-precision configs for weight> --skip_quant_act
-
-# Infer with mixed-precision quantization configurations for activations, obtaining one image per configuration, and then assess each to select the optimal mixed-precision configuration.
-# we should choose a mixed-precision config for weight in advance.
-python mixed_precision_scripts/quant_inference_mp.py --base_path <outdir> --config ./configs/stable-diffusion/sdxl-turbo.yaml --ckpt <quantized_ckpt_path> --config_weight_mp <The final mixed precision config for weight> --use_act_mp --dir_act_mp <your path to save the mixde-precision configs for act>
-
-
-# NOTE: the final config will be saved at the "base_path" dir
-```
 
 #### Inference with mixed precision quantized model
 
-```shell
-# inference with quantized weight (W5A16/32)
-python scripts/quant_txt2img.py --base_path <outdir> --config configs/stable-diffusion/sdxl-turbo.yaml --ckpt <quantized_ckpt_path> --use_weight_mp --config_weight_mp ./mixed_precision_scripts/mixed_percision_config/sdxl_turbo/final_config/weight/weight_5.02.yaml --skip_quant_act
+- Infer with the generated mixed precision plan, run `./final_mixed_precision_infer.sh`, the images will be generated under the `${OUTDIR}/generated_images`
 
-# inference with quantized weight and act (W5A8)
-python scripts/quant_txt2img.py --base_path <outdir> --config configs/stable-diffusion/sdxl-turbo.yaml --ckpt <quantized_ckpt_path> --use_act_mp --config_weight_mp ./mixed_precision_scripts/mixed_percision_config/sdxl_turbo/final_config/weight/weight_5.02.yaml --config_act_mp ./mixed_precision_scripts/mixed_percision_config/sdxl_turbo/final_config/act/act_7.77.yaml --act_protect ./mixed_precision_scripts/mixed_percision_config/sdxl_turbo/final_config/act/act_sensitivie_a8_1%.pt
-```
+

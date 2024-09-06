@@ -81,19 +81,21 @@ def main():
         # run sampling
         # NOTE: LatentConsistencyModelPipeline.__call__ should be modified to support guidance_scale_embedding and return_trajectory input.
         #      StableDiffusionPipelineOutput should also be modified to support trajectory output.
-        return_args = ['trajectory','text_emb']
+        return_args = ['trajectory','text_emb','output']
         if config.model.model_type == 'sdxl':
             return_args.append('added_conds')
             cur_save_data["added_cond_kwargs"] = {}
         output = pipe(prompt=prompt, guidance_scale=config.calib_data.scale_value,
                     num_inference_steps=config.calib_data.n_steps, return_args=return_args)
         traj = output.return_args['trajectory']
+        outputs = output.return_args['output']
         added_conds = output.return_args['added_conds']
         input_cond_emb = output.return_args['text_emb']
 
         # collect results
         cur_save_data["ts"] = torch.tensor(list(traj.keys())).unsqueeze(1).repeat(1, bs)
         cur_save_data["xs"] = torch.stack(list(traj.values()), dim=0)
+        cur_save_data["outputs"] = torch.stack(list(outputs.values()), dim=0)
         cur_save_data["text_embs"] = input_cond_emb.unsqueeze(0).repeat(len(traj), 1, 1, 1)
         for k_ in added_conds.keys():
             cur_save_data["added_cond_kwargs"][k_] = torch.stack(added_conds[k_], dim=0)

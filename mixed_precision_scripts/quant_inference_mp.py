@@ -18,7 +18,7 @@ from qdiff.models.quant_block import BaseQuantBlock
 from qdiff.models.quant_layer import QuantLayer
 from qdiff.models.quant_model import QuantModel
 from qdiff.quantizer.base_quantizer import BaseQuantizer, WeightQuantizer, ActQuantizer
-from qdiff.utils import get_model, load_model_from_config, load_quant_params
+from qdiff.utils import get_model, load_quant_params
 
 from PIL import Image
 from tqdm.auto import tqdm
@@ -103,6 +103,11 @@ def main():
         type=str,
         help="path for generated images",
     )
+    parser.add_argument(
+        "--reference_img",
+        type=str,
+        help="path for reference FP16 generated images",
+    )
 
     parser.add_argument(
         "--seed",
@@ -155,8 +160,7 @@ def main():
     if opt.image_folder is None:
         opt.image_folder = os.path.join(opt.base_path,'generated_images')
     config = OmegaConf.load(f"{opt.config}")
-    # model = load_model_from_config(config, ckpt=None, cfg_type='diffusers')
-    model, pipe = get_model(cache_dir=config.model.cache_dir, quant_inference = True, is_fp16 = False, return_pipe=True, model_type=config.model.model_type)
+    model, pipe = get_model(config.model, fp16=False, return_pipe=True, convert_model_for_quant=True)
 
     assert(config.conditional)
 
@@ -166,6 +170,9 @@ def main():
     # use_act_quant = False if aq_params is False else True
     use_weight_quant = not opt.skip_quant_weight
     use_act_quant = not opt.skip_quant_act
+
+    wq_params['mixed_precision'] = config.mixed_precision
+    aq_params['mixed_precision'] = config.mixed_precision
 
     qnn = QuantModel(
         model=model, \
@@ -191,7 +198,6 @@ def main():
     qnn.set_quant_init_done('weight')
     qnn.set_quant_init_done('activation')
 
-    # TODO: load quant params
     load_quant_params(qnn, opt.ckpt)
 
 
@@ -199,32 +205,33 @@ def main():
     prompt_list, image_path = prepare_coco_text_and_image(json_file=json_file)
     prompts = prompt_list[0:1]
 
-
     mse_min = float("inf")
     final_config = {}
-    #################################################### weight only ####################################################
+    # ------------ weight only ------------------
     if opt.use_weight_mp:
         for filename, config in load_yaml_files(opt.dir_weight_mp):
             bit_config = config
-            logger.info("############################# load the bitwidth config for weight! \nInference with weight quantized only! #############################")
-            logger.info(f"############################### config: {filename} ###############################")
+            logger.info("-------- load the bitwidth config for weight! \nInference with weight quantized only! ------")
+            logger.info(f"-------- config: {filename} -------")
 
             qnn.load_bitwidth_config(model=qnn, bit_config=bit_config, bit_type='weight')
 
             if opt.use_weight_mp and not opt.use_act_mp:
                 # opt.image_folder = os.path.join(opt.base_path,f'images_{filename}')
-                # os.makedirs(opt.image_folder, exist_ok=True)
+                os.makedirs(opt.image_folder, exist_ok=True)
                 # prompts = ["portrait photo of muscular bearded guy in a worn mech suit, light bokeh, intricate, steel metal, elegant, sharp focus, soft lighting, vibrant colors"]
-                sample_fid(prompts, qnn, pipe, opt, batch_size=1, quant_inference = True, is_fp16 = False)
-                original_img = './utils_files'
-                mse_tmp = MSE_pixel(opt.image_folder, original_img)
+                sample_fid(prompts, qnn, pipe, opt, batch_size=1, quant_inference = True, is_fp16 = False, save_path=filename)
+                mse_tmp = MSE_pixel(
+                        f"{opt.image_folder}/{filename}.png",
+                        os.path.join(opt.reference_img,'0.png')
+                    )
                 if mse_tmp < mse_min:
                     mse_min = mse_tmp
                     final_config = bit_config
                     final_name = filename
-        write_yaml_file(os.path.join(opt.base_path, final_name), final_config)
+        write_yaml_file(os.path.join(opt.base_path, "final_weight_mp.yaml"), final_config)
         qnn.load_bitwidth_config(model=qnn, bit_config=final_config, bit_type='weight')
-        sample_fid(prompts, qnn, pipe, opt, batch_size=1, quant_inference = True, is_fp16 = False)
+        sample_fid(prompts, qnn, pipe, opt, batch_size=1, quant_inference = True, is_fp16 = False, save_path='final')
 
 
     #################################################### wxa8 only ####################################################
@@ -247,18 +254,20 @@ def main():
             qnn.load_bitwidth_config(model=qnn, bit_config=bit_config, bit_type='act')
 
             # opt.image_folder = os.path.join(opt.base_path,f'images_{filename}')
-            # os.makedirs(opt.image_folder, exist_ok=True)
+            os.makedirs(opt.image_folder, exist_ok=True)
             # prompts = ["portrait photo of muscular bearded guy in a worn mech suit, light bokeh, intricate, steel metal, elegant, sharp focus, soft lighting, vibrant colors"]
-            sample_fid(prompts, qnn, pipe, opt, batch_size=1, quant_inference = True, is_fp16 = False)
-            original_img = './utils_files'
-            mse_tmp = MSE_pixel(opt.image_folder, original_img)
+            sample_fid(prompts, qnn, pipe, opt, batch_size=1, quant_inference = True, is_fp16 = False, save_path=filename)
+            mse_tmp = MSE_pixel(
+                    f"{opt.image_folder}/{filename}.png",
+                    os.path.join(opt.reference_img,'0.png')
+                )
             if mse_tmp < mse_min:
                 mse_min = mse_tmp
                 final_config = bit_config
                 final_name = filename
-        write_yaml_file(os.path.join(opt.base_path, final_name), final_config)
+        write_yaml_file(os.path.join(opt.base_path, "final_act_mp.yaml"), final_config)
         qnn.load_bitwidth_config(model=qnn, bit_config=final_config, bit_type='act')
-        sample_fid(prompts, qnn, pipe, opt, batch_size=1, quant_inference = True, is_fp16 = False)
+        sample_fid(prompts, qnn, pipe, opt, batch_size=1, quant_inference = True, is_fp16 = False, save_path='final')
 
 
 def prepare_coco_text_and_image(json_file):
@@ -291,7 +300,7 @@ def inference_sdxl_turbo(prompt, pipe):
     return image
 
 
-def sample_fid(prompt, unet, pipe, opt, batch_size, quant_inference = False, is_fp16 = False):
+def sample_fid(prompt, unet, pipe, opt, batch_size, quant_inference = False, is_fp16 = False, save_path=None):
 
     torch_device = "cuda" if torch.cuda.is_available() else "cpu"
     generator = torch.manual_seed(opt.seed)  # Seed generator to create the initial latent noise
@@ -319,7 +328,7 @@ def sample_fid(prompt, unet, pipe, opt, batch_size, quant_inference = False, is_
                 image = inference_sdxl_turbo(prompt[batch_size*i:batch_size*(i+1)], pipe)
 
             for j in range(batch_size):
-                image[j].save(f"{opt.image_folder}/{img_id}.png")
+                image[j].save(f"{opt.image_folder}/{save_path}.png")
                 img_id += 1
 
 
@@ -332,15 +341,10 @@ def load_yaml_files(directory):
 
 
 def MSE_pixel(img_path1, img_path2, bs=1):
-    mse_mean = 0
-    for i in range(bs):
-        img1 = (cv2.imread(img_path1+f'/{i}.png'))
-        img2 = (cv2.imread(img_path2+f'/{i}.png'))
-        mse = np.mean((img1-img2)**2)
-        mse_mean = mse_mean + mse
-    mse_mean = mse_mean / bs
-    return mse_mean
-
+    img1 = (cv2.imread(img_path1))
+    img2 = (cv2.imread(img_path2))
+    mse = np.mean((img1-img2)**2)
+    return mse
 
 def write_yaml_file(file_path, data):
     with open(file_path, 'w') as file:

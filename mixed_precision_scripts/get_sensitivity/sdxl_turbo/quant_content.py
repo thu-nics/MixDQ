@@ -17,12 +17,11 @@ import json
 import sys
 import yaml
 
-
 from qdiff.models.quant_block import BaseQuantBlock
 from qdiff.models.quant_layer import QuantLayer
 from qdiff.models.quant_model import QuantModel
 from qdiff.quantizer.base_quantizer import BaseQuantizer, WeightQuantizer, ActQuantizer
-from qdiff.utils import get_model, load_model_from_config, load_quant_params
+from qdiff.utils import get_model, load_quant_params
 
 from PIL import Image
 from tqdm.auto import tqdm
@@ -35,31 +34,31 @@ logger = logging.getLogger(__name__)
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument(
-        "--prompt",
-        type=str,
-        nargs="?",
-        default="a painting of a virus monster playing guitar",
-        help="the prompt to render"
-    )
+    # parser.add_argument(
+    #     "--prompt",
+    #     type=str,
+    #     nargs="?",
+    #     default="a painting of a virus monster playing guitar",
+    #     help="the prompt to render"
+    # )
     parser.add_argument(
         "--base_path",
         type=str,
         nargs="?",
         help="dir to load the ckpt",
     )
-    parser.add_argument(
-        "--n_samples",
-        type=int,
-        default=3,
-        help="how many samples to produce for each given prompt. A.k.a. batch size",
-    )
-    parser.add_argument(
-        "--scale",
-        type=float,
-        default=7.5,
-        help="unconditional guidance scale: eps = eps(x, empty) + scale * (eps(x, cond) - eps(x, empty))",
-    )
+    # parser.add_argument(
+    #     "--n_samples",
+    #     type=int,
+    #     default=3,
+    #     help="how many samples to produce for each given prompt. A.k.a. batch size",
+    # )
+    # parser.add_argument(
+    #     "--scale",
+    #     type=float,
+    #     default=7.5,
+    #     help="unconditional guidance scale: eps = eps(x, empty) + scale * (eps(x, cond) - eps(x, empty))",
+    # )
     parser.add_argument(
         "--config",
         type=str,
@@ -80,7 +79,7 @@ def main():
     parser.add_argument(
         "--sensitivity_type",
         type=str,
-        help="path for generated images",
+        help="weight/act",
     )
     parser.add_argument(
         "--seed",
@@ -96,15 +95,15 @@ def main():
         "--skip_quant_weight",
         action='store_true',
     )
-    parser.add_argument(
-        "--template_config", required=True,
-        type=str,
-        help="a template to init a sensitivity config",
-    )
+    # parser.add_argument(
+    #     "--template_config", required=True,
+    #     type=str,
+    #     help="a template to init a sensitivity config",
+    # )
     parser.add_argument(
         "--reference_img", required=True,
         type=str,
-        help="the path to your reference imgs",
+        help="the path to store reference imgs",
     )
 
     opt = parser.parse_args()
@@ -135,7 +134,7 @@ def main():
         opt.image_folder = os.path.join(opt.base_path,'generated_images')
     config = OmegaConf.load(f"{opt.config}")
     # model = load_model_from_config(config, ckpt=None, cfg_type='diffusers')
-    model, pipe = get_model(model_id="stabilityai/sdxl-turbo", cache_dir="/share/public/diffusion_quant/huggingface/hub", quant_inference = True, is_fp16 = False, return_pipe=True, model_type=config.model.model_type)
+    model, pipe = get_model(config.model, fp16=False, return_pipe=True, convert_model_for_quant=True)
 
     assert(config.conditional)
 
@@ -164,51 +163,54 @@ def main():
     # calib_data_placeholder = (torch.randn(1, 4, 64, 64), torch.randint(0, 1000, (1,)), torch.randn(1, 77, 2048), calib_added_cond_kwargs)  # assign empty calib_data placeholder
     with torch.no_grad():
         _ = qnn(torch.randn(1, 4, 64, 64).cuda(), torch.randint(0, 1000, (1,)).cuda(), torch.randn(1, 77, 2048).cuda(), added_cond_kwargs=calib_added_cond)
+    
+    json_file = "/share/public/diffusion_quant/coco/coco/annotations/captions_val2014.json"
+    prompt_list, image_path = prepare_coco_text_and_image(json_file=json_file)
+    prompts = prompt_list[0:32] # use the first 32 prompts for coco
+
+    # generate the reference FP16 images
+    os.makedirs(opt.reference_img, exist_ok=True)
+    with torch.no_grad():
+        sample_fid(prompts, qnn, pipe, opt, batch_size=32, quant_inference = False, is_fp16= True)
 
     # set the init flag True, otherwise will recalculate params
     qnn.set_quant_state(use_weight_quant, use_act_quant) # enable weight quantization, disable act quantization
     qnn.set_quant_init_done('weight')
     qnn.set_quant_init_done('activation')
-
-    # TODO: load quant params
     load_quant_params(qnn, opt.ckpt)
-    
-    json_file = "/share/public/diffusion_quant/coco/coco/annotations/captions_val2014.json"
-    prompt_list, image_path = prepare_coco_text_and_image(json_file=json_file)
-    prompts = prompt_list[0:32]
 
+    # content_layers = []
+    # for n,m in model.named_modules():
+    #     if 'attn2' in n or 'ff' in n:
+    #         if isinstance(m, QuantLayer):
+    #             content_layers.append('model.'+n)
+    # config_ssim_layer = {}
+    # for layer_name in content_layers:
+    #     config_ssim_layer[layer_name] = []
 
-    ##############################################################################################################
+    config_ssim_layer = {}  # leave empty
+
     if opt.sensitivity_type == 'act':
-        config_ssim_layer = {}
-
-        with open(opt.template_config, 'r') as file:
-            config_ssim_layer = yaml.safe_load(file)
 
         for bit_width in [2,4,8]:
-            logger.info(f"\nthe bit width is {bit_width}!\n")
+            logger.info(f"\nthe bit width is {bit_width} \n")
             qnn.set_layer_bit(model=qnn, n_bit=bit_width, quant_level='reset', bit_type='act')
 
             qnn.set_quant_state(False, False)
-            logger.info("########## start to compute the SSIM related to quant_layers ##########")
+            logger.info("------- start to compute the SSIM related to quant_layers -----")
             SSIM_Layer(model=qnn, qnn=qnn, pipe=pipe, opt=opt, prompts=prompts, weight_quant=False, act_quant=True, weight_only=False, config_ssim_layer=config_ssim_layer, cur_bit=bit_width)
 
 
     if opt.sensitivity_type == 'weight':
-        config_ssim_layer = {}
-        with open(opt.template_config, 'r') as file:
-            config_ssim_layer = yaml.safe_load(file)
-
         for bit_width in [2,4,8]:
             logger.info(f"\nthe bit width is {bit_width}!\n")
             qnn.set_layer_bit(model=qnn, n_bit=bit_width, quant_level='reset', bit_type='weight')
-
             qnn.set_quant_state(False, False)
-            logger.info("########## start to compute the SSIM related to quant_layers ##########")
+            logger.info("-------- start to compute the SSIM related to quant_layers -------")
             SSIM_Layer(model=qnn, qnn=qnn, pipe=pipe, opt=opt, prompts=prompts, weight_quant=True, act_quant=False, weight_only=True, config_ssim_layer=config_ssim_layer, cur_bit=bit_width)
 
 
-    save_path_config = opt.base_path+'/sensitivity.yaml'
+    save_path_config = opt.base_path+'/sensitivity_{}_content.yaml'.format(opt.sensitivity_type)
     with open(save_path_config, 'w') as file:
         yaml.dump(config_ssim_layer, file)
 
@@ -233,7 +235,10 @@ def SSIM_Layer(model, qnn, pipe, opt, prompts, weight_quant=True, act_quant=Fals
 
                 logger.info('SSIM:{:.5f}\n'.format(float(ssim)))
 
-                config_ssim_layer[full_name][int(math.log2(cur_bit)-1)] = float(ssim)
+                # config_ssim_layer[full_name][int(math.log2(cur_bit)-1)] = float(ssim)
+                if not full_name in config_ssim_layer.keys():
+                    config_ssim_layer[full_name] = []
+                config_ssim_layer[full_name].append(float(ssim))
 
                 if weight_only:
                     if not progressivly:
@@ -303,7 +308,11 @@ def sample_fid(prompt, unet, pipe, opt, batch_size, quant_inference = False, is_
                 image = inference_sdxl_turbo(prompt[batch_size*i:batch_size*(i+1)], pipe)
 
             for j in range(batch_size):
-                image[j].save(f"{opt.image_folder}/{img_id}.png")
+                if quant_inference:
+                    path_ = opt.image_folder
+                else: # generate for FP16 reference
+                    path_ = opt.reference_img
+                image[j].save(f"{path_}/{img_id}.png")
                 img_id += 1
 
 
@@ -312,9 +321,9 @@ def SSIM(img_path1, img_path2, bs=32):
     for i in range(bs):
         img1 = (cv2.imread(img_path1+f'/{i}.png'))
         img2 = (cv2.imread(img_path2+f'/{i}.png'))
-        # 计算SSIM
         ssim_index = metrics.structural_similarity(img1, img2, multichannel=True, channel_axis=2, win_size=511)
         ssim_index_mean = ssim_index_mean + ssim_index
+        # print(ssim_index)
     ssim_index_mean = ssim_index_mean / bs
     return ssim_index_mean
 

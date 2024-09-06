@@ -1,0 +1,6 @@
+diffusers==0.26.3
+peft==0.9.0
+torch==2.2.1
+torchvision==0.17.1
+transformers==4.38.2
+pytorch_lightning==2.2.3

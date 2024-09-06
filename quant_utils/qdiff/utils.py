@@ -51,7 +51,7 @@ def save_in_out_data(model: QuantModel, layer: Union[QuantLayer, BaseQuantBlock]
     torch.cuda.empty_cache()
 
     assert config.conditional # only support conditional generation
-    assert not split_save_attn, "not checked for now"
+    # assert not split_save_attn, "not checked for now"
 
     if model_type == 'sdxl':
         calib_xs, calib_ts, calib_conds, calib_added_conds = calib_data
@@ -59,39 +59,42 @@ def save_in_out_data(model: QuantModel, layer: Union[QuantLayer, BaseQuantBlock]
         calib_added_time_ids = calib_added_conds["time_ids"]
     elif model_type == 'sd':
         calib_xs, calib_ts, calib_conds = calib_data
+    elif model_type == 'pixart':
+        calib_xs, calib_ts, calib_conds, calib_masks = calib_data
+
     else:
         raise NotImplementedError
     calib_added_conds = {}
 
     # INO: whether split attention map to avoid OOM
-    if split_save_attn:
-        logger.info("Checking if attention is too large...")
+    # if split_save_attn:
+        # logger.info("Checking if attention is too large...")
 
-        if model_type == 'sdxl':
-            calib_added_conds["text_embeds"] = calib_added_text_embeds[:1].to(device)
-            calib_added_conds["time_ids"] = calib_added_time_ids[:1].to(device)
-        test_inp, test_out = get_in_out(
-            calib_xs[:1].to(device),
-            calib_ts[:1].to(device),
-            calib_conds[:1].to(device),
-            calib_added_conds
-        )
+        # if model_type == 'sdxl':
+            # calib_added_conds["text_embeds"] = calib_added_text_embeds[:1].to(device)
+            # calib_added_conds["time_ids"] = calib_added_time_ids[:1].to(device)
+        # test_inp, test_out = get_in_out(
+            # calib_xs[:1].to(device),
+            # calib_ts[:1].to(device),
+            # calib_conds[:1].to(device),
+            # calib_added_conds
+        # )
 
-        split_save_attn = False
-        if (isinstance(test_inp, tuple) and test_inp[0].shape[1] == test_inp[0].shape[2]):
-            logger.info(f"test_inp shape: {test_inp[0].shape}, {test_inp[1].shape}")
-            if test_inp[0].shape[1] == 4096:
-                split_save_attn = True
-        if test_out.shape[1] == test_out.shape[2]:
-            logger.info(f"test_out shape: {test_out.shape}")
-            if test_out.shape[1] == 4096:
-                split_save_attn = True
+        # split_save_attn = False
+        # if (isinstance(test_inp, tuple) and test_inp[0].shape[1] == test_inp[0].shape[2]):
+            # logger.info(f"test_inp shape: {test_inp[0].shape}, {test_inp[1].shape}")
+            # if test_inp[0].shape[1] == 4096:
+                # split_save_attn = True
+        # if test_out.shape[1] == test_out.shape[2]:
+            # logger.info(f"test_out shape: {test_out.shape}")
+            # if test_out.shape[1] == 4096:
+                # split_save_attn = True
 
-        if split_save_attn:
-            logger.info("Confirmed. Trading speed for memory when caching attn matrix calibration data")
-            inds = np.random.choice(calib_xs.size(0), calib_xs.size(0) // 2, replace=False)
-        else:
-            logger.info("Nope. Using normal caching method")
+        # if split_save_attn:
+            # logger.info("Confirmed. Trading speed for memory when caching attn matrix calibration data")
+            # inds = np.random.choice(calib_xs.size(0), calib_xs.size(0) // 2, replace=False)
+        # else:
+            # logger.info("Nope. Using normal caching method")
 
     batch_size = config.calib_data.batch_size
     iters = int(calib_xs.size(0) / batch_size)
@@ -107,11 +110,17 @@ def save_in_out_data(model: QuantModel, layer: Union[QuantLayer, BaseQuantBlock]
         else:
             calib_added_conds = {}
 
+        if model_type == 'pixart':
+            calib_masks = calib_masks[i * batch_size:(i + 1) * batch_size].to(device)
+        else:
+            calib_masks = None
+
         cur_inp, cur_out = get_in_out(
             calib_xs[i * batch_size:(i + 1) * batch_size].to(device),
             calib_ts[i * batch_size:(i + 1) * batch_size].to(device),
             calib_conds[i * batch_size:(i + 1) * batch_size].to(device),
-            calib_added_conds
+            calib_added_conds,
+            calib_masks[i * batch_size:(i + 1) * batch_size].to(device),
         )
         if isinstance(cur_inp, tuple):
             if(len(cur_inp)>2):
@@ -259,7 +268,7 @@ class GetLayerInOut:
         self.model_type = model_type
         self.data_saver = DataSaverHook(store_input=True, store_output=True, stop_forward=True)
 
-    def __call__(self, x, timesteps, context=None, added_conds=None):
+    def __call__(self, x, timesteps, context=None, added_conds=None, mask=None):
 
         self.model.eval()  # temporarily use eval mode
         # INFO: save the quant_state, since it will be written by (False, False)
