@@ -1,0 +1,309 @@
+{
+  "last_node_id": 15,
+  "last_link_id": 30,
+  "nodes": [
+    {
+      "id": 6,
+      "type": "PreviewImage",
+      "pos": {
+        "0": 813,
+        "1": 190
+      },
+      "size": {
+        "0": 210,
+        "1": 246
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 26
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 2,
+      "type": "PreviewImage",
+      "pos": {
+        "0": 501,
+        "1": 191
+      },
+      "size": {
+        "0": 210,
+        "1": 246
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 25
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 14,
+      "type": "ShowText|pysssss",
+      "pos": {
+        "0": 502,
+        "1": 531
+      },
+      "size": {
+        "0": 336.3792419433594,
+        "1": 131.71994018554688
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 28,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "Static (weights) memory usage: 0 G 0 M 0 0 K 0 Bytes (0.0 MBs)\nDynamic (acts) memory usage:1 G 78 M 962 217 K 962 Bytes (1102.2128314971924 MBs)\nPeak (total) memory usage:1 G 78 M 962 217 K 962 Bytes (1102.2128314971924 MBs)\nLatency Time:0.39480574056506157"
+      ]
+    },
+    {
+      "id": 13,
+      "type": "ShowText|pysssss",
+      "pos": {
+        "0": 492,
+        "1": -17
+      },
+      "size": {
+        "0": 343.0458679199219,
+        "1": 145.05325317382812
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 27,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "Static (weights) memory usage: 0 G 0 M 0 325 K 0 Bytes (0.3173828125 MBs)\nDynamic (acts) memory usage:1 G 78 M 962 217 K 962 Bytes (1102.2128314971924 MBs)\nPeak (total) memory usage:1 G 78 M 962 542 K 962 Bytes (1102.5302143096924 MBs)\nLatency Time:0.4188109841197729"
+      ]
+    },
+    {
+      "id": 10,
+      "type": "LoadPipe",
+      "pos": {
+        "0": -450,
+        "1": 249
+      },
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "PIPELINE",
+          "type": "PIPELINE",
+          "links": [
+            23
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "PIPELINE",
+          "type": "PIPELINE",
+          "links": [
+            30
+          ],
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadPipe"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 15,
+      "type": "MixdqIntegral",
+      "pos": {
+        "0": -49,
+        "1": 145
+      },
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pipeline1",
+          "type": "PIPELINE",
+          "link": 23
+        },
+        {
+          "name": "pipeline2",
+          "type": "PIPELINE",
+          "link": 30
+        }
+      ],
+      "outputs": [
+        {
+          "name": "quant_image",
+          "type": "IMAGE",
+          "links": [
+            25
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "nonquant_image",
+          "type": "IMAGE",
+          "links": [
+            26
+          ],
+          "slot_index": 1
+        },
+        {
+          "name": "quant_efficiency",
+          "type": "STRING",
+          "links": [
+            27
+          ],
+          "slot_index": 2
+        },
+        {
+          "name": "nonquant_efficiency",
+          "type": "STRING",
+          "links": [
+            28
+          ],
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MixdqIntegral"
+      },
+      "widgets_values": [
+        "a vanilla and chocolate mixing icecream cone, ice background",
+        "W8-bit(Recommended)",
+        "W8-bit(Recommended)"
+      ]
+    }
+  ],
+  "links": [
+    [
+      23,
+      10,
+      0,
+      15,
+      0,
+      "PIPELINE"
+    ],
+    [
+      25,
+      15,
+      0,
+      2,
+      0,
+      "IMAGE"
+    ],
+    [
+      26,
+      15,
+      1,
+      6,
+      0,
+      "IMAGE"
+    ],
+    [
+      27,
+      15,
+      2,
+      13,
+      0,
+      "STRING"
+    ],
+    [
+      28,
+      15,
+      3,
+      14,
+      0,
+      "STRING"
+    ],
+    [
+      30,
+      10,
+      1,
+      15,
+      1,
+      "PIPELINE"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.9090909090909091,
+      "offset": [
+        432.61528648159515,
+        167.84443700743054
+      ]
+    }
+  },
+  "version": 0.4
+}
