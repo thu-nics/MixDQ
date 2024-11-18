@@ -1,40 +1,13 @@
 {
-  "last_node_id": 15,
+  "last_node_id": 17,
   "last_link_id": 30,
   "nodes": [
-    {
-      "id": 6,
-      "type": "PreviewImage",
-      "pos": {
-        "0": 813,
-        "1": 190
-      },
-      "size": {
-        "0": 210,
-        "1": 246
-      },
-      "flags": {},
-      "order": 3,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 26
-        }
-      ],
-      "outputs": [],
-      "properties": {
-        "Node name for S&R": "PreviewImage"
-      },
-      "widgets_values": []
-    },
     {
       "id": 2,
       "type": "PreviewImage",
       "pos": {
-        "0": 501,
-        "1": 191
+        "0": 494,
+        "1": 127
       },
       "size": {
         "0": 210,
@@ -57,91 +30,38 @@
       "widgets_values": []
     },
     {
-      "id": 14,
-      "type": "ShowText|pysssss",
+      "id": 6,
+      "type": "PreviewImage",
       "pos": {
-        "0": 502,
-        "1": 531
+        "0": 713,
+        "1": 128
       },
       "size": {
-        "0": 336.3792419433594,
-        "1": 131.71994018554688
+        "0": 210,
+        "1": 246
       },
       "flags": {},
-      "order": 5,
+      "order": 3,
       "mode": 0,
       "inputs": [
         {
-          "name": "text",
-          "type": "STRING",
-          "link": 28,
-          "widget": {
-            "name": "text"
-          }
+          "name": "images",
+          "type": "IMAGE",
+          "link": 26
         }
       ],
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": null,
-          "shape": 6
-        }
-      ],
+      "outputs": [],
       "properties": {
-        "Node name for S&R": "ShowText|pysssss"
+        "Node name for S&R": "PreviewImage"
       },
-      "widgets_values": [
-        "",
-        "Static (weights) memory usage: 0 G 0 M 0 0 K 0 Bytes (0.0 MBs)\nDynamic (acts) memory usage:1 G 78 M 962 217 K 962 Bytes (1102.2128314971924 MBs)\nPeak (total) memory usage:1 G 78 M 962 217 K 962 Bytes (1102.2128314971924 MBs)\nLatency Time:0.39480574056506157"
-      ]
-    },
-    {
-      "id": 13,
-      "type": "ShowText|pysssss",
-      "pos": {
-        "0": 492,
-        "1": -17
-      },
-      "size": {
-        "0": 343.0458679199219,
-        "1": 145.05325317382812
-      },
-      "flags": {},
-      "order": 4,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "text",
-          "type": "STRING",
-          "link": 27,
-          "widget": {
-            "name": "text"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": null,
-          "shape": 6
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "ShowText|pysssss"
-      },
-      "widgets_values": [
-        "",
-        "Static (weights) memory usage: 0 G 0 M 0 325 K 0 Bytes (0.3173828125 MBs)\nDynamic (acts) memory usage:1 G 78 M 962 217 K 962 Bytes (1102.2128314971924 MBs)\nPeak (total) memory usage:1 G 78 M 962 542 K 962 Bytes (1102.5302143096924 MBs)\nLatency Time:0.4188109841197729"
-      ]
+      "widgets_values": []
     },
     {
       "id": 10,
       "type": "LoadPipe",
       "pos": {
-        "0": -450,
-        "1": 249
+        "0": -355,
+        "1": 148
       },
       "size": {
         "0": 210,
@@ -238,9 +158,89 @@
         "Node name for S&R": "MixdqIntegral"
       },
       "widgets_values": [
-        "a vanilla and chocolate mixing icecream cone, ice background",
+        "A cinematic shot of a baby racoon wearing an intricate italian priest robe.",
         "W8-bit(Recommended)",
         "W8-bit(Recommended)"
+      ]
+    },
+    {
+      "id": 13,
+      "type": "ShowText|pysssss",
+      "pos": {
+        "0": 461,
+        "1": -77
+      },
+      "size": {
+        "0": 343.0458679199219,
+        "1": 145.05325317382812
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 27,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "Static (weights) memory usage: 4 G 142 M 162 271 K 162 Bytes (4238.264802932739 MBs)\nDynamic (acts) memory usage:1 G 86 M 966 345 K 966 Bytes (1110.3378353118896 MBs)\nPeak (total) memory usage:5 G 228 M 104 617 K 104 Bytes (5348.602638244629 MBs)\nLatency Time:0.40134410187602043"
+      ]
+    },
+    {
+      "id": 14,
+      "type": "ShowText|pysssss",
+      "pos": {
+        "0": 451,
+        "1": 430
+      },
+      "size": {
+        "0": 336.3792419433594,
+        "1": 131.71994018554688
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 28,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "Static (weights) memory usage: 6 G 472 M 166 291 K 166 Bytes (6616.2843379974365 MBs)\nDynamic (acts) memory usage:1 G 78 M 966 217 K 966 Bytes (1102.2128353118896 MBs)\nPeak (total) memory usage:7 G 550 M 108 509 K 108 Bytes (7718.497173309326 MBs)\nLatency Time:0.38287898898124695"
       ]
     }
   ],
@@ -298,10 +298,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.9090909090909091,
+      "scale": 0.9090909090909095,
       "offset": [
-        432.61528648159515,
-        167.84443700743054
+        516.5423687380401,
+        202.46288130743028
       ]
     }
   },
