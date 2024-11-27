@@ -17,6 +17,7 @@
 
 ### News
 
+- [24/11] We release the [ComfyUI](https://github.com/comfyanonymous/ComfyUI) plugin for MixDQ, check it out at [./ComfyUI/README.md](./ComfyUI/README.md) for usage!
 - [24/08] We release the CUDA kernels for MixDQ hardware acceleration, please check out [./kernels/README.md](./kernels/README.md)
 - [24/07] MixDQ is accepted by [ECCV2024](https://eccv2024.ecva.net/).
 - [24/05] We release the MixDQ hardware acceleration pipline (with INT8 GPU kernel) at [https://huggingface.co/nics-efc/MixDQ](https://huggingface.co/nics-efc/MixDQ).

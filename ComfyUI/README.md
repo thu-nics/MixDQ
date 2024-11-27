@@ -1,14 +1,16 @@
 # ComfyUI MixDQ Setup
 
 ## Environment requisites
-- **0.** Establish conda environment `conda create -n kernel python=3.10`
+
+- **0.** Create conda environment `conda create -n kernel python=3.10` (you only need the hardware cuda kernel environment for extention)
 - **1.** Follow the instructions here: https://github.com/thu-nics/MixDQ/tree/master/kernels to set up basic environment for the moduel.
 
-- **2.** Follow the instructions here: https://github.com/comfyanonymous/ComfyUI#installing for manuel install for Linux.
+- **2.** Follow the instructions here: https://github.com/comfyanonymous/ComfyUI#installing for manuel install comfyui for Linux.
 
-- **3.** Git Clone and put the package `MixDQ`(dir) under `./ComfyUI/custom_nodes/`
+- **3.** Git Clone and put the `MixDQ`repository under `./ComfyUI/custom_nodes/`
 
 - **4.** Putting the sdxl-turbo model under `/ComfyUI/models/checkpoints/sdxl-turbo`. The model can be downloaded by Diffuser as below:
+
 ```python
 from diffusers import AutoPipelineForText2Image
 import torch
@@ -28,6 +30,7 @@ pipe.save_pretrained(save_path)
 - It is worth noticing that torch 2.2.1+cu118 with xformers 0.0.25 may cause error in Diffusers inference when tested on our computer. To solve this problem, we recommend to uninstall xformers or use `xformers==0.0.20`(Although it may display version incompatibility but it works). For more details, you can see https://github.com/huggingface/diffusers/issues/9889.
 
 ## Run
+
 1. Run `python main.py --cuda-device 0` to run ComfyUI, as `--cuda-device` chooses which GPU to run with.
 2. Open browser and go to `http://127.0.0.1:8188`. 
 3. Load the workflow by `mixdq_workflow.json` or `mixdq.png` in `ComfyUI/custom_nodes/MixDQ/workflow`
