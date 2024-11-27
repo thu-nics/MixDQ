@@ -1,0 +1,309 @@
+{
+  "last_node_id": 17,
+  "last_link_id": 30,
+  "nodes": [
+    {
+      "id": 2,
+      "type": "PreviewImage",
+      "pos": {
+        "0": 494,
+        "1": 127
+      },
+      "size": {
+        "0": 210,
+        "1": 246
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 25
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 6,
+      "type": "PreviewImage",
+      "pos": {
+        "0": 713,
+        "1": 128
+      },
+      "size": {
+        "0": 210,
+        "1": 246
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 26
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 10,
+      "type": "LoadPipe",
+      "pos": {
+        "0": -355,
+        "1": 148
+      },
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "PIPELINE",
+          "type": "PIPELINE",
+          "links": [
+            23
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "PIPELINE",
+          "type": "PIPELINE",
+          "links": [
+            30
+          ],
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadPipe"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 15,
+      "type": "MixdqIntegral",
+      "pos": {
+        "0": -49,
+        "1": 145
+      },
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pipeline1",
+          "type": "PIPELINE",
+          "link": 23
+        },
+        {
+          "name": "pipeline2",
+          "type": "PIPELINE",
+          "link": 30
+        }
+      ],
+      "outputs": [
+        {
+          "name": "quant_image",
+          "type": "IMAGE",
+          "links": [
+            25
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "nonquant_image",
+          "type": "IMAGE",
+          "links": [
+            26
+          ],
+          "slot_index": 1
+        },
+        {
+          "name": "quant_efficiency",
+          "type": "STRING",
+          "links": [
+            27
+          ],
+          "slot_index": 2
+        },
+        {
+          "name": "nonquant_efficiency",
+          "type": "STRING",
+          "links": [
+            28
+          ],
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MixdqIntegral"
+      },
+      "widgets_values": [
+        "A cinematic shot of a baby racoon wearing an intricate italian priest robe.",
+        "W8-bit(Recommended)",
+        "W8-bit(Recommended)"
+      ]
+    },
+    {
+      "id": 13,
+      "type": "ShowText|pysssss",
+      "pos": {
+        "0": 461,
+        "1": -77
+      },
+      "size": {
+        "0": 343.0458679199219,
+        "1": 145.05325317382812
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 27,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "Static (weights) memory usage: 4 G 142 M 162 271 K 162 Bytes (4238.264802932739 MBs)\nDynamic (acts) memory usage:1 G 86 M 966 345 K 966 Bytes (1110.3378353118896 MBs)\nPeak (total) memory usage:5 G 228 M 104 617 K 104 Bytes (5348.602638244629 MBs)\nLatency Time:0.40134410187602043"
+      ]
+    },
+    {
+      "id": 14,
+      "type": "ShowText|pysssss",
+      "pos": {
+        "0": 451,
+        "1": 430
+      },
+      "size": {
+        "0": 336.3792419433594,
+        "1": 131.71994018554688
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 28,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "Static (weights) memory usage: 6 G 472 M 166 291 K 166 Bytes (6616.2843379974365 MBs)\nDynamic (acts) memory usage:1 G 78 M 966 217 K 966 Bytes (1102.2128353118896 MBs)\nPeak (total) memory usage:7 G 550 M 108 509 K 108 Bytes (7718.497173309326 MBs)\nLatency Time:0.38287898898124695"
+      ]
+    }
+  ],
+  "links": [
+    [
+      23,
+      10,
+      0,
+      15,
+      0,
+      "PIPELINE"
+    ],
+    [
+      25,
+      15,
+      0,
+      2,
+      0,
+      "IMAGE"
+    ],
+    [
+      26,
+      15,
+      1,
+      6,
+      0,
+      "IMAGE"
+    ],
+    [
+      27,
+      15,
+      2,
+      13,
+      0,
+      "STRING"
+    ],
+    [
+      28,
+      15,
+      3,
+      14,
+      0,
+      "STRING"
+    ],
+    [
+      30,
+      10,
+      1,
+      15,
+      1,
+      "PIPELINE"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.9090909090909095,
+      "offset": [
+        516.5423687380401,
+        202.46288130743028
+      ]
+    }
+  },
+  "version": 0.4
+}
